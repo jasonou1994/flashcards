@@ -36,7 +36,6 @@ Files to inspect when making changes
 - `src/index.jsx`, `src/styles.css` — entry and styling.
 - `webpack.config.js` — dev server, build, and asset behavior.
  - `decks/` — folder containing per-deck JSON files. The app discovers these via webpack's `require.context`.
- - `server/index.js` — an optional development server that exposes endpoints to list, read, delete, and replace deck files. Useful for implementing in-place edits (delete) and undo functionality.
 
 Common tasks and examples
 - Adding a new field to cards (e.g., `level`):
@@ -45,14 +44,7 @@ Common tasks and examples
 - Persisting progress across reloads (optional enhancement):
   - Use `localStorage` keyed by repo name. On mount, load saved progress if it exists; on known/unknown updates, persist remaining deck.
 
-Server-backed editing (dev-only)
-- The repo includes `server/index.js` (Express) exposing:
-  - GET /api/decks -> list JSON filenames in `decks/`
-  - GET /api/decks/:name -> read deck JSON
-  - POST /api/decks/:name/delete { index } -> remove a card by index and overwrite the file
-  - POST /api/decks/:name/replace { content } -> replace deck content (used for "Undo All")
-
-The UI will attempt to call the server at http://localhost:4000. If the server is not available the UI will still work but file edits (Delete/Undo All) will be local only.
+Server-backed editing has been removed; the app is purely client-side and reads static JSON decks bundled at build time.
 
 Edge-cases & constraints
 - The app imports `deck.json` at build time. If a user expects runtime editing of the file without rebuilding, they'll need a server endpoint — note that introducing a server changes the project's scope.
