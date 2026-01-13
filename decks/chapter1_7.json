@@ -1,0 +1,275 @@
+[
+  {
+    "japanese": "完璧",
+    "hiragana": "かんぺき",
+    "english": "Perfect; flawless (na-noun/na-adjective: 完璧だ／完璧なN). Often used for plans, results, performances, etc.",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>の<ruby>計画<rt>けいかく</rt></ruby>は<ruby>完璧<rt>かんぺき</rt></ruby>だ。",
+    "english_example": "His plan is perfect."
+  },
+  {
+    "japanese": "涙声",
+    "hiragana": "なみだごえ",
+    "english": "A tearful voice (noun), describing speech that sounds like someone is about to cry; can also be used predicatively as 涙声だ.",
+    "japanese_example": "<ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>涙声<rt>なみだごえ</rt></ruby>で<ruby>謝<rt>あやま</rt></ruby>った。",
+    "english_example": "She apologized in a tearful voice."
+  },
+  {
+    "japanese": "席",
+    "hiragana": "せき",
+    "english": "A seat; also an occasion/setting (e.g., a meeting or a meal), as in 夕食の席 “at the dinner table/occasion.”",
+    "japanese_example": "<ruby>夕食<rt>ゆうしょく</rt></ruby>の<ruby>席<rt>せき</rt></ruby>でその<ruby>話<rt>はなし</rt></ruby>が<ruby>話題<rt>わだい</rt></ruby>になった。",
+    "english_example": "That topic came up at the dinner table."
+  },
+  {
+    "japanese": "気の利いた",
+    "hiragana": "きのきいた",
+    "english": "Witty; smart; thoughtfully considerate (attributive form), often for replies, remarks, or actions (e.g., 気の利いた返事).",
+    "japanese_example": "<ruby>気<rt>き</rt></ruby>の<ruby>利<rt>き</rt></ruby>いた<ruby>返事<rt>へんじ</rt></ruby>ができた。",
+    "english_example": "I managed to give a witty reply."
+  },
+  {
+    "japanese": "お世辞",
+    "hiragana": "おせじ",
+    "english": "Flattery; compliment (often implying insincerity). Commonly: お世辞を言う／お世辞にも〜ない.",
+    "japanese_example": "<ruby>お世辞<rt>おせじ</rt></ruby>を<ruby>言<rt>い</rt></ruby>うつもりはない。",
+    "english_example": "I don’t intend to flatter you."
+  },
+  {
+    "japanese": "〜かな？",
+    "hiragana": "かな",
+    "english": "Sentence-final ending meaning “I wonder …,” adding a soft, self-directed tone to a question.",
+    "japanese_example": "<ruby>何<rt>なに</rt></ruby>かいい<ruby>案<rt>あん</rt></ruby>はあるかな？",
+    "english_example": "I wonder if there are any good ideas."
+  },
+  {
+    "japanese": "いらっしゃる",
+    "hiragana": "いらっしゃる",
+    "english": "Honorific verb for 行く・来る・いる, used to show respect to the subject (e.g., 先生はいらっしゃいます).",
+    "japanese_example": "<ruby>先生<rt>せんせい</rt></ruby>は<ruby>今<rt>いま</rt></ruby><ruby>研究室<rt>けんきゅうしつ</rt></ruby>にいらっしゃいます。",
+    "english_example": "The professor is in the lab now."
+  },
+  {
+    "japanese": "素晴らしいゴルファーでいらっしゃる",
+    "hiragana": "すばらしいごるふぁーでいらっしゃる",
+    "english": "Honorific phrasing meaning “(someone) is a wonderful golfer.” でいらっしゃる functions as a respectful equivalent of です.",
+    "japanese_example": "<ruby>社長<rt>しゃちょう</rt></ruby>は<ruby>素晴<rt>すば</rt></ruby>らしいゴルファーでいらっしゃいます。",
+    "english_example": "The company president is a wonderful golfer."
+  },
+  {
+    "japanese": "素敵",
+    "hiragana": "すてき",
+    "english": "Lovely; stylish; wonderful (na-adjective: 素敵なN／素敵だ). Common for clothes, places, experiences, etc.",
+    "japanese_example": "<ruby>素敵<rt>すてき</rt></ruby>な<ruby>服<rt>ふく</rt></ruby>ですね。",
+    "english_example": "That’s a lovely outfit."
+  },
+  {
+    "japanese": "お召し物",
+    "hiragana": "おめしもの",
+    "english": "Honorific term for clothing (especially “your clothing”). Often used in polite compliments or service settings.",
+    "japanese_example": "<ruby>お召<rt>め</rt></ruby>し<ruby>物<rt>もの</rt></ruby>がとても<ruby>素敵<rt>すてき</rt></ruby>です。",
+    "english_example": "Your clothes are very lovely."
+  },
+  {
+    "japanese": "いったい",
+    "hiragana": "いったい",
+    "english": "Emphatic word in questions meaning “what on earth; just what,” expressing surprise, annoyance, or urgency.",
+    "japanese_example": "いったい<ruby>何<rt>なに</rt></ruby>が<ruby>起<rt>お</rt></ruby>きたの？",
+    "english_example": "What on earth happened?"
+  },
+  {
+    "japanese": "求める／お求め",
+    "hiragana": "もとめる",
+    "english": "求める means “to seek; to request,” and in formal contexts can mean “to purchase.” お求め is a polite nominal form used in customer-service speech.",
+    "japanese_example": "どちらで<ruby>お求<rt>もと</rt></ruby>めですか。",
+    "english_example": "Where did you purchase it?"
+  },
+  {
+    "japanese": "お〜になる",
+    "hiragana": "おになる",
+    "english": "Honorific pattern meaning “to do” respectfully: お + verb stem + になる (e.g., お待ちになる, お探しになる).",
+    "japanese_example": "<ruby>何<rt>なに</rt></ruby>を<ruby>お探<rt>さが</rt></ruby>しになるのですか。",
+    "english_example": "What are you looking for?"
+  },
+  {
+    "japanese": "お召し物はどこでお求めになりましたの？",
+    "hiragana": "おめしものはどこでおもとめになりましたの",
+    "english": "Very polite question meaning “Where did you purchase your clothes?” Uses honorific お求めになる and soft sentence ending の.",
+    "japanese_example": "<ruby>お召<rt>め</rt></ruby>し<ruby>物<rt>もの</rt></ruby>はどこで<ruby>お求<rt>もと</rt></ruby>めになりましたの？",
+    "english_example": "Where did you purchase your clothes?"
+  },
+  {
+    "japanese": "こんなのどうかな",
+    "hiragana": "こんなのどうかな",
+    "english": "Casual suggestion meaning “How about something like this, I wonder?” Used when proposing an idea gently.",
+    "japanese_example": "こんな<ruby>案<rt>あん</rt></ruby>でどうかな。",
+    "english_example": "How about an idea like this?"
+  },
+  {
+    "japanese": "尊敬",
+    "hiragana": "そんけい",
+    "english": "Respect; esteem. Commonly used as 尊敬する (to respect) and 尊敬している (to admire).",
+    "japanese_example": "<ruby>私<rt>わたし</rt></ruby>は<ruby>彼<rt>かれ</rt></ruby>を<ruby>尊敬<rt>そんけい</rt></ruby>している。",
+    "english_example": "I respect him."
+  },
+  {
+    "japanese": "尊敬する人物",
+    "hiragana": "そんけいするじんぶつ",
+    "english": "A person you respect/admire. Often used in writing prompts or introductions (e.g., 尊敬する人物について).",
+    "japanese_example": "<ruby>私<rt>わたし</rt></ruby>の<ruby>尊敬<rt>そんけい</rt></ruby>する<ruby>人物<rt>じんぶつ</rt></ruby>は<ruby>父<rt>ちち</rt></ruby>です。",
+    "english_example": "The person I respect is my father."
+  },
+  {
+    "japanese": "人物",
+    "hiragana": "じんぶつ",
+    "english": "A person; figure/character (especially in history, stories, or public life), as in 歴史上の人物.",
+    "japanese_example": "<ruby>歴史上<rt>れきしじょう</rt></ruby>の<ruby>人物<rt>じんぶつ</rt></ruby>について<ruby>調<rt>しら</rt></ruby>べた。",
+    "english_example": "I researched a historical figure."
+  },
+  {
+    "japanese": "作文",
+    "hiragana": "さくぶん",
+    "english": "A composition; essay (often school writing). Commonly: 作文を書く.",
+    "japanese_example": "<ruby>作文<rt>さくぶん</rt></ruby>を<ruby>書<rt>か</rt></ruby>く。",
+    "english_example": "I write an essay."
+  },
+  {
+    "japanese": "〜ことになって",
+    "hiragana": "ことになって",
+    "english": "Indicates an externally decided outcome: “it has been decided that …” Often implies a rule, schedule, or decision not made solely by the speaker.",
+    "japanese_example": "<ruby>学校<rt>がっこう</rt></ruby>で<ruby>作文<rt>さくぶん</rt></ruby>を<ruby>書<rt>か</rt></ruby>くことになっている。",
+    "english_example": "At school, it’s been decided that we write essays."
+  },
+  {
+    "japanese": "学校で尊敬する人物について作文を書くことになって、あなたのことを書きました",
+    "hiragana": "がっこうでそんけいするじんぶつについてさくぶんをかくことになってあなたのことをかきました",
+    "english": "Means “At school it was decided we’d write an essay about someone we respect, and I wrote about you,” using ことになって for an external assignment/decision.",
+    "japanese_example": "<ruby>学校<rt>がっこう</rt></ruby>で<ruby>尊敬<rt>そんけい</rt></ruby>する<ruby>人物<rt>じんぶつ</rt></ruby>について<ruby>作文<rt>さくぶん</rt></ruby>を<ruby>書<rt>か</rt></ruby>くことになって、あなたのことを<ruby>書<rt>か</rt></ruby>きました。",
+    "english_example": "At school, it was decided we’d write an essay about someone we respect, and I wrote about you."
+  },
+  {
+    "japanese": "出来過ぎだった",
+    "hiragana": "できすぎだった",
+    "english": "“It was too perfect/too good to be true,” implying something seemed unrealistically well-made or convenient. Often used as 出来過ぎだ／出来過ぎだった.",
+    "japanese_example": "<ruby>話<rt>はなし</rt></ruby>が<ruby>出来過<rt>できす</rt></ruby>ぎだった。",
+    "english_example": "The story was too perfect."
+  },
+  {
+    "japanese": "感激",
+    "hiragana": "かんげき",
+    "english": "Deep emotion from being moved or impressed; “to be deeply touched.” Often: 感激する／感激した.",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>の<ruby>言葉<rt>ことば</rt></ruby>に<ruby>感激<rt>かんげき</rt></ruby>した。",
+    "english_example": "I was deeply moved by his words."
+  },
+  {
+    "japanese": "泣き出す",
+    "hiragana": "なきだす",
+    "english": "To burst into tears; to start crying (suddenly). Pattern: Vます-stem + 出す for “begin abruptly.”",
+    "japanese_example": "<ruby>子供<rt>こども</rt></ruby>が<ruby>急<rt>きゅう</rt></ruby>に<ruby>泣<rt>な</rt></ruby>き<ruby>出<rt>だ</rt></ruby>した。",
+    "english_example": "The child suddenly burst into tears."
+  },
+  {
+    "japanese": "抱く",
+    "hiragana": "だく",
+    "english": "To hold/embrace (だく); also “to harbor” a feeling/idea (often written 抱く, reading いだく in that sense).",
+    "japanese_example": "<ruby>赤<rt>あか</rt></ruby>ちゃんを<ruby>抱<rt>だ</rt></ruby>いた。",
+    "english_example": "I held the baby."
+  },
+  {
+    "japanese": "抱きしめる",
+    "hiragana": "だきしめる",
+    "english": "To hug tightly; to hold someone close with affection or relief.",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>を<ruby>強<rt>つよ</rt></ruby>く<ruby>抱<rt>だ</rt></ruby>きしめた。",
+    "english_example": "I hugged him tightly."
+  },
+  {
+    "japanese": "潜り込む",
+    "hiragana": "もぐりこむ",
+    "english": "To slip/dive into; to crawl into (e.g., bedcovers, a narrow space). Often used with 布団, ベッド, etc.",
+    "japanese_example": "<ruby>布団<rt>ふとん</rt></ruby>に<ruby>潜<rt>もぐ</rt></ruby>り<ruby>込<rt>こ</rt></ruby>んだ。",
+    "english_example": "I slipped under the futon."
+  },
+  {
+    "japanese": "大笑いするところ",
+    "hiragana": "おおわらいするところ",
+    "english": "“About to burst into laughter.” V辞書形 + ところ indicates the moment just before doing something.",
+    "japanese_example": "<ruby>危<rt>あぶ</rt></ruby>なく<ruby>大笑<rt>おおわら</rt></ruby>いするところだった。",
+    "english_example": "I almost burst out laughing."
+  },
+  {
+    "japanese": "小僧",
+    "hiragana": "こぞう",
+    "english": "Kid; brat (rough/derogatory), used by an older speaker to look down on a boy/young person.",
+    "japanese_example": "あの<ruby>小僧<rt>こぞう</rt></ruby>がまた<ruby>来<rt>き</rt></ruby>た。",
+    "english_example": "That brat came again."
+  },
+  {
+    "japanese": "必死で",
+    "hiragana": "ひっしで",
+    "english": "Desperately; frantically; with all one’s might. Often used with actions like 走る, 探す, 守る.",
+    "japanese_example": "<ruby>必死<rt>ひっし</rt></ruby>で<ruby>走<rt>はし</rt></ruby>った。",
+    "english_example": "I ran desperately."
+  },
+  {
+    "japanese": "普通",
+    "hiragana": "ふつう",
+    "english": "Ordinary; normal; usual(ly). Used as a noun/na-adjective/adverb depending on context (普通だ／普通のN／普通に).",
+    "japanese_example": "<ruby>普通<rt>ふつう</rt></ruby>は<ruby>朝<rt>あさ</rt></ruby><ruby>七時<rt>しちじ</rt></ruby>に<ruby>起<rt>お</rt></ruby>きる。",
+    "english_example": "I usually get up at 7 a.m."
+  },
+  {
+    "japanese": "装って",
+    "hiragana": "よそおって",
+    "english": "Te-form of 装う: “to pretend; to put on an appearance; to disguise (as).” Often with 〜ふりを装う.",
+    "japanese_example": "<ruby>何<rt>なに</rt></ruby>も<ruby>知<rt>し</rt></ruby>らないふりを<ruby>装<rt>よそお</rt></ruby>って<ruby>話<rt>はな</rt></ruby>した。",
+    "english_example": "I spoke while pretending not to know anything."
+  },
+  {
+    "japanese": "出てくる",
+    "hiragana": "でてくる",
+    "english": "To come out; to appear; to emerge (often from inside to outside, or something becomes noticeable). Also used figuratively (ideas/tears come out).",
+    "japanese_example": "<ruby>涙<rt>なみだ</rt></ruby>が<ruby>出<rt>で</rt></ruby>てくる。",
+    "english_example": "Tears start to come out."
+  },
+  {
+    "japanese": "全くもって",
+    "hiragana": "まったくもって",
+    "english": "Absolutely; utterly; completely (emphatic, somewhat formal). Often used with agreement or evaluation, e.g., 全くもって同感だ.",
+    "japanese_example": "<ruby>全<rt>まった</rt></ruby>くもって<ruby>同感<rt>どうかん</rt></ruby>だ。",
+    "english_example": "I absolutely agree."
+  },
+  {
+    "japanese": "しろ（するの命令形）",
+    "hiragana": "しろ",
+    "english": "Imperative of する is しろ (a strong command). Used for blunt orders (e.g., 早く準備しろ).",
+    "japanese_example": "<ruby>早<rt>はや</rt></ruby>く<ruby>準備<rt>じゅんび</rt></ruby>しろ。",
+    "english_example": "Hurry up and get ready."
+  },
+  {
+    "japanese": "力がこもった",
+    "hiragana": "ちからがこもった",
+    "english": "Full of force/feeling; charged with emotion or emphasis. Commonly modifies voice/words: 力がこもった声.",
+    "japanese_example": "<ruby>力<rt>ちから</rt></ruby>がこもった<ruby>声<rt>こえ</rt></ruby>で<ruby>訴<rt>うった</rt></ruby>えた。",
+    "english_example": "He appealed in a forceful, emotion-filled voice."
+  },
+  {
+    "japanese": "夕食の席",
+    "hiragana": "ゆうしょくのせき",
+    "english": "The dinner table/occasion; the setting of a meal where conversation or events occur.",
+    "japanese_example": "<ruby>夕食<rt>ゆうしょく</rt></ruby>の<ruby>席<rt>せき</rt></ruby>で<ruby>発表<rt>はっぴょう</rt></ruby>した。",
+    "english_example": "I announced it at the dinner table."
+  },
+  {
+    "japanese": "素晴らしい",
+    "hiragana": "すばらしい",
+    "english": "Splendid; excellent; wonderful (i-adjective). Used for achievements, experiences, people, etc.",
+    "japanese_example": "<ruby>素晴<rt>すば</rt></ruby>らしい<ruby>成果<rt>せいか</rt></ruby>だ。",
+    "english_example": "That’s an excellent result."
+  },
+  {
+    "japanese": "何かあるかな？",
+    "hiragana": "なにかあるかな",
+    "english": "Casual “I wonder if there’s something,” used as a soft self-question (かな adds a gentle, wondering tone).",
+    "japanese_example": "<ruby>何<rt>なに</rt></ruby>かあるかな？",
+    "english_example": "I wonder if there’s something."
+  }
+]

@@ -1,0 +1,163 @@
+[
+  {
+    "japanese": "知らんままでよい",
+    "hiragana": "しらんままでよい",
+    "english": "“It’s fine to remain not knowing.” 知らん is a colloquial (often masculine/dialectal) form of 知らない; 〜まま keeps a state unchanged.",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>理由<rt>りゆう</rt></ruby>を<ruby>知<rt>し</rt></ruby>らんままでよい。",
+    "english_example": "It’s fine for him to remain unaware of the reason."
+  },
+  {
+    "japanese": "差し上げる",
+    "hiragana": "さしあげる",
+    "english": "Humble verb meaning “to give,” used for giving from the speaker’s side to someone of higher status (私側→相手). Pattern: N1をN2に差し上げる.",
+    "japanese_example": "<ruby>先生<rt>せんせい</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>を<ruby>差<rt>さ</rt></ruby>し<ruby>上<rt>あ</rt></ruby>げます。",
+    "english_example": "I will give the teacher a book."
+  },
+  {
+    "japanese": "話題",
+    "hiragana": "わだい",
+    "english": "A topic of conversation; subject matter. Common collocations include 話題を変える and 話題にする.",
+    "japanese_example": "<ruby>話題<rt>わだい</rt></ruby>を<ruby>変<rt>か</rt></ruby>えよう。",
+    "english_example": "Let’s change the topic."
+  },
+  {
+    "japanese": "持つ",
+    "hiragana": "もつ",
+    "english": "To hold; to carry; to have/possess. Note the contrast with 待つ（まつ） “to wait.”",
+    "japanese_example": "<ruby>かばん<rt>かばん</rt></ruby>を<ruby>持<rt>も</rt></ruby>つ。",
+    "english_example": "I hold a bag."
+  },
+  {
+    "japanese": "持っていく（話題を〜）",
+    "hiragana": "もっていく",
+    "english": "Literally “to take (something) along,” and figuratively “to steer/bring the topic to (a subject).” Often: 話題を〜に持っていく.",
+    "japanese_example": "<ruby>話題<rt>わだい</rt></ruby>を<ruby>経済<rt>けいざい</rt></ruby>の<ruby>話<rt>はなし</rt></ruby>に<ruby>持<rt>も</rt></ruby>っていった。",
+    "english_example": "They steered the topic to economics."
+  },
+  {
+    "japanese": "バーノンおじさんは話題をドリルに持って行った",
+    "hiragana": "ばーのんおじさんはわだいをどりるにもっていった",
+    "english": "Means “Uncle Vernon steered the topic to drills,” using 話題を〜に持って行く to shift the conversation toward a chosen subject.",
+    "japanese_example": "バーノンおじさんは<ruby>話題<rt>わだい</rt></ruby>をドリルに<ruby>持<rt>も</rt></ruby>って<ruby>行<rt>い</rt></ruby>った。",
+    "english_example": "Uncle Vernon steered the topic to drills."
+  },
+  {
+    "japanese": "連れる",
+    "hiragana": "つれる",
+    "english": "To take/bring (a person or animal) along. Often used with 〜を連れて行く／連れて来る.",
+    "japanese_example": "<ruby>子供<rt>こども</rt></ruby>を<ruby>学校<rt>がっこう</rt></ruby>に<ruby>連<rt>つ</rt></ruby>れて<ruby>行<rt>い</rt></ruby>く。",
+    "english_example": "I take my child to school."
+  },
+  {
+    "japanese": "運ぶ",
+    "hiragana": "はこぶ",
+    "english": "To carry/transport (things). Often contrasted with 連れる, which is used for people/animals.",
+    "japanese_example": "<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>運<rt>はこ</rt></ruby>ぶ。",
+    "english_example": "I carry the luggage."
+  },
+  {
+    "japanese": "運",
+    "hiragana": "うん",
+    "english": "Luck; fortune. Common patterns include 運がいい／悪い and 運が良ければ (“if I’m lucky”).",
+    "japanese_example": "<ruby>運<rt>うん</rt></ruby>が<ruby>良<rt>よ</rt></ruby>ければ、うまくいく。",
+    "english_example": "If I’m lucky, it will go well."
+  },
+  {
+    "japanese": "い形容詞の条件形（〜ければ）",
+    "hiragana": "いけいようしのじょうけんけい",
+    "english": "I-adjective conditional: replace final い with ければ (e.g., 早い→早ければ, 良い→良ければ). Used for “if it is ….”",
+    "japanese_example": "<ruby>早<rt>はや</rt></ruby>ければ<ruby>間<rt>ま</rt></ruby>に<ruby>合<rt>あ</rt></ruby>う。",
+    "english_example": "If it’s early enough, we’ll make it in time."
+  },
+  {
+    "japanese": "商談成立",
+    "hiragana": "しょうだんせいりつ",
+    "english": "A deal concluded; successful negotiation (noun). Often used in business contexts, e.g., 商談成立おめでとう.",
+    "japanese_example": "<ruby>商談<rt>しょうだん</rt></ruby><ruby>成立<rt>せいりつ</rt></ruby>おめでとうございます。",
+    "english_example": "Congratulations on closing the deal."
+  },
+  {
+    "japanese": "署名",
+    "hiragana": "しょめい",
+    "english": "A signature; signing one’s name (not a seal). Commonly: 書類／契約書に署名する.",
+    "japanese_example": "<ruby>契約書<rt>けいやくしょ</rt></ruby>に<ruby>署名<rt>しょめい</rt></ruby>した。",
+    "english_example": "I signed the contract."
+  },
+  {
+    "japanese": "捺印",
+    "hiragana": "なついん",
+    "english": "Affixing a seal; stamping with an official seal impression. Often used for documents, sometimes contrasted with 署名.",
+    "japanese_example": "<ruby>書類<rt>しょるい</rt></ruby>に<ruby>捺印<rt>なついん</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>だ。",
+    "english_example": "The document needs a seal stamp."
+  },
+  {
+    "japanese": "今頃",
+    "hiragana": "いまごろ",
+    "english": "Around now; by this time (often used to guess what someone is doing now).",
+    "japanese_example": "<ruby>今頃<rt>いまごろ</rt></ruby>、<ruby>彼<rt>かれ</rt></ruby>は<ruby>家<rt>いえ</rt></ruby>に<ruby>着<rt>つ</rt></ruby>いているだろう。",
+    "english_example": "By now, he’s probably home."
+  },
+  {
+    "japanese": "別荘",
+    "hiragana": "べっそう",
+    "english": "A villa; vacation house/second home. Reading is べっそう (not べつそう).",
+    "japanese_example": "<ruby>海辺<rt>うみべ</rt></ruby>の<ruby>別荘<rt>べっそう</rt></ruby>に<ruby>泊<rt>と</rt></ruby>まった。",
+    "english_example": "I stayed at a seaside vacation house."
+  },
+  {
+    "japanese": "〜をな（男ことば）",
+    "hiragana": "をな",
+    "english": "A masculine/emphatic tag placed after を, adding insistence or drawing attention (region/age-marked). Often used in spoken narration or rough speech.",
+    "japanese_example": "それをな、よく<ruby>聞<rt>き</rt></ruby>け。",
+    "english_example": "Listen closely to that, you hear."
+  },
+  {
+    "japanese": "ことさら",
+    "hiragana": "ことさら",
+    "english": "Especially; particularly; (often) “deliberately” or “to make a point,” depending on context. Commonly appears as ことさら〜ない (“not particularly …”).",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>はことさら<ruby>喜<rt>よろこ</rt></ruby>びもしなかった。",
+    "english_example": "He didn’t seem particularly pleased."
+  },
+  {
+    "japanese": "ハリーはことさら嬉しいとも思わなかった",
+    "hiragana": "はりーはことさらうれしいともおもわなかった",
+    "english": "Means “Harry didn’t even particularly think it was pleasant,” using ことさら〜とも思わない to show “not particularly; not even.”",
+    "japanese_example": "ハリーはことさら<ruby>嬉<rt>うれ</rt></ruby>しいとも<ruby>思<rt>おも</rt></ruby>わなかった。",
+    "english_example": "Harry didn’t think it was particularly pleasing."
+  },
+  {
+    "japanese": "打って変わって",
+    "hiragana": "うってかわって",
+    "english": "Completely changed (from before); “in sharp contrast to earlier.” Often used with 昨日と打って変わって, さっきと打って変わって, etc.",
+    "japanese_example": "<ruby>昨日<rt>きのう</rt></ruby>と<ruby>打<rt>う</rt></ruby>って<ruby>変<rt>か</rt></ruby>わって、<ruby>今日<rt>きょう</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かだ。",
+    "english_example": "In complete contrast to yesterday, today is quiet."
+  },
+  {
+    "japanese": "可愛がる",
+    "hiragana": "かわいがる",
+    "english": "To be affectionate toward; to dote on; to treat (someone/animal) with fond care.",
+    "japanese_example": "<ruby>祖母<rt>そぼ</rt></ruby>は<ruby>孫<rt>まご</rt></ruby>をとても<ruby>可愛<rt>かわい</rt></ruby>がっている。",
+    "english_example": "My grandmother dotes on her grandchild."
+  },
+  {
+    "japanese": "思える／思えなかった",
+    "hiragana": "おもえる",
+    "english": "Potential form of 思う: “to be able to think/feel; to seem (to oneself).” Negative past 思えなかった means “couldn’t bring myself to think so.”",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>が<ruby>来<rt>く</rt></ruby>るとは<ruby>思<rt>おも</rt></ruby>えなかった。",
+    "english_example": "I couldn’t imagine that he would come."
+  },
+  {
+    "japanese": "行ったって（＝行ったとしても）",
+    "hiragana": "いったって",
+    "english": "Colloquial concessive meaning “even if (someone) went,” equivalent to 行ったとしても. Often implies the result won’t change.",
+    "japanese_example": "<ruby>今<rt>いま</rt></ruby><ruby>行<rt>い</rt></ruby>ったって<ruby>間<rt>ま</rt></ruby>に<ruby>合<rt>あ</rt></ruby>わない。",
+    "english_example": "Even if you go now, you won’t make it in time."
+  },
+  {
+    "japanese": "ダーズリー一家がマジョルカ島に行ったって、いまプリベット通りと打って変わって、ハリーを可愛がるとは思えなかった",
+    "hiragana": "だーずりーいっかがまじょるかとうにいったっていまぷりべっとどおりとうってかわってはりーをかわいがるとはおもえなかった",
+    "english": "Means “Even if the Dursleys went to Mallorca, I couldn’t imagine they’d completely change from how they are on Privet Drive now and start doting on Harry,” combining たって (even if), 打って変わって (completely changed), and 思えなかった (couldn’t imagine).",
+    "japanese_example": "ダーズリー<ruby>一家<rt>いっか</rt></ruby>がマジョルカ<ruby>島<rt>とう</rt></ruby>に<ruby>行<rt>い</rt></ruby>ったって、<ruby>今<rt>いま</rt></ruby>プリベット<ruby>通<rt>どお</rt></ruby>りと<ruby>打<rt>う</rt></ruby>って<ruby>変<rt>か</rt></ruby>わって、ハリーを<ruby>可愛<rt>かわい</rt></ruby>がるとは<ruby>思<rt>おも</rt></ruby>えなかった。",
+    "english_example": "Even if the Dursleys went to Mallorca, I couldn’t imagine them suddenly changing from how they are on Privet Drive now and doting on Harry."
+  }
+]

@@ -1,0 +1,275 @@
+[
+  {
+    "japanese": "殺す",
+    "hiragana": "ころす",
+    "english": "To kill; a transitive verb used for causing death (literal or figurative).",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>虫<rt>むし</rt></ruby>を<ruby>殺<rt>ころ</rt></ruby>したくないと<ruby>言<rt>い</rt></ruby>った。",
+    "english_example": "He said he doesn't want to kill insects."
+  },
+  {
+    "japanese": "損なう",
+    "hiragana": "そこなう",
+    "english": "To spoil, damage, or impair; also used in patterns like 〜損なう to mean “fail to (do)” or “do badly.”",
+    "japanese_example": "<ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>信頼<rt>しんらい</rt></ruby>を<ruby>損<rt>そこな</rt></ruby>うようなことはしない。",
+    "english_example": "She won't do anything that would damage trust."
+  },
+  {
+    "japanese": "殺し損ねた",
+    "hiragana": "ころしそこねた",
+    "english": "Past form of 〜損ねる attached to a verb: “failed to (do)”; here, “failed to kill.”",
+    "japanese_example": "<ruby>男<rt>おとこ</rt></ruby>は<ruby>相手<rt>あいて</rt></ruby>を<ruby>殺<rt>ころ</rt></ruby>し<ruby>損<rt>そこ</rt></ruby>ねて、<ruby>逃<rt>に</rt></ruby>げられた。",
+    "english_example": "The man failed to kill his target, and they got away."
+  },
+  {
+    "japanese": "打つ",
+    "hiragana": "うつ",
+    "english": "To strike or hit (something); a basic verb used for physical blows and some set phrases.",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>机<rt>つくえ</rt></ruby>をこぶしで<ruby>打<rt>う</rt></ruby>った。",
+    "english_example": "He struck the desk with his fist."
+  },
+  {
+    "japanese": "砕く",
+    "hiragana": "くだく",
+    "english": "To smash or crush into pieces; often used for breaking hard things or figuratively “to break down.”",
+    "japanese_example": "<ruby>氷<rt>こおり</rt></ruby>を<ruby>砕<rt>くだ</rt></ruby>いて、<ruby>飲<rt>の</rt></ruby>み<ruby>物<rt>もの</rt></ruby>に<ruby>入<rt>い</rt></ruby>れた。",
+    "english_example": "I crushed ice and put it into the drink."
+  },
+  {
+    "japanese": "打ち砕かれる",
+    "hiragana": "うちくだかれる",
+    "english": "Passive form meaning “to be shattered/crushed,” often used for hopes, confidence, or plans being destroyed.",
+    "japanese_example": "<ruby>期待<rt>きたい</rt></ruby>は<ruby>一瞬<rt>いっしゅん</rt></ruby>で<ruby>打<rt>う</rt></ruby>ち<ruby>砕<rt>くだ</rt></ruby>かれた。",
+    "english_example": "My hopes were shattered in an instant."
+  },
+  {
+    "japanese": "打ち砕かれた",
+    "hiragana": "うちくだかれた",
+    "english": "Past passive: “was shattered/crushed”; commonly used for dreams, pride, expectations, etc.",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>の<ruby>自信<rt>じしん</rt></ruby>はその<ruby>言葉<rt>ことば</rt></ruby>で<ruby>打<rt>う</rt></ruby>ち<ruby>砕<rt>くだ</rt></ruby>かれた。",
+    "english_example": "His confidence was crushed by those words."
+  },
+  {
+    "japanese": "こうして",
+    "hiragana": "こうして",
+    "english": "Thus; in this way; used to connect events and show the manner/result of what follows.",
+    "japanese_example": "<ruby>話<rt>はなし</rt></ruby>し<ruby>合<rt>あ</rt></ruby>いを<ruby>重<rt>かさ</rt></ruby>ね、<ruby>こうして</ruby><ruby>計画<rt>けいかく</rt></ruby>が<ruby>決<rt>き</rt></ruby>まった。",
+    "english_example": "After many discussions, this is how the plan was decided."
+  },
+  {
+    "japanese": "母方",
+    "hiragana": "ははがた",
+    "english": "Maternal side; used for relatives or lineage on one’s mother’s side (contrast: 父方).",
+    "japanese_example": "<ruby>母方<rt>ははがた</rt></ruby>の<ruby>祖母<rt>そぼ</rt></ruby>は<ruby>北海道<rt>ほっかいどう</rt></ruby>に<ruby>住<rt>す</rt></ruby>んでいる。",
+    "english_example": "My grandmother on my mother's side lives in Hokkaido."
+  },
+  {
+    "japanese": "夫婦",
+    "hiragana": "ふうふ",
+    "english": "Husband and wife; a married couple as a unit.",
+    "japanese_example": "あの<ruby>夫婦<rt>ふうふ</rt></ruby>は<ruby>毎朝<rt>まいあさ</rt></ruby><ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>散歩<rt>さんぽ</rt></ruby>する。",
+    "english_example": "That couple takes a walk together every morning."
+  },
+  {
+    "japanese": "育てる",
+    "hiragana": "そだてる",
+    "english": "To raise or bring up (someone/something); transitive (contrast: 育つ intransitive).",
+    "japanese_example": "<ruby>両親<rt>りょうしん</rt></ruby>は<ruby>子供<rt>こども</rt></ruby>を<ruby>大切<rt>たいせつ</rt></ruby>に<ruby>育<rt>そだ</rt></ruby>てた。",
+    "english_example": "My parents raised their children with care."
+  },
+  {
+    "japanese": "育つ",
+    "hiragana": "そだつ",
+    "english": "To grow up or be raised; intransitive (contrast: 育てる transitive).",
+    "japanese_example": "<ruby>この町<rt>このまち</rt></ruby>で<ruby>育<rt>そだ</rt></ruby>った<ruby>人<rt>ひと</rt></ruby>は<ruby>地元<rt>じもと</rt></ruby>への<ruby>愛着<rt>あいちゃく</rt></ruby>が<ruby>強<rt>つよ</rt></ruby>い。",
+    "english_example": "People who grew up in this town have a strong attachment to it."
+  },
+  {
+    "japanese": "過ごす",
+    "hiragana": "すごす",
+    "english": "To spend (time) or live through (a period); often used with time expressions.",
+    "japanese_example": "<ruby>週末<rt>しゅうまつ</rt></ruby>は<ruby>家<rt>いえ</rt></ruby>でゆっくり<ruby>過<rt>す</rt></ruby>ごした。",
+    "english_example": "I spent the weekend relaxing at home."
+  },
+  {
+    "japanese": "最初",
+    "hiragana": "さいしょ",
+    "english": "First; the beginning; used for the initial point in a sequence or process.",
+    "japanese_example": "<ruby>最初<rt>さいしょ</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>しかったが、だんだん<ruby>慣<rt>な</rt></ruby>れてきた。",
+    "english_example": "It was difficult at first, but I gradually got used to it."
+  },
+  {
+    "japanese": "ハリーは自分ではそんな気はないのに",
+    "hiragana": "はりーはじぶんではそんなきはないのに",
+    "english": "Phrase meaning “Even though Harry himself doesn’t feel that way”; 〜のに expresses contradiction: despite X, Y happens.",
+    "japanese_example": "<ruby>ハリー</ruby>は<ruby>自分<rt>じぶん</rt></ruby>ではそんな<ruby>気<rt>き</rt></ruby>はないのに、みんなに<ruby>怒<rt>おこ</rt></ruby>っていると<ruby>思<rt>おも</rt></ruby>われた。",
+    "english_example": "Even though Harry himself didn't feel that way, everyone thought he was angry."
+  },
+  {
+    "japanese": "しょっちゅう",
+    "hiragana": "しょっちゅう",
+    "english": "Often; frequently; casual adverb meaning something happens repeatedly.",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>しょっちゅう</ruby><ruby>遅刻<rt>ちこく</rt></ruby>して<ruby>注意<rt>ちゅうい</rt></ruby>される。",
+    "english_example": "He is frequently late and gets warned."
+  },
+  {
+    "japanese": "出来事",
+    "hiragana": "できごと",
+    "english": "An event or incident; something that happened (often notable).",
+    "japanese_example": "<ruby>昨日<rt>きのう</rt></ruby>の<ruby>出来事<rt>できごと</rt></ruby>は<ruby>今<rt>いま</rt></ruby>でも<ruby>忘<rt>わす</rt></ruby>れられない。",
+    "english_example": "I still can't forget what happened yesterday."
+  },
+  {
+    "japanese": "引き起こす",
+    "hiragana": "ひきおこす",
+    "english": "To cause or bring about (often an event/problem); transitive and fairly formal.",
+    "japanese_example": "<ruby>不注意<rt>ふちゅうい</rt></ruby>が<ruby>大<rt>おお</rt></ruby>きな<ruby>事故<rt>じこ</rt></ruby>を<ruby>引<rt>ひ</rt></ruby>き<ruby>起<rt>お</rt></ruby>こすことがある。",
+    "english_example": "Carelessness can cause a serious accident."
+  },
+  {
+    "japanese": "不思議",
+    "hiragana": "ふしぎ",
+    "english": "A mystery; strange or wondrous (noun/な-adjective), used for things that feel inexplicable.",
+    "japanese_example": "<ruby>不思議<rt>ふしぎ</rt></ruby>なことに、<ruby>鍵<rt>かぎ</rt></ruby>が<ruby>急<rt>きゅう</rt></ruby>に<ruby>見<rt>み</rt></ruby>つかった。",
+    "english_example": "Strangely enough, the key suddenly turned up."
+  },
+  {
+    "japanese": "自分でも不思議に思っていた",
+    "hiragana": "じぶんでもふしぎにおもっていた",
+    "english": "Phrase meaning “even he himself found it strange”; 不思議に思う = to find (something) mysterious/strange.",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>自分<rt>じぶん</rt></ruby>でも<ruby>不思議<rt>ふしぎ</rt></ruby>に<ruby>思<rt>おも</rt></ruby>っていたほど、<ruby>急<rt>きゅう</rt></ruby>に<ruby>運<rt>うん</rt></ruby>が<ruby>良<rt>よ</rt></ruby>くなった。",
+    "english_example": "His luck improved so suddenly that even he himself found it strange."
+  },
+  {
+    "japanese": "自動車",
+    "hiragana": "じどうしゃ",
+    "english": "Automobile; a general term for motor vehicles (often contrasted with 自転車).",
+    "japanese_example": "<ruby>自動車<rt>じどうしゃ</rt></ruby>で<ruby>通勤<rt>つうきん</rt></ruby>する<ruby>人<rt>ひと</rt></ruby>が<ruby>増<rt>ふ</rt></ruby>えている。",
+    "english_example": "More people are commuting by car."
+  },
+  {
+    "japanese": "自転車",
+    "hiragana": "じてんしゃ",
+    "english": "Bicycle; a pedal-powered vehicle (often contrasted with 自動車).",
+    "japanese_example": "<ruby>駅<rt>えき</rt></ruby>まで<ruby>自転車<rt>じてんしゃ</rt></ruby>で<ruby>行<rt>い</rt></ruby>く。",
+    "english_example": "I go to the station by bicycle."
+  },
+  {
+    "japanese": "事故",
+    "hiragana": "じこ",
+    "english": "An accident; commonly used for traffic accidents, incidents, and mishaps.",
+    "japanese_example": "<ruby>交差点<rt>こうさてん</rt></ruby>で<ruby>事故<rt>じこ</rt></ruby>が<ruby>起<rt>お</rt></ruby>きて、<ruby>道<rt>みち</rt></ruby>が<ruby>混<rt>こ</rt></ruby>んだ。",
+    "english_example": "An accident happened at the intersection, and the road got congested."
+  },
+  {
+    "japanese": "できる",
+    "hiragana": "できる",
+    "english": "To be able to/can; also “to be completed/made.” Meaning depends on context and the subject.",
+    "japanese_example": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>早<rt>はや</rt></ruby>く<ruby>帰<rt>かえ</rt></ruby>ることが<ruby>できる</ruby>。",
+    "english_example": "Today I can go home early."
+  },
+  {
+    "japanese": "ところが",
+    "hiragana": "ところが",
+    "english": "However; and yet; used to introduce an unexpected turn or contrast to what was just said.",
+    "japanese_example": "<ruby>簡単<rt>かんたん</rt></ruby>だと<ruby>思<rt>おも</rt></ruby>った。<ruby>ところが</ruby>、<ruby>実際<rt>じっさい</rt></ruby>にやると<ruby>難<rt>むずか</rt></ruby>しかった。",
+    "english_example": "I thought it would be easy. However, when I actually did it, it was difficult."
+  },
+  {
+    "japanese": "ちょうど",
+    "hiragana": "ちょうど",
+    "english": "Exactly; just; used for precise timing/amount or when something happens at the perfect moment.",
+    "japanese_example": "<ruby>ちょうど</ruby><ruby>昼休<rt>ひるやす</rt></ruby>みの<ruby>時間<rt>じかん</rt></ruby>に<ruby>電話<rt>でんわ</rt></ruby>がかかってきた。",
+    "english_example": "A call came in right during my lunch break."
+  },
+  {
+    "japanese": "宛",
+    "hiragana": "あて",
+    "english": "Suffix meaning “addressed to”; used in names/labels like 〜宛 (contrast with 〜向け ‘intended for’).",
+    "japanese_example": "<ruby>部長<rt>ぶちょう</rt></ruby><ruby>宛<rt>あて</rt></ruby>の<ruby>書類<rt>しょるい</rt></ruby>を<ruby>受付<rt>うけつけ</rt></ruby>に<ruby>預<rt>あず</rt></ruby>けた。",
+    "english_example": "I left the documents addressed to the manager at reception."
+  },
+  {
+    "japanese": "ハリー宛の手紙",
+    "hiragana": "はりーあてのてがみ",
+    "english": "“A letter addressed to Harry”; 宛 marks the addressee, used on envelopes and labels.",
+    "japanese_example": "<ruby>ハリー</ruby><ruby>宛<rt>あて</rt></ruby>の<ruby>手紙<rt>てがみ</rt></ruby>が<ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>置<rt>お</rt></ruby>いてあった。",
+    "english_example": "A letter addressed to Harry was left on the desk."
+  },
+  {
+    "japanese": "届く",
+    "hiragana": "とどく",
+    "english": "To arrive or be delivered; intransitive (something reaches you).",
+    "japanese_example": "<ruby>注文<rt>ちゅうもん</rt></ruby>した<ruby>荷物<rt>にもつ</rt></ruby>が<ruby>今日<rt>きょう</rt></ruby><ruby>届<rt>とど</rt></ruby>いた。",
+    "english_example": "The package I ordered arrived today."
+  },
+  {
+    "japanese": "明るみに出た",
+    "hiragana": "あかるみにでた",
+    "english": "Came to light; became public/known (often about secrets, wrongdoing, or hidden facts).",
+    "japanese_example": "<ruby>不正<rt>ふせい</rt></ruby>が<ruby>明<rt>あか</rt></ruby>るみに<ruby>出<rt>で</rt></ruby>て、<ruby>会社<rt>かいしゃ</rt></ruby>は<ruby>謝罪<rt>しゃざい</rt></ruby>した。",
+    "english_example": "The misconduct came to light, and the company apologized."
+  },
+  {
+    "japanese": "入学",
+    "hiragana": "にゅうがく",
+    "english": "Entering a school; admission/enrollment (often used with 〜する).",
+    "japanese_example": "<ruby>妹<rt>いもうと</rt></ruby>は<ruby>春<rt>はる</rt></ruby>に<ruby>大学<rt>だいがく</rt></ruby>に<ruby>入学<rt>にゅうがく</rt></ruby>した。",
+    "english_example": "My younger sister entered university in the spring."
+  },
+  {
+    "japanese": "学期末",
+    "hiragana": "がっきまつ",
+    "english": "End of the school term/semester; often used when talking about exams and reports.",
+    "japanese_example": "<ruby>学期末<rt>がっきまつ</rt></ruby>は<ruby>課題<rt>かだい</rt></ruby>が<ruby>多<rt>おお</rt></ruby>くて<ruby>忙<rt>いそが</rt></ruby>しい。",
+    "english_example": "The end of the term is busy because there are lots of assignments."
+  },
+  {
+    "japanese": "以前",
+    "hiragana": "いぜん",
+    "english": "Before; previously; can mean “earlier than X” or “formerly,” depending on context.",
+    "japanese_example": "<ruby>以前<rt>いぜん</rt></ruby>はこの<ruby>近<rt>ちか</rt></ruby>くに<ruby>住<rt>す</rt></ruby>んでいた。",
+    "english_example": "I used to live near here before."
+  },
+  {
+    "japanese": "臭い",
+    "hiragana": "くさい",
+    "english": "Smelly; stinky; an い-adjective used for unpleasant odors (also figuratively “fishy/suspicious”).",
+    "japanese_example": "<ruby>靴<rt>くつ</rt></ruby>が<ruby>臭<rt>くさ</rt></ruby>いので、<ruby>外<rt>そと</rt></ruby>に<ruby>干<rt>ほ</rt></ruby>した。",
+    "english_example": "My shoes smelled, so I left them outside to air out."
+  },
+  {
+    "japanese": "転がってきた",
+    "hiragana": "ころがってきた",
+    "english": "Past form of 転がってくる: “came rolling (toward the speaker/this side).”",
+    "japanese_example": "<ruby>坂<rt>さか</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>からボールが<ruby>転<rt>ころ</rt></ruby>がってきた。",
+    "english_example": "A ball came rolling down from the top of the slope."
+  },
+  {
+    "japanese": "犬畜生",
+    "hiragana": "いぬちくしょう",
+    "english": "A strong insult meaning “brute” or “cur”; rude and aggressive, used to curse someone.",
+    "japanese_example": "<ruby>犬畜生<rt>いぬちくしょう</rt></ruby>めと<ruby>叫<rt>さけ</rt></ruby>んで、<ruby>彼<rt>かれ</rt></ruby>は<ruby>相手<rt>あいて</rt></ruby>に<ruby>飛<rt>と</rt></ruby>び<ruby>かか</ruby>った。",
+    "english_example": "Shouting “You brute!”, he lunged at the other person."
+  },
+  {
+    "japanese": "扱う",
+    "hiragana": "あつかう",
+    "english": "To handle, deal with, or treat (someone/something); used both for physical handling and how someone is treated.",
+    "japanese_example": "<ruby>危険<rt>きけん</rt></ruby>な<ruby>薬品<rt>やくひん</rt></ruby>は<ruby>注意<rt>ちゅうい</rt></ruby>して<ruby>扱<rt>あつか</rt></ruby>うべきだ。",
+    "english_example": "Dangerous chemicals should be handled with care."
+  },
+  {
+    "japanese": "扱った",
+    "hiragana": "あつかった",
+    "english": "Past tense of 扱う: “handled/dealt with/treated (someone or something).”",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>はその<ruby>問題<rt>もんだい</rt></ruby>を<ruby>丁寧<rt>ていねい</rt></ruby>に<ruby>扱<rt>あつか</rt></ruby>った。",
+    "english_example": "He handled the issue carefully."
+  },
+  {
+    "japanese": "扱われた",
+    "hiragana": "あつかわれた",
+    "english": "Passive past of 扱う: “was handled/was treated”; commonly used for how a person was treated.",
+    "japanese_example": "<ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>職場<rt>しょくば</rt></ruby>で<ruby>不公平<rt>ふこうへい</rt></ruby>に<ruby>扱<rt>あつか</rt></ruby>われた。",
+    "english_example": "She was treated unfairly at work."
+  }
+]

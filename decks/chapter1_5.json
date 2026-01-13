@@ -1,0 +1,359 @@
+[
+  {
+    "japanese": "さて",
+    "hiragana": "さて",
+    "english": "Discourse marker meaning “well then; now,” used to open a new scene or shift topics.",
+    "japanese_example": "さて、<ruby>話<rt>はなし</rt></ruby>を<ruby>始<rt>はじ</rt></ruby>めよう。",
+    "english_example": "Well then, let’s begin."
+  },
+  {
+    "japanese": "〜の通り",
+    "hiragana": "のとおり",
+    "english": "Means “according to; as,” indicating something matches what was said/shown/done. Patterns: Nの通り / Vる通り / Vた通り.",
+    "japanese_example": "<ruby>説明<rt>せつめい</rt></ruby>の<ruby>通<rt>とお</rt></ruby>りにやってください。",
+    "english_example": "Please do it according to the instructions."
+  },
+  {
+    "japanese": "疑う",
+    "hiragana": "うたがう",
+    "english": "To doubt; to suspect (someone/something). Often used with を: 〜を疑う.",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>の<ruby>話<rt>はなし</rt></ruby>を<ruby>疑<rt>うたが</rt></ruby>った。",
+    "english_example": "I doubted his story."
+  },
+  {
+    "japanese": "疑った",
+    "hiragana": "うたがった",
+    "english": "Past form of 疑う: “doubted; suspected.”",
+    "japanese_example": "<ruby>私<rt>わたし</rt></ruby>は<ruby>彼<rt>かれ</rt></ruby>を<ruby>疑<rt>うたが</rt></ruby>った。",
+    "english_example": "I suspected him."
+  },
+  {
+    "japanese": "人生",
+    "hiragana": "じんせい",
+    "english": "Life; one’s lifetime; human life. Often used in phrases like 人生で一番.",
+    "japanese_example": "これは<ruby>人生<rt>じんせい</rt></ruby>で<ruby>一番<rt>いちばん</rt></ruby><ruby>大事<rt>だいじ</rt></ruby>な<ruby>日<rt>ひ</rt></ruby>だ。",
+    "english_example": "This is the most important day of my life."
+  },
+  {
+    "japanese": "最大",
+    "hiragana": "さいだい",
+    "english": "Largest; biggest; maximum. Commonly modifies nouns as 最大のN.",
+    "japanese_example": "<ruby>最大<rt>さいだい</rt></ruby>の<ruby>問題<rt>もんだい</rt></ruby>は<ruby>時間<rt>じかん</rt></ruby>だ。",
+    "english_example": "The biggest problem is time."
+  },
+  {
+    "japanese": "商談",
+    "hiragana": "しょうだん",
+    "english": "Business negotiations; deal talks. Often used with する as 商談する.",
+    "japanese_example": "<ruby>明日<rt>あした</rt></ruby>、<ruby>取引先<rt>とりひきさき</rt></ruby>と<ruby>商談<rt>しょうだん</rt></ruby>がある。",
+    "english_example": "Tomorrow, I have business negotiations with a client."
+  },
+  {
+    "japanese": "成立する",
+    "hiragana": "せいりつする",
+    "english": "To be concluded/established; to come into being. Used for things like agreements, deals, theories, and conditions.",
+    "japanese_example": "<ruby>契約<rt>けいやく</rt></ruby>が<ruby>成立<rt>せいりつ</rt></ruby>した。",
+    "english_example": "The contract was finalized."
+  },
+  {
+    "japanese": "〜かもしれん",
+    "hiragana": "かもしれん",
+    "english": "Casual/rough (often regional) contraction of 〜かもしれない, meaning “might; maybe.”",
+    "japanese_example": "<ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>かもしれん。",
+    "english_example": "It might rain tomorrow."
+  },
+  {
+    "japanese": "僕の人生最大の商談が成立するかもしれん",
+    "hiragana": "ぼくのじんせいさいだいのしょうだんがせいりつするかもしれん",
+    "english": "Means “My biggest deal in life might go through,” combining 人生最大のN + 成立する + かもしれん to express uncertainty.",
+    "japanese_example": "<ruby>僕<rt>ぼく</rt></ruby>の<ruby>人生<rt>じんせい</rt></ruby><ruby>最大<rt>さいだい</rt></ruby>の<ruby>商談<rt>しょうだん</rt></ruby>が<ruby>成立<rt>せいりつ</rt></ruby>するかもしれん。",
+    "english_example": "My biggest deal in life might go through."
+  },
+  {
+    "japanese": "やっぱり",
+    "hiragana": "やっぱり",
+    "english": "As expected; after all; used when something matches (or returns to) an earlier expectation or conclusion.",
+    "japanese_example": "やっぱり<ruby>彼<rt>かれ</rt></ruby>は<ruby>来<rt>こ</rt></ruby>なかった。",
+    "english_example": "As I expected, he didn’t come."
+  },
+  {
+    "japanese": "苦い思い",
+    "hiragana": "にがいおもい",
+    "english": "Bitter feelings; painful memories; frustration or regret about an experience.",
+    "japanese_example": "<ruby>苦<rt>にが</rt></ruby>い<ruby>思<rt>おも</rt></ruby>いを<ruby>思<rt>おも</rt></ruby>い<ruby>出<rt>だ</rt></ruby>した。",
+    "english_example": "I remembered a bitter experience."
+  },
+  {
+    "japanese": "噛む",
+    "hiragana": "かむ",
+    "english": "To bite; to chew. Also appears in expressions about “biting down” or “holding back” feelings.",
+    "japanese_example": "<ruby>硬<rt>かた</rt></ruby>いパンをよく<ruby>噛<rt>か</rt></ruby>んで<ruby>食<rt>た</rt></ruby>べる。",
+    "english_example": "I chew hard bread well before eating."
+  },
+  {
+    "japanese": "噛みしめる",
+    "hiragana": "かみしめる",
+    "english": "To bite down firmly; figuratively, to savor or dwell deeply on an emotion/meaning.",
+    "japanese_example": "<ruby>言葉<rt>ことば</rt></ruby>の<ruby>意味<rt>いみ</rt></ruby>を<ruby>噛<rt>か</rt></ruby>みしめた。",
+    "english_example": "I pondered the meaning of the words deeply."
+  },
+  {
+    "japanese": "苦い思いを噛みしめる",
+    "hiragana": "にがいおもいをかみしめる",
+    "english": "To dwell on and deeply feel one’s bitterness; to relive painful feelings and let them sink in.",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>苦<rt>にが</rt></ruby>い<ruby>思<rt>おも</rt></ruby>いを<ruby>噛<rt>か</rt></ruby>みしめていた。",
+    "english_example": "He was dwelling on bitter feelings."
+  },
+  {
+    "japanese": "バカげる",
+    "hiragana": "ばかげる",
+    "english": "To be absurd; to be ridiculous (intransitive). Commonly: バカげた話 “a ridiculous story.”",
+    "japanese_example": "そんなのは<ruby>バカ<rt>ばか</rt></ruby>げている。",
+    "english_example": "That’s ridiculous."
+  },
+  {
+    "japanese": "バカげた",
+    "hiragana": "ばかげた",
+    "english": "Past/attributive form used like an adjective: “absurd; ridiculous,” typically before nouns.",
+    "japanese_example": "<ruby>バカ<rt>ばか</rt></ruby>げた<ruby>話<rt>はなし</rt></ruby>はやめろ。",
+    "english_example": "Cut out the ridiculous talk."
+  },
+  {
+    "japanese": "接待",
+    "hiragana": "せったい",
+    "english": "Corporate entertaining; hosting clients (wining and dining) as a business practice. Commonly: 接待する／接待費.",
+    "japanese_example": "<ruby>今夜<rt>こんや</rt></ruby>は<ruby>取引先<rt>とりひきさき</rt></ruby>を<ruby>接待<rt>せったい</rt></ruby>する。",
+    "english_example": "Tonight I’m entertaining a client."
+  },
+  {
+    "japanese": "〜しか…ない",
+    "hiragana": "しかない",
+    "english": "Means “only; nothing but,” and it must pair with a negative verb to emphasize limitation (stronger than だけ).",
+    "japanese_example": "<ruby>水<rt>みず</rt></ruby>しかない。",
+    "english_example": "There’s nothing but water."
+  },
+  {
+    "japanese": "このことしか話さなかった",
+    "hiragana": "このことしかはなさなかった",
+    "english": "Means “(I) talked about nothing but this,” using しか with a negative verb; を is often omitted because しか marks the focus.",
+    "japanese_example": "このことしか<ruby>話<rt>はな</rt></ruby>さなかった。",
+    "english_example": "I talked about nothing but this."
+  },
+  {
+    "japanese": "このことだけ話した",
+    "hiragana": "このことだけはなした",
+    "english": "Means “(I) talked only about this,” using だけ without requiring a negative; less emphatic than しか…ない.",
+    "japanese_example": "このことだけ<ruby>話<rt>はな</rt></ruby>した。",
+    "english_example": "I talked only about this."
+  },
+  {
+    "japanese": "どこかの",
+    "hiragana": "どこかの",
+    "english": "Some; some kind of; of an unknown/unspecified place or entity (e.g., どこかの会社).",
+    "japanese_example": "どこかの<ruby>会社<rt>かいしゃ</rt></ruby>から<ruby>電話<rt>でんわ</rt></ruby>があった。",
+    "english_example": "There was a call from some company or other."
+  },
+  {
+    "japanese": "気持ち",
+    "hiragana": "きもち",
+    "english": "Feeling; mood; emotion. Note it is unrelated to 金持ち “rich person.”",
+    "japanese_example": "<ruby>気持<rt>きも</rt></ruby>ちが<ruby>落<rt>お</rt></ruby>ち<ruby>着<rt>つ</rt></ruby>いた。",
+    "english_example": "I calmed down."
+  },
+  {
+    "japanese": "土建屋",
+    "hiragana": "どけんや",
+    "english": "Construction contractor; civil-engineering firm (colloquial and can sound rough or dismissive).",
+    "japanese_example": "<ruby>土建屋<rt>どけんや</rt></ruby>に<ruby>工事<rt>こうじ</rt></ruby>を<ruby>頼<rt>たの</rt></ruby>んだ。",
+    "english_example": "We asked a contractor to do the construction work."
+  },
+  {
+    "japanese": "奥さん",
+    "hiragana": "おくさん",
+    "english": "Wife (honorific for someone else’s); also a polite way to address a married woman.",
+    "japanese_example": "<ruby>奥<rt>おく</rt></ruby>さん、これをどうぞ。",
+    "english_example": "Ma’am, please have this."
+  },
+  {
+    "japanese": "連れる（連れて）",
+    "hiragana": "つれる",
+    "english": "To take/bring a person (or animal) along; te-form 連れて links with 行く/来る to show going together.",
+    "japanese_example": "<ruby>妹<rt>いもうと</rt></ruby>を<ruby>連<rt>つ</rt></ruby>れて<ruby>行<rt>い</rt></ruby>く。",
+    "english_example": "I’ll take my little sister along."
+  },
+  {
+    "japanese": "夕食",
+    "hiragana": "ゆうしょく",
+    "english": "Dinner; evening meal.",
+    "japanese_example": "<ruby>夕食<rt>ゆうしょく</rt></ruby>の<ruby>後<rt>あと</rt></ruby>で<ruby>散歩<rt>さんぽ</rt></ruby>した。",
+    "english_example": "I took a walk after dinner."
+  },
+  {
+    "japanese": "やってくる",
+    "hiragana": "やってくる",
+    "english": "To come toward the speaker; to show up/arrive; can also mean something begins to happen (e.g., season comes).",
+    "japanese_example": "<ruby>友達<rt>ともだち</rt></ruby>がうちにやってきた。",
+    "english_example": "My friend showed up at my place."
+  },
+  {
+    "japanese": "注文",
+    "hiragana": "ちゅうもん",
+    "english": "An order (restaurant or goods); also a request/demand depending on context.",
+    "japanese_example": "<ruby>注文<rt>ちゅうもん</rt></ruby>を<ruby>取<rt>と</rt></ruby>りましょうか。",
+    "english_example": "Shall I take your order?"
+  },
+  {
+    "japanese": "取る",
+    "hiragana": "とる",
+    "english": "To take; to get; also to take (notes/reservations/orders) depending on context.",
+    "japanese_example": "<ruby>予約<rt>よやく</rt></ruby>を<ruby>取<rt>と</rt></ruby>った。",
+    "english_example": "I made a reservation."
+  },
+  {
+    "japanese": "取れる",
+    "hiragana": "とれる",
+    "english": "Potential/passive-like form of 取る: “can be taken; is obtained.” Also means “come off/be removed” in other contexts.",
+    "japanese_example": "<ruby>注文<rt>ちゅうもん</rt></ruby>がたくさん<ruby>取<rt>と</rt></ruby>れる。",
+    "english_example": "We can get a lot of orders."
+  },
+  {
+    "japanese": "可能形（〜(ら)れる）",
+    "hiragana": "かのうけい",
+    "english": "Potential form: ichidan verbs use 〜られる (食べる→食べられる), and godan verbs change u→e + る (読む→読める). Ichidan potential overlaps in form with the passive.",
+    "japanese_example": "<ruby>私<rt>わたし</rt></ruby>は<ruby>泳<rt>およ</rt></ruby>げる。",
+    "english_example": "I can swim."
+  },
+  {
+    "japanese": "僕は寿司を食べられる",
+    "hiragana": "ぼくはすしをたべられる",
+    "english": "Means “I can eat sushi,” using ichidan potential 食べられる (which can also look like passive, depending on context).",
+    "japanese_example": "<ruby>僕<rt>ぼく</rt></ruby>はすしを<ruby>食<rt>た</rt></ruby>べられる。",
+    "english_example": "I can eat sushi."
+  },
+  {
+    "japanese": "僕は本を読める",
+    "hiragana": "ぼくはほんをよめる",
+    "english": "Means “I can read a book,” using godan potential 読む→読める (e-row + る).",
+    "japanese_example": "<ruby>僕<rt>ぼく</rt></ruby>は<ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>める。",
+    "english_example": "I can read a book."
+  },
+  {
+    "japanese": "踏む",
+    "hiragana": "ふむ",
+    "english": "To step on; also used figuratively in reasoning as “to judge/assume” in expressions like 〜と踏む.",
+    "japanese_example": "<ruby>石<rt>いし</rt></ruby>を<ruby>踏<rt>ふ</rt></ruby>んで<ruby>転<rt>ころ</rt></ruby>んだ。",
+    "english_example": "I stepped on a stone and fell."
+  },
+  {
+    "japanese": "〜と踏む",
+    "hiragana": "とふむ",
+    "english": "To assume/judge that; to estimate that (a working assumption). Often used in business or strategic reasoning.",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>成功<rt>せいこう</rt></ruby>すると<ruby>踏<rt>ふ</rt></ruby>んでいる。",
+    "english_example": "He is assuming it will succeed."
+  },
+  {
+    "japanese": "山のように注文が取れると踏んでいた",
+    "hiragana": "やまのようにちゅうもんがとれるとふんでいた",
+    "english": "Means “(He) assumed he could get a mountain of orders,” using 取れる (can get) + と踏んでいた (was assuming).",
+    "japanese_example": "<ruby>山<rt>やま</rt></ruby>のように<ruby>注文<rt>ちゅうもん</rt></ruby>が<ruby>取<rt>と</rt></ruby>れると<ruby>踏<rt>ふ</rt></ruby>んでいた。",
+    "english_example": "He assumed he could get a mountain of orders."
+  },
+  {
+    "japanese": "穴",
+    "hiragana": "あな",
+    "english": "Hole; cavity; gap.",
+    "japanese_example": "<ruby>壁<rt>かべ</rt></ruby>に<ruby>穴<rt>あな</rt></ruby>があいている。",
+    "english_example": "There’s a hole in the wall."
+  },
+  {
+    "japanese": "穴あけ",
+    "hiragana": "あなあけ",
+    "english": "Hole-making; punching/drilling holes (also written 穴開け). Used as a noun for the action or process.",
+    "japanese_example": "<ruby>穴<rt>あな</rt></ruby>あけが<ruby>必要<rt>ひつよう</rt></ruby>だ。",
+    "english_example": "We need to drill some holes."
+  },
+  {
+    "japanese": "高望み",
+    "hiragana": "たかのぞみ",
+    "english": "Overambitious hope; aiming too high (noun; also 高望みする).",
+    "japanese_example": "<ruby>高望<rt>たかのぞ</rt></ruby>みはしない。",
+    "english_example": "I won’t aim too high."
+  },
+  {
+    "japanese": "まとも",
+    "hiragana": "まとも",
+    "english": "Decent; respectable; sensible; normal (na-adjective/nominal). Often used as まともなN／まともに.",
+    "japanese_example": "まともな<ruby>食事<rt>しょくじ</rt></ruby>をしていない。",
+    "english_example": "I haven’t been eating proper meals."
+  },
+  {
+    "japanese": "贈り物",
+    "hiragana": "おくりもの",
+    "english": "Present; gift (often slightly formal).",
+    "japanese_example": "<ruby>贈<rt>おく</rt></ruby>り<ruby>物<rt>もの</rt></ruby>を<ruby>用意<rt>ようい</rt></ruby>した。",
+    "english_example": "I prepared a gift."
+  },
+  {
+    "japanese": "ましてや",
+    "hiragana": "ましてや",
+    "english": "Let alone; much less; not to mention (often used to strengthen a negative statement).",
+    "japanese_example": "<ruby>時間<rt>じかん</rt></ruby>もない。ましてや<ruby>準備<rt>じゅんび</rt></ruby>なんてできない。",
+    "english_example": "I don’t even have time—let alone any chance to prepare."
+  },
+  {
+    "japanese": "ましてや誕生日のケーキなんか無理だ",
+    "hiragana": "ましてやたんじょうびのけーきなんかむりだ",
+    "english": "Means “Let alone a birthday cake—that’s impossible,” using ましてや to emphasize that an even harder thing is out of the question, with なんか adding a dismissive tone.",
+    "japanese_example": "ましてや<ruby>誕生日<rt>たんじょうび</rt></ruby>のケーキなんか<ruby>無理<rt>むり</rt></ruby>だ。",
+    "english_example": "A birthday cake, let alone anything else, is impossible."
+  },
+  {
+    "japanese": "だけど",
+    "hiragana": "だけど",
+    "english": "But; however (casual connector), often used to soften a contrast or start a new turn in conversation.",
+    "japanese_example": "だけど、<ruby>今<rt>いま</rt></ruby>は<ruby>行<rt>い</rt></ruby>けない。",
+    "english_example": "But I can’t go right now."
+  },
+  {
+    "japanese": "完全",
+    "hiragana": "かんぜん",
+    "english": "Complete; perfect; entire. Often used as 完全に for “completely.”",
+    "japanese_example": "<ruby>計画<rt>けいかく</rt></ruby>は<ruby>完全<rt>かんぜん</rt></ruby>に<ruby>失敗<rt>しっぱい</rt></ruby>した。",
+    "english_example": "The plan failed completely."
+  },
+  {
+    "japanese": "無視する",
+    "hiragana": "むしする",
+    "english": "To ignore; to disregard (often deliberately).",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>の<ruby>話<rt>はなし</rt></ruby>を<ruby>無視<rt>むし</rt></ruby>した。",
+    "english_example": "He ignored what I said."
+  },
+  {
+    "japanese": "まさに",
+    "hiragana": "まさに",
+    "english": "Exactly; precisely; truly; used for emphasis (e.g., まさにその通り) or timing (まさに今).",
+    "japanese_example": "それはまさに<ruby>奇跡<rt>きせき</rt></ruby>だ。",
+    "english_example": "That is truly a miracle."
+  },
+  {
+    "japanese": "まさにその時",
+    "hiragana": "まさにそのとき",
+    "english": "Just then; at that very moment, highlighting exact timing in a narrative.",
+    "japanese_example": "まさにその<ruby>時<rt>とき</rt></ruby>、<ruby>電話<rt>でんわ</rt></ruby>が<ruby>鳴<rt>な</rt></ruby>った。",
+    "english_example": "Just then, the phone rang."
+  },
+  {
+    "japanese": "重々しく",
+    "hiragana": "おもおもしく",
+    "english": "Gravely; solemnly; with a weighty air (adverb of 重々しい).",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>重々<rt>おもおも</rt></ruby>しく<ruby>口<rt>くち</rt></ruby>を<ruby>開<rt>ひら</rt></ruby>いた。",
+    "english_example": "He opened his mouth solemnly."
+  },
+  {
+    "japanese": "咳払いする",
+    "hiragana": "せきばらいする",
+    "english": "To clear one’s throat (often to get attention or before speaking).",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>咳払<rt>せきばら</rt></ruby>いしてから<ruby>話<rt>はな</rt></ruby>し<ruby>始<rt>はじ</rt></ruby>めた。",
+    "english_example": "He cleared his throat and then began to speak."
+  }
+]

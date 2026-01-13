@@ -1,0 +1,331 @@
+[
+  {
+    "japanese": "まるで",
+    "hiragana": "まるで",
+    "english": "As if; just like; often used with comparisons (まるで〜みたいだ / まるで〜ようだ).",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>まるで</ruby><ruby>何<rt>なに</rt></ruby>も<ruby>知<rt>し</rt></ruby>らないかのように<ruby>話<rt>はな</rt></ruby>した。",
+    "english_example": "He spoke as if he knew nothing."
+  },
+  {
+    "japanese": "絶え間なく",
+    "hiragana": "たえまなく",
+    "english": "Continually; constantly; an adverb meaning something happens without a break (contrast: 絶え間ない as an adjective).",
+    "japanese_example": "<ruby>雨<rt>あめ</rt></ruby>が<ruby>絶<rt>た</rt></ruby>え<ruby>間<rt>ま</rt></ruby>なく<ruby>降<rt>ふ</rt></ruby>り<ruby>続<rt>つづ</rt></ruby>いた。",
+    "english_example": "The rain continued to fall nonstop."
+  },
+  {
+    "japanese": "絶え間ない",
+    "hiragana": "たえまない",
+    "english": "Unceasing; continuous; an adjective meaning something goes on without interruption (contrast: 絶え間なく as an adverb).",
+    "japanese_example": "<ruby>絶<rt>た</rt></ruby>え<ruby>間<rt>ま</rt></ruby>ない<ruby>拍手<rt>はくしゅ</rt></ruby>が<ruby>会場<rt>かいじょう</rt></ruby>に<ruby>響<rt>ひび</rt></ruby>いた。",
+    "english_example": "Unceasing applause echoed through the venue."
+  },
+  {
+    "japanese": "胃",
+    "hiragana": "い",
+    "english": "Stomach; the organ for digestion (often used in medical or bodily sensation contexts).",
+    "japanese_example": "<ruby>胃<rt>い</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>くて、<ruby>朝<rt>あさ</rt></ruby>ごはんが<ruby>食<rt>た</rt></ruby>べられなかった。",
+    "english_example": "My stomach hurt, so I couldn't eat breakfast."
+  },
+  {
+    "japanese": "しくしく",
+    "hiragana": "しくしく",
+    "english": "With a dull, throbbing pain; describes a persistent ache (often used with 痛む).",
+    "japanese_example": "<ruby>胃<rt>い</rt></ruby>がしくしく<ruby>痛<rt>いた</rt></ruby>んで、<ruby>落<rt>お</rt></ruby>ち<ruby>着<rt>つ</rt></ruby>かなかった。",
+    "english_example": "My stomach ached dully, and I couldn't settle down."
+  },
+  {
+    "japanese": "城",
+    "hiragana": "しろ",
+    "english": "Castle; a fortified residence or stronghold.",
+    "japanese_example": "<ruby>丘<rt>おか</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>古<rt>ふる</rt></ruby>い<ruby>城<rt>しろ</rt></ruby>が<ruby>建<rt>た</rt></ruby>っている。",
+    "english_example": "An old castle stands on top of the hill."
+  },
+  {
+    "japanese": "抜け道",
+    "hiragana": "ぬけみち",
+    "english": "Back way; secret passage; also used for a shortcut or a way to slip past something.",
+    "japanese_example": "<ruby>渋滞<rt>じゅうたい</rt></ruby>を<ruby>避<rt>さ</rt></ruby>けるために<ruby>抜<rt>ぬ</rt></ruby>け<ruby>道<rt>みち</rt></ruby>を<ruby>使<rt>つか</rt></ruby>った。",
+    "english_example": "To avoid traffic, I took a back road."
+  },
+  {
+    "japanese": "運ぶ",
+    "hiragana": "はこぶ",
+    "english": "To carry or transport (something) from one place to another; used for physical movement of items.",
+    "japanese_example": "<ruby>重<rt>おも</rt></ruby>い<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>二人<rt>ふたり</rt></ruby>で<ruby>運<rt>はこ</rt></ruby>んだ。",
+    "english_example": "We carried the heavy luggage together."
+  },
+  {
+    "japanese": "大広間",
+    "hiragana": "おおひろま",
+    "english": "Great hall; a large main hall used for gatherings or ceremonies.",
+    "japanese_example": "<ruby>大広間<rt>おおひろま</rt></ruby>に<ruby>学生<rt>がくせい</rt></ruby>が<ruby>集<rt>あつ</rt></ruby>まった。",
+    "english_example": "The students gathered in the great hall."
+  },
+  {
+    "japanese": "ご馳走",
+    "hiragana": "ごちそう",
+    "english": "Feast; treat; a special meal (also used in ご馳走する “to treat someone”).",
+    "japanese_example": "<ruby>誕生日<rt>たんじょうび</rt></ruby>に<ruby>ご馳走<rt>ごちそう</rt></ruby>を<ruby>用意<rt>ようい</rt></ruby>した。",
+    "english_example": "I prepared a feast for the birthday."
+  },
+  {
+    "japanese": "塔",
+    "hiragana": "とう",
+    "english": "Tower; a tall structure (e.g., castle tower, radio tower).",
+    "japanese_example": "<ruby>塔<rt>とう</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>から<ruby>町<rt>まち</rt></ruby>がよく<ruby>見<rt>み</rt></ruby>えた。",
+    "english_example": "From the top of the tower, the town was clearly visible."
+  },
+  {
+    "japanese": "寮",
+    "hiragana": "りょう",
+    "english": "Dormitory; residence hall, especially for students or employees.",
+    "japanese_example": "<ruby>大学<rt>だいがく</rt></ruby>の<ruby>寮<rt>りょう</rt></ruby>に<ruby>住<rt>す</rt></ruby>み<ruby>始<rt>はじ</rt></ruby>めた。",
+    "english_example": "I started living in the university dormitory."
+  },
+  {
+    "japanese": "天蓋",
+    "hiragana": "てんがい",
+    "english": "Canopy; especially the canopy over a bed (天蓋付きのベッド).",
+    "japanese_example": "<ruby>天蓋<rt>てんがい</rt></ruby>つきの<ruby>ベッド</ruby>が<ruby>部屋<rt>へや</rt></ruby>の<ruby>中央<rt>ちゅうおう</rt></ruby>にあった。",
+    "english_example": "A canopy bed was in the center of the room."
+  },
+  {
+    "japanese": "禁じられた",
+    "hiragana": "きんじられた",
+    "english": "Forbidden; past passive form of 禁じる used adjectivally (禁じられた〜).",
+    "japanese_example": "<ruby>禁<rt>きん</rt></ruby>じられた<ruby>場所<rt>ばしょ</rt></ruby>に<ruby>入<rt>はい</rt></ruby>ってはいけない。",
+    "english_example": "You must not enter a forbidden area."
+  },
+  {
+    "japanese": "隣",
+    "hiragana": "となり",
+    "english": "Next to; adjacent; often used as 隣の〜 or 隣に.",
+    "japanese_example": "<ruby>隣<rt>となり</rt></ruby>の<ruby>部屋<rt>へや</rt></ruby>から<ruby>声<rt>こえ</rt></ruby>が<ruby>聞<rt>き</rt></ruby>こえる。",
+    "english_example": "I can hear voices from the room next door."
+  },
+  {
+    "japanese": "丸太小屋",
+    "hiragana": "まるたごや",
+    "english": "Log cabin; a small house made from logs.",
+    "japanese_example": "<ruby>森<rt>もり</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に<ruby>丸太小屋<rt>まるたごや</rt></ruby>が<ruby>ぽつん</ruby>と<ruby>建<rt>た</rt></ruby>っていた。",
+    "english_example": "A lone log cabin stood in the forest."
+  },
+  {
+    "japanese": "訪ねる",
+    "hiragana": "たずねる",
+    "english": "To visit; to call on someone (can also mean “to ask,” but written as 尋ねる for “inquire”).",
+    "japanese_example": "<ruby>週末<rt>しゅうまつ</rt></ruby>に<ruby>祖母<rt>そぼ</rt></ruby>の<ruby>家<rt>いえ</rt></ruby>を<ruby>訪<rt>たず</rt></ruby>ねた。",
+    "english_example": "I visited my grandmother's house on the weekend."
+  },
+  {
+    "japanese": "〜たり",
+    "hiragana": "〜たり",
+    "english": "Listing form for examples of actions/states; often paired as 〜たり〜たりする and frequently used with past forms.",
+    "japanese_example": "<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>たり<ruby>料理<rt>りょうり</rt></ruby>したりして<ruby>過<rt>す</rt></ruby>ごした。",
+    "english_example": "I spent the time doing things like watching movies and cooking."
+  },
+  {
+    "japanese": "空飛ぶ",
+    "hiragana": "そらとぶ",
+    "english": "Flying; an attributive form meaning “that flies” (e.g., 空飛ぶ車).",
+    "japanese_example": "<ruby>空飛<rt>そらと</rt></ruby>ぶ<ruby>車<rt>くるま</rt></ruby>なんて、<ruby>まだ</ruby><ruby>夢<rt>ゆめ</rt></ruby>みたいだ。",
+    "english_example": "A flying car still feels like a dream."
+  },
+  {
+    "japanese": "六本",
+    "hiragana": "ろっぽん",
+    "english": "Six (counter for long cylindrical objects such as bottles, pens, trees).",
+    "japanese_example": "<ruby>ペン</ruby>を<ruby>六本<rt>ろっぽん</rt></ruby><ruby>買<rt>か</rt></ruby>った。",
+    "english_example": "I bought six pens."
+  },
+  {
+    "japanese": "四個",
+    "hiragana": "よんこ",
+    "english": "Four (counter for small items); also often read よっこ depending on speaker and context.",
+    "japanese_example": "<ruby>りんご</ruby>を<ruby>四個<rt>よんこ</rt></ruby><ruby>箱<rt>はこ</rt></ruby>に<ruby>入<rt>い</rt></ruby>れた。",
+    "english_example": "I put four apples into the box."
+  },
+  {
+    "japanese": "箒",
+    "hiragana": "ほうき",
+    "english": "Broom; used for sweeping (and as a fantasy “flying broom”).",
+    "japanese_example": "<ruby>箒<rt>ほうき</rt></ruby>で<ruby>廊下<rt>ろうか</rt></ruby>を<ruby>掃<rt>は</rt></ruby>いた。",
+    "english_example": "I swept the hallway with a broom."
+  },
+  {
+    "japanese": "呪文",
+    "hiragana": "じゅもん",
+    "english": "Spell; incantation; words chanted to produce magical effects.",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>呪文<rt>じゅもん</rt></ruby>を<ruby>唱<rt>とな</rt></ruby>えて<ruby>扉<rt>とびら</rt></ruby>を<ruby>開<rt>あ</rt></ruby>けた。",
+    "english_example": "He chanted a spell and opened the door."
+  },
+  {
+    "japanese": "杖",
+    "hiragana": "つえ",
+    "english": "Cane or staff; also a wand in fantasy contexts, depending on the situation.",
+    "japanese_example": "<ruby>老<rt>ろう</rt></ruby><ruby>人<rt>じん</rt></ruby>は<ruby>杖<rt>つえ</rt></ruby>をついて<ruby>歩<rt>ある</rt></ruby>いた。",
+    "english_example": "The elderly person walked using a cane."
+  },
+  {
+    "japanese": "最高級",
+    "hiragana": "さいこうきゅう",
+    "english": "Top-grade; highest quality; often used as 最高級の〜.",
+    "japanese_example": "<ruby>最高級<rt>さいこうきゅう</rt></ruby>の<ruby>素材<rt>そざい</rt></ruby>で<ruby>作<rt>つく</rt></ruby>られた<ruby>椅子<rt>いす</rt></ruby>だ。",
+    "english_example": "This chair is made from top-grade materials."
+  },
+  {
+    "japanese": "家に帰ったとたん",
+    "hiragana": "いえにかえったとたん",
+    "english": "The moment (someone) got home; とたん expresses an immediate change right after an action.",
+    "japanese_example": "<ruby>家<rt>いえ</rt></ruby>に<ruby>帰<rt>かえ</rt></ruby>ったとたん、<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>り<ruby>出<rt>だ</rt></ruby>した。",
+    "english_example": "The moment I got home, it started to rain."
+  },
+  {
+    "japanese": "物置",
+    "hiragana": "ものおき",
+    "english": "Storeroom; storage shed/closet used for keeping items.",
+    "japanese_example": "<ruby>古<rt>ふる</rt></ruby>い<ruby>道具<rt>どうぐ</rt></ruby>は<ruby>物置<rt>ものおき</rt></ruby>にしまってある。",
+    "english_example": "Old tools are put away in the storeroom."
+  },
+  {
+    "japanese": "押し込む",
+    "hiragana": "おしこむ",
+    "english": "To push in; cram; force something into a space by pushing.",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>棚<rt>たな</rt></ruby>に<ruby>押<rt>お</rt></ruby>し<ruby>込<rt>こ</rt></ruby>んだ。",
+    "english_example": "He crammed the luggage onto the shelf."
+  },
+  {
+    "japanese": "鍵を掛ける",
+    "hiragana": "かぎをかける",
+    "english": "To lock (with a key); literally “to put on a lock,” commonly said for doors and windows.",
+    "japanese_example": "<ruby>出<rt>で</rt></ruby>かける<ruby>前<rt>まえ</rt></ruby>に<ruby>ドア</ruby>に<ruby>鍵<rt>かぎ</rt></ruby>を<ruby>掛<rt>か</rt></ruby>けた。",
+    "english_example": "Before going out, I locked the door."
+  },
+  {
+    "japanese": "外す",
+    "hiragana": "はずす",
+    "english": "To remove or detach; also “to miss” (a guess/aim) or “to exclude,” depending on context.",
+    "japanese_example": "<ruby>席<rt>せき</rt></ruby>を<ruby>外<rt>はず</rt></ruby>す<ruby>間<rt>あいだ</rt></ruby>、<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>見<rt>み</rt></ruby>ていて。",
+    "english_example": "While I'm away from my seat, watch my bags."
+  },
+  {
+    "japanese": "〜ようが",
+    "hiragana": "〜ようが",
+    "english": "Whether ~ or not; even if; often used as 〜ようが〜まいが to mean “no matter whether…”.",
+    "japanese_example": "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ろうが、<ruby>予定<rt>よてい</rt></ruby>どおり<ruby>出発<rt>しゅっぱつ</rt></ruby>する。",
+    "english_example": "Even if it rains, we'll leave as planned."
+  },
+  {
+    "japanese": "一家",
+    "hiragana": "いっか",
+    "english": "A household; a family as a unit (e.g., 一家全員).",
+    "japanese_example": "<ruby>一家<rt>いっか</rt></ruby>で<ruby>旅行<rt>りょこう</rt></ruby>に<ruby>行<rt>い</rt></ruby>った。",
+    "english_example": "The whole family went on a trip."
+  },
+  {
+    "japanese": "〜にとって",
+    "hiragana": "〜にとって",
+    "english": "For ~; from ~’s standpoint; marks whose perspective or interests something is evaluated by.",
+    "japanese_example": "<ruby>私<rt>わたし</rt></ruby>にとって、<ruby>この</ruby><ruby>経験<rt>けいけん</rt></ruby>は<ruby>大切<rt>たいせつ</rt></ruby>だ。",
+    "english_example": "For me, this experience is important."
+  },
+  {
+    "japanese": "知ったことはない",
+    "hiragana": "しったことはない",
+    "english": "Idiomatic: “I don’t care; not my problem”; blunt and dismissive, often used in arguments.",
+    "japanese_example": "<ruby>そんな</ruby><ruby>こと</ruby>、<ruby>知<rt>し</rt></ruby>ったことはない。",
+    "english_example": "I don't care about that; it's not my problem."
+  },
+  {
+    "japanese": "一つも",
+    "hiragana": "ひとつも",
+    "english": "Not even one; used with negation to emphasize zero quantity (一つも〜ない).",
+    "japanese_example": "<ruby>質問<rt>しつもん</rt></ruby>の<ruby>答<rt>こた</rt></ruby>えが<ruby>一<rt>ひと</rt></ruby>つも<ruby>分<rt>わ</rt></ruby>からなかった。",
+    "english_example": "I couldn't understand even a single answer to the questions."
+  },
+  {
+    "japanese": "〜ずに",
+    "hiragana": "〜ずに",
+    "english": "Without doing ~; a written/formal equivalent of 〜ないで, attaching to the verb stem (e.g., 食べずに).",
+    "japanese_example": "<ruby>朝<rt>あさ</rt></ruby>ごはんを<ruby>食<rt>た</rt></ruby>べずに<ruby>学校<rt>がっこう</rt></ruby>へ<ruby>行<rt>い</rt></ruby>った。",
+    "english_example": "I went to school without eating breakfast."
+  },
+  {
+    "japanese": "〜たって",
+    "hiragana": "〜たって",
+    "english": "Colloquial “even if/though,” roughly equivalent to 〜ても; can sound casual or emphatic.",
+    "japanese_example": "<ruby>今<rt>いま</rt></ruby>から<ruby>走<rt>はし</rt></ruby>ったって、<ruby>間<rt>ま</rt></ruby>に<ruby>合<rt>あ</rt></ruby>わないよ。",
+    "english_example": "Even if you run from now, you won't make it in time."
+  },
+  {
+    "japanese": "へっちゃら",
+    "hiragana": "へっちゃら",
+    "english": "No problem; unfazed; a casual word meaning something doesn’t bother you at all.",
+    "japanese_example": "<ruby>これ</ruby>くらいの<ruby>寒<rt>さむ</rt></ruby>さなら<ruby>へっちゃら</ruby>だ。",
+    "english_example": "This level of cold doesn't bother me at all."
+  },
+  {
+    "japanese": "魔法族",
+    "hiragana": "まほうぞく",
+    "english": "Magical folk/people; a group or lineage associated with magic (fictional or stylized term).",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>魔法族<rt>まほうぞく</rt></ruby>の<ruby>家系<rt>かけい</rt></ruby>に<ruby>生<rt>う</rt></ruby>まれた。",
+    "english_example": "He was born into a magical family line."
+  },
+  {
+    "japanese": "一滴",
+    "hiragana": "いってき",
+    "english": "A single drop; counter for drops of liquid (often used as 一滴も with negation).",
+    "japanese_example": "<ruby>血<rt>ち</rt></ruby>が<ruby>一滴<rt>いってき</rt></ruby><ruby>床<rt>ゆか</rt></ruby>に<ruby>落<rt>お</rt></ruby>ちた。",
+    "english_example": "A single drop of blood fell onto the floor."
+  },
+  {
+    "japanese": "呼ぶ",
+    "hiragana": "よぶ",
+    "english": "To call (someone/something); to summon or name, depending on context.",
+    "japanese_example": "<ruby>困<rt>こま</rt></ruby>ったら<ruby>私<rt>わたし</rt></ruby>を<ruby>呼<rt>よ</rt></ruby>んでね。",
+    "english_example": "If you have trouble, call me."
+  },
+  {
+    "japanese": "血",
+    "hiragana": "ち",
+    "english": "Blood; also used figuratively for lineage or temperament in some expressions.",
+    "japanese_example": "<ruby>血<rt>ち</rt></ruby>が<ruby>止<rt>と</rt></ruby>まらないので、<ruby>すぐ</ruby><ruby>病院<rt>びょういん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>った。",
+    "english_example": "The bleeding wouldn't stop, so I went to the hospital right away."
+  },
+  {
+    "japanese": "人種",
+    "hiragana": "じんしゅ",
+    "english": "Race; ethnicity; a sociological term for human groupings (usage can be sensitive depending on context).",
+    "japanese_example": "<ruby>人種<rt>じんしゅ</rt></ruby>による<ruby>差別<rt>さべつ</rt></ruby>は<ruby>許<rt>ゆる</rt></ruby>されない。",
+    "english_example": "Discrimination based on race is not allowed."
+  },
+  {
+    "japanese": "家族",
+    "hiragana": "かぞく",
+    "english": "Family; one’s family members as a group.",
+    "japanese_example": "<ruby>家族<rt>かぞく</rt></ruby>と<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>夕食<rt>ゆうしょく</rt></ruby>を<ruby>食<rt>た</rt></ruby>べた。",
+    "english_example": "I ate dinner together with my family."
+  },
+  {
+    "japanese": "魔法使い",
+    "hiragana": "まほうつかい",
+    "english": "Wizard; magician; a person who uses magic (general term).",
+    "japanese_example": "<ruby>魔法使<rt>まほうつか</rt></ruby>いは<ruby>杖<rt>つえ</rt></ruby>を<ruby>手<rt>て</rt></ruby>に<ruby>取<rt>と</rt></ruby>った。",
+    "english_example": "The wizard took a wand in hand."
+  },
+  {
+    "japanese": "〜なんて",
+    "hiragana": "〜なんて",
+    "english": "Expression showing contempt, surprise, or disbelief about something; often like “something like…” or “to think that…”.",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>が<ruby>嘘<rt>うそ</rt></ruby>をつくなんて<ruby>信<rt>しん</rt></ruby>じられない。",
+    "english_example": "I can't believe he would lie."
+  },
+  {
+    "japanese": "〜にしてみれば",
+    "hiragana": "〜にしてみれば",
+    "english": "From the perspective of ~; as far as ~ is concerned; highlights the subject’s viewpoint.",
+    "japanese_example": "<ruby>親<rt>おや</rt></ruby>にしてみれば、<ruby>子供<rt>こども</rt></ruby>の<ruby>安全<rt>あんぜん</rt></ruby>が<ruby>一番<rt>いちばん</rt></ruby>だ。",
+    "english_example": "From a parent's perspective, a child's safety comes first."
+  }
+]
