@@ -19,7 +19,7 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 // Render text that may contain <ruby>…<rt>…</rt></ruby> markup
-function HtmlOrText({ className, text }: { className?: string; text?: string }) {
+export function HtmlOrText({ className, text }: { className?: string; text?: string }) {
   const hasRuby = typeof text === 'string' && /<\s*(ruby|rb|rt|rp)\b/i.test(text);
   if (hasRuby) {
     return <div className={className} dangerouslySetInnerHTML={{ __html: text! }} />;
@@ -27,7 +27,7 @@ function HtmlOrText({ className, text }: { className?: string; text?: string }) 
   return <div className={className}>{text}</div>;
 }
 
-function Card({ card, flipped, onFlip }: { card: CardItem; flipped: boolean; onFlip: () => void }) {
+export function Card({ card, flipped, onFlip }: { card: CardItem; flipped: boolean; onFlip: () => void }) {
   return (
     <div className={`card ${flipped ? 'flipped' : ''}`} onClick={onFlip}>
       <HtmlOrText className="side front" text={card.japanese} />

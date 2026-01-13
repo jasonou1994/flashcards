@@ -29,6 +29,7 @@ Developer workflows (commands)
   - npm start  # runs webpack-dev-server on port 3000 and opens the browser
 - Build for production: `npm run build`
 - The app is served by webpack-dev-server; changes to source files trigger HMR.
+ - Run tests: `npm test` (watch mode: `npm run test:watch`)
 
 Files to inspect when making changes
 - `deck.json` — the source of truth for cards.
@@ -53,6 +54,11 @@ Edge-cases & constraints
 When editing code, run these quick checks
 - npm start — confirm the dev server loads and the app opens at http://localhost:3000
 - Verify shuffle/known/unknown flows: mark a card known and confirm it disappears; mark unknown and confirm it reappears later.
+ - npm test — ensure the unit tests pass before and after changes.
+
+Testing policy
+- All code changes should include accompanying tests covering the new or changed behavior.
+- After making changes, always run the test suite locally (`npm test`) and fix any failures before committing.
 
 If you (the agent) make changes, include in the PR description:
 - What user-visible behavior changed (one sentence).
