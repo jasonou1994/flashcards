@@ -1,38 +1,49 @@
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#fafafa; color:#111; }
-.app { max-width:810px; margin:32px auto; text-align:center; }
-.layout { display:flex; gap:16px; align-items:flex-start; }
-.sidebar { width:160px; background:#fff; border-radius:8px; padding:12px; box-shadow:0 6px 18px rgba(0,0,0,0.04); }
-.sidebar h3 { margin-top:0; }
-.sidebar ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
-.sidebar button { width:100%; text-align:left; background:transparent; border:0; padding:6px; border-radius:6px; }
-.sidebar li.active button { background:#eef; }
-.main { flex:1; }
-.hint { margin-top:8px; color:#777; font-size:0.9rem; }
-.card { width:100%; height:auto; margin:24px 0; perspective:1000px; cursor:pointer; position:relative; will-change:transform; display:grid; }
-.card .side { grid-area: 1 / 1; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:2rem; backface-visibility: hidden; box-shadow:0 6px 18px rgba(0,0,0,0.12); }
-.card .front { background:white; }
-.card .back { background:#fffbe6; transform:rotateY(180deg); flex-direction:column; gap:8px; align-items:center; justify-content:flex-start; padding:16px; }
+
+/* Nav styles (global) */
+.nav { max-width:810px; margin:16px auto; display:flex; gap:12px; align-items:center; justify-content:center; }
+.tab { text-decoration:none; color:#333; padding:6px 10px; border-radius:6px; background:#eee; }
+.tab.active { background:#cfe3ff; font-weight:600; }
+
+/* Study styles scoped under .study */
+.study .app { max-width:810px; margin:32px auto; text-align:center; }
+.study .layout { display:flex; gap:16px; align-items:flex-start; }
+.study .sidebar { width:160px; background:#fff; border-radius:8px; padding:12px; box-shadow:0 6px 18px rgba(0,0,0,0.04); }
+.study .sidebar h3 { margin-top:0; }
+.study .sidebar ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+.study .sidebar button { width:100%; text-align:left; background:transparent; border:0; padding:6px; border-radius:6px; }
+.study .sidebar li.active button { background:#eef; }
+.study .main { flex:1; }
+.study .hint { margin-top:8px; color:#777; font-size:0.9rem; }
+.study .card { width:100%; height:auto; margin:24px 0; perspective:1000px; cursor:pointer; position:relative; will-change:transform; display:grid; }
+.study .card .side { grid-area: 1 / 1; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:2rem; backface-visibility: hidden; box-shadow:0 6px 18px rgba(0,0,0,0.12); }
+.study .card .front { background:white; }
+.study .card .back { background:#fffbe6; transform:rotateY(180deg); flex-direction:column; gap:8px; align-items:center; justify-content:flex-start; padding:16px; }
 /* Center-align each content line on back side */
-.card .back > div { text-align:center; width:100%; }
-.card.flipped { transform: rotateY(180deg); }
-.card { transition: transform 150ms ease; transform-style: preserve-3d; }
-.card-stats-overlay { position:absolute; top:8px; right:8px; font-size:0.9rem; color:#444; background:rgba(255,255,255,0.8); padding:2px 6px; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.08); }
-.card-actions { position:absolute; top:8px; left:8px; right:8px; display:flex; align-items:center; justify-content:space-between; }
-.flag-button { background:transparent; border:0; cursor:pointer; font-size:1.5rem; color:#888; }
-.flag-button.active { color:#d32f2f; }
-.card .front { padding-top:36px; }
-.card .back { padding-top:52px; }
-.actions { display:flex; gap:8px; justify-content:center; }
-.controls { display:flex; gap:8px; justify-content:center; }
-.progress { margin-top:12px; color:#666; }
+.study .card .back > div { text-align:center; width:100%; }
+.study .card.flipped { transform: rotateY(180deg); }
+.study .card { transition: transform 150ms ease; transform-style: preserve-3d; }
+.study .card-stats-overlay { position:absolute; top:8px; right:8px; font-size:0.9rem; color:#444; background:rgba(255,255,255,0.8); padding:2px 6px; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.08); }
+.study .card-actions { position:absolute; top:8px; left:8px; right:8px; display:flex; align-items:center; justify-content:space-between; }
+.study .flag-button { background:transparent; border:0; cursor:pointer; font-size:1.5rem; color:#888; }
+.study .flag-button.active { color:#d32f2f; }
+.study .card .front { padding-top:36px; }
+.study .card .back { padding-top:52px; }
+.study .actions { display:flex; gap:8px; justify-content:center; }
+.study .controls { display:flex; gap:8px; justify-content:center; }
+.study .progress { margin-top:12px; color:#666; }
 
 /* Front-side toggle stacked options */
-.front-toggle { margin-top:12px; text-align:left; }
-.front-toggle h4 { margin:8px 0 4px; }
-.front-toggle label { display:block; margin:4px 0; }
+.study .front-toggle { margin-top:12px; text-align:left; }
+.study .front-toggle h4 { margin:8px 0 4px; }
+.study .front-toggle label { display:block; margin:4px 0; }
 
 /* Random controls in sidebar */
-.random-controls { margin-top:12px; text-align:left; }
-.random-controls h4 { margin:8px 0 4px; }
-.random-row { display:flex; gap:8px; align-items:center; }
-.random-row select { margin-left:6px; }
+.study .random-controls { margin-top:12px; text-align:left; }
+.study .random-controls h4 { margin:8px 0 4px; }
+.study .random-row { display:flex; gap:8px; align-items:center; }
+.study .random-row select { margin-left:6px; }
+.study .random-controls .help-text { display:block; margin-top:6px; color:#777; font-size:0.85rem; }
+.study .random-controls .checkbox-label { display:flex; align-items:center; gap:6px; }
+.study .random-start-button { width:100%; background:#2e7d32; border:0; padding:8px 10px; border-radius:6px; text-align:center; cursor:pointer; }
+/* Keep the Start button consistently green; no hover-only color change */
