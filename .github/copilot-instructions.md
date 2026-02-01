@@ -31,6 +31,9 @@ Developer workflows (commands)
 - The app is served by webpack-dev-server; changes to source files trigger HMR.
  - Run tests: `npm test` (watch mode: `npm run test:watch`)
 
+Agent workflow policy
+- Do not commit or push any changes unless explicitly requested by the repo owner in the conversation. Perform edits locally and run tests/builds, but avoid `git commit`/`git push` until instructed.
+
 Files to inspect when making changes
 - `deck.json` — the source of truth for cards.
 - `src/App.jsx` — main logic for shuffle, flip, mark known/unknown, deck lifecycle.
@@ -44,6 +47,11 @@ Common tasks and examples
   - Update `src/App.jsx` to read and render the new field. Keep state logic intact: maintain deck as an array of card objects.
 - Persisting progress across reloads (optional enhancement):
   - Use `localStorage` keyed by repo name. Saved progress persists across deck runs and browser sessions; each tab/window maintains its own session and can restore or continue a deck run independently.
+
+Utilities and types pattern
+- Extract non-React, pure logic into `src/utils.ts` (e.g., `validateDeckIds`, `aggregateAndDedupe`, shared types like `CardItem`).
+- Keep React components thin: import utility functions/types from `utils.ts`.
+- Add dedicated unit tests for utilities (e.g., `src/utils.test.ts`) covering validation and dedupe logic.
 
 Server-backed editing has been removed; the app is purely client-side and reads static JSON decks bundled at build time.
 

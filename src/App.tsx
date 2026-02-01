@@ -2,24 +2,12 @@ import React, { useEffect, useState, useMemo, useRef } from 'react';
 import sampleDeck from '../decks/chapter1_1.json';
 import { LocalStorageStatsProvider } from './stats/LocalStorageStatsProvider';
 import type { CardStats } from './stats/StatsProvider';
+import type { CardItem } from './utils';
+import { validateDeckIds, aggregateAndDedupe as dedupeCards, shuffle, sampleN } from './utils';
 
-export interface CardItem {
-  id: string;
-  japanese: string;
-  hiragana: string;
-  english: string;
-  japanese_example?: string;
-  english_example?: string;
-}
+export type { CardItem };
 
-function shuffle<T>(arr: T[]): T[] {
-  const a = arr.slice();
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
+// shuffle() moved to utils.ts
 
 // Render text that may contain <ruby>…<rt>…</rt></ruby> markup
 export function HtmlOrText({ className, text }: { className?: string; text?: string }) {
@@ -70,19 +58,6 @@ export default function App() {
   // Track which card IDs have been counted in the current deck run
   const countedThisRun = useRef<Set<string>>(new Set());
 
-  function validateDeckIds(cards: CardItem[]): void {
-    const seen = new Set<string>();
-    for (const c of cards) {
-      const id = (c as any).id;
-      if (typeof id !== 'string' || id.trim().length === 0) {
-        throw new Error('Deck validation error: each card must have a non-empty string id');
-      }
-      if (seen.has(id)) {
-        throw new Error(`Deck validation error: duplicate id detected: ${id}`);
-      }
-      seen.add(id);
-    }
-  }
 
   const RANDOM_KEY = '__random__';
   const [selectedDeckKey, setSelectedDeckKey] = useState<string>(() => (availableDecks[0] && availableDecks[0].key) || '../deck.json');
@@ -105,7 +80,7 @@ export default function App() {
   const [frontField, setFrontField] = useState<'japanese' | 'english'>('japanese');
   const [counts, setCounts] = useState<CardStats>({ success: 0, failure: 0 });
 
-  function aggregateAndDedupe(): CardItem[] {
+  function aggregateAllAndDedupe(): CardItem[] {
     // Aggregate all cards across discovered decks and dedupe by any of the fields
     let all: CardItem[] = [];
     try {
@@ -123,32 +98,13 @@ export default function App() {
     } catch {
       all = sampleDeck as CardItem[];
     }
-
-    const seenJ = new Set<string>();
-    const seenH = new Set<string>();
-    const seenE = new Set<string>();
-    const deduped: CardItem[] = [];
-    for (const c of all) {
-      const j = (c.japanese || '').trim();
-      const h = (c.hiragana || '').trim();
-      const e = (c.english || '').trim();
-      if (seenJ.has(j) || seenH.has(h) || seenE.has(e)) continue;
-      deduped.push(c);
-      if (j) seenJ.add(j);
-      if (h) seenH.add(h);
-      if (e) seenE.add(e);
-    }
-    return deduped;
+    return dedupeCards(all);
   }
 
-  function sampleN<T>(arr: T[], n: number): T[] {
-    if (n <= 0) return [];
-    const shuffled = shuffle(arr);
-    return shuffled.slice(0, Math.min(n, shuffled.length));
-  }
+  // sampleN() moved to utils.ts
 
   function startRandomDeck() {
-    const deduped = aggregateAndDedupe();
+    const deduped = aggregateAllAndDedupe();
     const sampled = sampleN<CardItem>(deduped, randomCount);
     setSelectedDeckKey(RANDOM_KEY);
     countedThisRun.current.clear();
@@ -160,7 +116,7 @@ export default function App() {
   // react to deck selection changes
   useEffect(() => {
     if (selectedDeckKey === RANDOM_KEY) {
-      const deduped = aggregateAndDedupe();
+      const deduped = aggregateAllAndDedupe();
       const sampled = sampleN<CardItem>(deduped, randomCount);
       countedThisRun.current.clear();
       validateDeckIds(sampled);
@@ -298,7 +254,7 @@ export default function App() {
           <p>You completed the deck.</p>
           <button onClick={() => {
             if (selectedDeckKey === RANDOM_KEY) {
-              const deduped = aggregateAndDedupe();
+              const deduped = aggregateAllAndDedupe();
               const sampled = sampleN<CardItem>(deduped, randomCount);
               countedThisRun.current.clear();
               validateDeckIds(sampled);
