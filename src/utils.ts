@@ -54,3 +54,48 @@ export function aggregateAndDedupe(all: CardItem[]): CardItem[] {
   }
   return deduped;
 }
+
+// Compute failure ratio given success/failure counts
+export function failureRatio(success: number, failure: number): number {
+  const total = success + failure;
+  if (total <= 0) return 0;
+  return failure / total;
+}
+
+// Select n items: half random, half by highest priority (excluding already chosen)
+export function sampleMixedByPriority<T extends { id: string }>(
+  arr: T[],
+  n: number,
+  getPriority: (item: T) => number
+): T[] {
+  if (n <= 0 || arr.length === 0) return [];
+  const k = Math.floor(n / 2);
+  const randomPart = sampleN(arr, Math.min(k, arr.length));
+  const chosen = new Set<string>(randomPart.map((x) => x.id));
+  const remaining = arr.filter((x) => !chosen.has(x.id));
+  const need = Math.min(n - randomPart.length, remaining.length);
+  const prioritized = remaining
+    .slice()
+    .sort((a, b) => getPriority(b) - getPriority(a))
+    .slice(0, need);
+  return randomPart.concat(prioritized);
+}
+
+// Prioritize flagged items first (sorted by priority desc), then fill remainder using sampleMixedByPriority
+export function sampleFlagFirst<T extends { id: string }>(
+  arr: T[],
+  flaggedIds: Set<string>,
+  n: number,
+  getPriority: (item: T) => number
+): T[] {
+  if (n <= 0 || arr.length === 0) return [];
+  const flagged = arr.filter((x) => flaggedIds.has(x.id));
+  const sortedFlagged = flagged.slice().sort((a, b) => getPriority(b) - getPriority(a));
+  if (sortedFlagged.length >= n) {
+    return sortedFlagged.slice(0, n);
+  }
+  const selected = sortedFlagged.slice();
+  const remainingCandidates = arr.filter((x) => !flaggedIds.has(x.id));
+  const remainder = sampleMixedByPriority(remainingCandidates, n - selected.length, getPriority);
+  return selected.concat(remainder);
+}

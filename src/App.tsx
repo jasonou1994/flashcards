@@ -3,7 +3,7 @@ import sampleDeck from '../decks/chapter1_1.json';
 import { LocalStorageStatsProvider } from './stats/LocalStorageStatsProvider';
 import type { CardStats } from './stats/StatsProvider';
 import type { CardItem } from './utils';
-import { validateDeckIds, aggregateAndDedupe as dedupeCards, shuffle, sampleN } from './utils';
+import { validateDeckIds, aggregateAndDedupe as dedupeCards, shuffle, sampleN, sampleMixedByPriority, sampleFlagFirst } from './utils';
 import Card from './Card';
 import { LocalStorageDifficultProvider } from './stats/LocalStorageDifficultProvider';
 
@@ -36,6 +36,7 @@ export default function App() {
   const RANDOM_KEY = '__random__';
   const [selectedDeckKey, setSelectedDeckKey] = useState<string>(() => (availableDecks[0] && availableDecks[0].key) || '../deck.json');
   const [randomCount, setRandomCount] = useState<number>(30);
+  const [prioritizeDifficult, setPrioritizeDifficult] = useState<boolean>(false);
   const [deck, setDeck] = useState<CardItem[]>(() => {
     // load initial deck
     try {
@@ -79,9 +80,23 @@ export default function App() {
 
   // sampleN() moved to utils.ts
 
+  function failureRatioFor(card: CardItem): number {
+    const { success, failure } = statsProvider.getCounts((card as any).id as string);
+    const total = success + failure;
+    return total > 0 ? failure / total : 0;
+  }
+
+  function sampleRandomRun(deduped: CardItem[]): CardItem[] {
+    if (prioritizeDifficult) {
+      const flaggedIds = new Set<string>(difficultProvider.getDifficult(RANDOM_KEY));
+      return sampleFlagFirst<CardItem>(deduped, flaggedIds, randomCount, failureRatioFor);
+    }
+    return sampleMixedByPriority<CardItem>(deduped, randomCount, failureRatioFor);
+  }
+
   function startRandomDeck() {
     const deduped = aggregateAllAndDedupe();
-    const sampled = sampleN<CardItem>(deduped, randomCount);
+    const sampled = sampleRandomRun(deduped);
     setSelectedDeckKey(RANDOM_KEY);
     countedThisRun.current.clear();
     validateDeckIds(sampled);
@@ -93,7 +108,7 @@ export default function App() {
   useEffect(() => {
     if (selectedDeckKey === RANDOM_KEY) {
       const deduped = aggregateAllAndDedupe();
-      const sampled = sampleN<CardItem>(deduped, randomCount);
+      const sampled = sampleRandomRun(deduped);
       countedThisRun.current.clear();
       validateDeckIds(sampled);
       setDeck(shuffle(sampled));
@@ -202,12 +217,21 @@ export default function App() {
               <label>
                 Quantity
                 <select value={randomCount} onChange={(e) => setRandomCount(parseInt(e.target.value))}>
+                  <option value={1}>1</option>
                   <option value={10}>10</option>
                   <option value={20}>20</option>
                   <option value={30}>30</option>
                   <option value={50}>50</option>
                   <option value={100}>100</option>
                 </select>
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={prioritizeDifficult}
+                  onChange={(e) => setPrioritizeDifficult(e.target.checked)}
+                />
+                Prioritize flagged
               </label>
             </div>
           </div>
@@ -241,7 +265,7 @@ export default function App() {
           <button onClick={() => {
             if (selectedDeckKey === RANDOM_KEY) {
               const deduped = aggregateAllAndDedupe();
-              const sampled = sampleN<CardItem>(deduped, randomCount);
+              const sampled = sampleRandomRun(deduped);
               countedThisRun.current.clear();
               validateDeckIds(sampled);
               setDeck(shuffle(sampled));
@@ -282,12 +306,21 @@ export default function App() {
             <label>
               Quantity
               <select value={randomCount} onChange={(e) => setRandomCount(parseInt(e.target.value))}>
+                <option value={5}>5</option>
                 <option value={10}>10</option>
                 <option value={20}>20</option>
                 <option value={30}>30</option>
                 <option value={50}>50</option>
                 <option value={100}>100</option>
               </select>
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                checked={prioritizeDifficult}
+                onChange={(e) => setPrioritizeDifficult(e.target.checked)}
+              />
+              Prioritize flagged
             </label>
           </div>
         </div>
