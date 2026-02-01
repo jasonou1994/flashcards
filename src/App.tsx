@@ -1,7 +1,10 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import sampleDeck from '../decks/chapter1_1.json';
+import { LocalStorageStatsProvider } from './stats/LocalStorageStatsProvider';
+import type { CardStats } from './stats/StatsProvider';
 
 export interface CardItem {
+  id: string;
   japanese: string;
   hiragana: string;
   english: string;
@@ -27,9 +30,12 @@ export function HtmlOrText({ className, text }: { className?: string; text?: str
   return <div className={className}>{text}</div>;
 }
 
-export function Card({ card, flipped, onFlip, frontField }: { card: CardItem; flipped: boolean; onFlip: () => void; frontField: 'japanese' | 'english' }) {
+export function Card({ card, flipped, onFlip, frontField, counts }: { card: CardItem; flipped: boolean; onFlip: () => void; frontField: 'japanese' | 'english'; counts?: CardStats }) {
   return (
     <div className={`card ${flipped ? 'flipped' : ''}`} onClick={onFlip}>
+      {counts ? (
+        <div className="card-stats-overlay">{counts.success} / {counts.success + counts.failure}</div>
+      ) : null}
       <HtmlOrText className="side front" text={card[frontField]} />
       <div className="side back">
         <HtmlOrText className="japanese" text={card.japanese} />
@@ -60,19 +66,42 @@ export default function App() {
     return deckContext.keys().map((k: string) => ({ name: k.replace(/^\.\//, ''), key: k, loader: () => deckContext(k) as CardItem[] }));
   }, []);
 
+  const statsProvider = useMemo(() => new LocalStorageStatsProvider(), []);
+
+  function validateDeckIds(cards: CardItem[]): void {
+    const seen = new Set<string>();
+    for (const c of cards) {
+      const id = (c as any).id;
+      if (typeof id !== 'string' || id.trim().length === 0) {
+        throw new Error('Deck validation error: each card must have a non-empty string id');
+      }
+      if (seen.has(id)) {
+        throw new Error(`Deck validation error: duplicate id detected: ${id}`);
+      }
+      seen.add(id);
+    }
+  }
+
   const RANDOM_KEY = '__random__';
   const [selectedDeckKey, setSelectedDeckKey] = useState<string>(() => (availableDecks[0] && availableDecks[0].key) || '../deck.json');
   const [randomCount, setRandomCount] = useState<number>(30);
   const [deck, setDeck] = useState<CardItem[]>(() => {
     // load initial deck
     try {
-      if (deckContext && selectedDeckKey && selectedDeckKey !== '../deck.json') return shuffle(deckContext(selectedDeckKey) as CardItem[]);
+      if (deckContext && selectedDeckKey && selectedDeckKey !== '../deck.json') {
+        const initial = deckContext(selectedDeckKey) as CardItem[];
+        validateDeckIds(initial);
+        return shuffle(initial);
+      }
     } catch (e) {}
-    return shuffle(sampleDeck as CardItem[]);
+    const initial = sampleDeck as CardItem[];
+    validateDeckIds(initial);
+    return shuffle(initial);
   }); 
 
   const [flipped, setFlipped] = useState<boolean>(false);
   const [frontField, setFrontField] = useState<'japanese' | 'english'>('japanese');
+  const [counts, setCounts] = useState<CardStats>({ success: 0, failure: 0 });
 
   function aggregateAndDedupe(): CardItem[] {
     // Aggregate all cards across discovered decks and dedupe by any of the fields
@@ -120,6 +149,7 @@ export default function App() {
     const deduped = aggregateAndDedupe();
     const sampled = sampleN<CardItem>(deduped, randomCount);
     setSelectedDeckKey(RANDOM_KEY);
+    validateDeckIds(sampled);
     setDeck(shuffle(sampled));
     setFlipped(false);
   }
@@ -129,6 +159,7 @@ export default function App() {
     if (selectedDeckKey === RANDOM_KEY) {
       const deduped = aggregateAndDedupe();
       const sampled = sampleN<CardItem>(deduped, randomCount);
+      validateDeckIds(sampled);
       setDeck(shuffle(sampled));
       setFlipped(false);
       return;
@@ -141,14 +172,28 @@ export default function App() {
     } catch (e) {
       loaded = sampleDeck as CardItem[];
     }
+    validateDeckIds(loaded);
     setDeck(shuffle(loaded));
     setFlipped(false);
   }, [selectedDeckKey]);
   
   const current = deck[0];
 
+  // Update counts when current card changes
+  useEffect(() => {
+    if (current && (current as any).id) {
+      setCounts(statsProvider.getCounts((current as any).id));
+    } else {
+      setCounts({ success: 0, failure: 0 });
+    }
+  }, [current, statsProvider]);
+
   function markKnown() {
     if (!current) return;
+    // Record success for current card
+    if ((current as any).id) {
+      statsProvider.incrementSuccess((current as any).id);
+    }
     const remaining = deck.slice(1);
     setDeck(remaining);
     setFlipped(false);
@@ -156,6 +201,10 @@ export default function App() {
 
   function markUnknown() {
     if (!current) return;
+    // Record failure for current card
+    if ((current as any).id) {
+      statsProvider.incrementFailure((current as any).id);
+    }
     // reinsert this card at random position after shuffling remaining
     const remaining = deck.slice(1);
     const newDeck = shuffle(remaining.concat(current));
@@ -238,14 +287,18 @@ export default function App() {
             if (selectedDeckKey === RANDOM_KEY) {
               const deduped = aggregateAndDedupe();
               const sampled = sampleN<CardItem>(deduped, randomCount);
+              validateDeckIds(sampled);
               setDeck(shuffle(sampled));
               return;
             }
             try {
               const loaded = deckContext && selectedDeckKey ? (deckContext(selectedDeckKey) as CardItem[]) : (sampleDeck as CardItem[]);
+              validateDeckIds(loaded);
               setDeck(shuffle(loaded));
             } catch (e) {
-              setDeck(shuffle(sampleDeck as CardItem[]));
+              const fallback = sampleDeck as CardItem[];
+              validateDeckIds(fallback);
+              setDeck(shuffle(fallback));
             }
           }}>Restart</button>
         </main>
@@ -311,7 +364,7 @@ export default function App() {
           <button onClick={() => { setDeck(shuffle(deck)); setFlipped(false); }}>Reshuffle</button>
         </div>
 
-        <Card card={current} flipped={flipped} onFlip={() => setFlipped((f) => !f)} frontField={frontField} />
+        <Card card={current} flipped={flipped} onFlip={() => setFlipped((f) => !f)} frontField={frontField} counts={counts} />
 
         <div className="actions">
           <button onClick={markKnown}>Known</button>

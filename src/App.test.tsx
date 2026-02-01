@@ -5,16 +5,19 @@ import App, { HtmlOrText, Card, CardItem } from './App';
 // Mock the sample deck imported by App to keep tests small and deterministic
 jest.mock('../decks/chapter1_1.json', () => [
   {
+    id: 'mock-0001',
     japanese: 'カード1',
     hiragana: 'かーど1',
     english: 'card one',
   },
   {
+    id: 'mock-0002',
     japanese: 'カード2',
     hiragana: 'かーど2',
     english: 'card two',
   },
   {
+    id: 'mock-0003',
     japanese: 'カード3',
     hiragana: 'かーど3',
     english: 'card three',
@@ -179,14 +182,14 @@ describe('Random deck aggregation and dedupe', () => {
   it('dedupes across japanese/hiragana/english and respects quantity on start and restart', () => {
     const decks: Record<string, CardItem[]> = {
       './a.json': [
-        { japanese: 'A', hiragana: 'あ', english: 'alpha' },
-        { japanese: 'B', hiragana: 'ぶ', english: 'beta' },
+        { id: 'a-1', japanese: 'A', hiragana: 'あ', english: 'alpha' },
+        { id: 'a-2', japanese: 'B', hiragana: 'ぶ', english: 'beta' },
       ],
       './b.json': [
-        { japanese: 'A', hiragana: 'あ2', english: 'alpha2' }, // duplicate japanese
-        { japanese: 'C', hiragana: 'ぶ', english: 'gamma' }, // duplicate hiragana
-        { japanese: 'D', hiragana: 'で', english: 'beta' }, // duplicate english
-        { japanese: 'E', hiragana: 'え', english: 'epsilon' }, // unique
+        { id: 'b-1', japanese: 'A', hiragana: 'あ2', english: 'alpha2' }, // duplicate japanese
+        { id: 'b-2', japanese: 'C', hiragana: 'ぶ', english: 'gamma' }, // duplicate hiragana
+        { id: 'b-3', japanese: 'D', hiragana: 'で', english: 'beta' }, // duplicate english
+        { id: 'b-4', japanese: 'E', hiragana: 'え', english: 'epsilon' }, // unique
       ],
     };
     mockDeckContext(decks);
@@ -212,6 +215,7 @@ describe('Random deck aggregation and dedupe', () => {
 
 describe('Card', () => {
   const base: CardItem = {
+    id: 'test-1',
     japanese: '<ruby>卒業<rt>そつぎょう</rt></ruby>',
     hiragana: 'そつぎょう',
     english: 'graduation',
@@ -231,7 +235,7 @@ describe('Card', () => {
   });
 
   it('renders optional examples after english in order', () => {
-    const card: CardItem = { ...base, japanese_example: '<ruby>例<rt>れい</rt></ruby> 文', english_example: 'Example sentence' };
+    const card: CardItem = { ...base, id: 'test-2', japanese_example: '<ruby>例<rt>れい</rt></ruby> 文', english_example: 'Example sentence' };
     const { container } = render(<Card card={card} flipped={true} onFlip={() => {}} frontField="japanese" />);
     const back = container.querySelector('.side.back');
     const children = Array.from(back!.children);

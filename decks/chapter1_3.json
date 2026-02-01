@@ -4,398 +4,455 @@
     "hiragana": "はずかしい",
     "english": "Embarrassing; to feel ashamed or self-conscious about oneself or a situation.",
     "japanese_example": "<ruby>人前<rt>ひとまえ</rt></ruby>で<ruby>転<rt>ころ</rt></ruby>んで、とても<ruby>恥<rt>は</rt></ruby>ずかしかった。",
-    "english_example": "I fell in front of everyone, and it was very embarrassing."
+    "english_example": "I fell in front of everyone, and it was very embarrassing.",
+    "id": "chapter1_3-0001"
   },
   {
     "japanese": "なのだ",
     "hiragana": "なのだ",
     "english": "Explanatory copula used to add explanation or emphasis; often feels like “it is that…” or “the thing is…”.",
     "japanese_example": "<ruby>今<rt>いま</rt></ruby><ruby>忙<rt>いそが</rt></ruby>しいのだ。",
-    "english_example": "The thing is, I'm busy right now."
+    "english_example": "The thing is, I'm busy right now.",
+    "id": "chapter1_3-0002"
   },
   {
     "japanese": "この上なく",
     "hiragana": "このうえなく",
     "english": "Supremely; exceedingly; “as ~ as possible,” typically modifying adjectives or adverbs.",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>この上<rt>このうえ</rt></ruby>なく<ruby>幸<rt>しあわ</rt></ruby>せそうだった。",
-    "english_example": "He looked supremely happy."
+    "english_example": "He looked supremely happy.",
+    "id": "chapter1_3-0003"
   },
   {
     "japanese": "鳥籠",
     "hiragana": "とりかご",
     "english": "Birdcage; a cage for keeping birds.",
     "japanese_example": "<ruby>鳥籠<rt>とりかご</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で<ruby>小鳥<rt>ことり</rt></ruby>が<ruby>鳴<rt>な</rt></ruby>いている。",
-    "english_example": "A little bird is chirping inside the birdcage."
+    "english_example": "A little bird is chirping inside the birdcage.",
+    "id": "chapter1_3-0004"
   },
   {
     "japanese": "閉じ込める",
     "hiragana": "とじこめる",
     "english": "To lock up or confine; to shut someone or something inside so they cannot get out.",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>怒<rt>おこ</rt></ruby>りを<ruby>心<rt>こころ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に<ruby>閉<rt>と</rt></ruby>じ<ruby>込<rt>こ</rt></ruby>めた。",
-    "english_example": "He locked his anger away inside his heart."
+    "english_example": "He locked his anger away inside his heart.",
+    "id": "chapter1_3-0005"
   },
   {
     "japanese": "〜込む",
     "hiragana": "〜こむ",
     "english": "Verb suffix meaning “into” or “thoroughly,” often implying entering deep inside or doing something completely.",
     "japanese_example": "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ってきたので、<ruby>家<rt>いえ</rt></ruby>に<ruby>駆<rt>か</rt></ruby>け<ruby>込<rt>こ</rt></ruby>んだ。",
-    "english_example": "When it started to rain, I dashed into the house."
+    "english_example": "When it started to rain, I dashed into the house.",
+    "id": "chapter1_3-0006"
   },
   {
     "japanese": "南京錠",
     "hiragana": "なんきんじょう",
     "english": "Padlock; a portable lock typically used with a chain or latch.",
     "japanese_example": "<ruby>門<rt>もん</rt></ruby>に<ruby>南京錠<rt>なんきんじょう</rt></ruby>がかかっていた。",
-    "english_example": "A padlock was fastened on the gate."
+    "english_example": "A padlock was fastened on the gate.",
+    "id": "chapter1_3-0007"
   },
   {
     "japanese": "まで",
     "hiragana": "まで",
     "english": "Up to/until; can also mean “even” to emphasize an extreme or unexpected example.",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>水<rt>みず</rt></ruby>まで<ruby>買<rt>か</rt></ruby>い<ruby>忘<rt>わす</rt></ruby>れた。",
-    "english_example": "He even forgot to buy water."
+    "english_example": "He even forgot to buy water.",
+    "id": "chapter1_3-0008"
   },
   {
     "japanese": "〜たり",
     "hiragana": "〜たり",
     "english": "Listing form used to give examples of actions/states; often paired as 〜たり〜たりする to mean “do things like…”.",
     "japanese_example": "<ruby>休日<rt>きゅうじつ</rt></ruby>は<ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>んだり<ruby>散歩<rt>さんぽ</rt></ruby>したりする。",
-    "english_example": "On my days off, I do things like read books and take walks."
+    "english_example": "On my days off, I do things like read books and take walks.",
+    "id": "chapter1_3-0009"
   },
   {
     "japanese": "図体",
     "hiragana": "ずうたい",
     "english": "Body/physique, often implying a big, hulking build; can sound slightly rude or blunt.",
     "japanese_example": "<ruby>図体<rt>ずうたい</rt></ruby>は<ruby>大<rt>おお</rt></ruby>きいのに、<ruby>動<rt>うご</rt></ruby>きは<ruby>意外<rt>いがい</rt></ruby>と<ruby>静<rt>しず</rt></ruby>かだ。",
-    "english_example": "Even though he's huge, his movements are surprisingly quiet."
+    "english_example": "Even though he's huge, his movements are surprisingly quiet.",
+    "id": "chapter1_3-0010"
   },
   {
     "japanese": "首",
     "hiragana": "くび",
     "english": "Neck; also used in set phrases (and can mean “head” or “job” in some contexts).",
     "japanese_example": "<ruby>首<rt>くび</rt></ruby>がこっているので、<ruby>少<rt>すこ</rt></ruby>し<ruby>回<rt>まわ</rt></ruby>した。",
-    "english_example": "My neck is stiff, so I rotated it a bit."
+    "english_example": "My neck is stiff, so I rotated it a bit.",
+    "id": "chapter1_3-0011"
   },
   {
     "japanese": "めり込む",
     "hiragana": "めりこむ",
     "english": "To sink into or become embedded; used for something pressing in deeply.",
     "japanese_example": "<ruby>石<rt>いし</rt></ruby>が<ruby>土<rt>つち</rt></ruby>に<ruby>めり込<rt>めりこ</rt></ruby>んで<ruby>取<rt>と</rt></ruby>れない。",
-    "english_example": "The stone is embedded in the soil and won't come out."
+    "english_example": "The stone is embedded in the soil and won't come out.",
+    "id": "chapter1_3-0012"
   },
   {
     "japanese": "目立つ",
     "hiragana": "めだつ",
     "english": "To stand out; to be conspicuous or noticeable (often visually).",
     "japanese_example": "<ruby>あの</ruby><ruby>赤<rt>あか</rt></ruby>い<ruby>帽子<rt>ぼうし</rt></ruby>はとても<ruby>目立<rt>めだ</rt></ruby>つ。",
-    "english_example": "That red hat really stands out."
+    "english_example": "That red hat really stands out.",
+    "id": "chapter1_3-0013"
   },
   {
     "japanese": "口髭",
     "hiragana": "くちひげ",
     "english": "Moustache; hair above the upper lip.",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>口髭<rt>くちひげ</rt></ruby>を<ruby>伸<rt>の</rt></ruby>ばし<ruby>始<rt>はじ</rt></ruby>めた。",
-    "english_example": "He started growing a moustache."
+    "english_example": "He started growing a moustache.",
+    "id": "chapter1_3-0014"
   },
   {
     "japanese": "痩せこける",
     "hiragana": "やせこける",
     "english": "To become emaciated/gaunt; suggests being extremely thin in an unhealthy-looking way.",
     "japanese_example": "<ruby>長<rt>なが</rt></ruby>い<ruby>入院<rt>にゅういん</rt></ruby>で<ruby>痩<rt>や</rt></ruby>せこけてしまった。",
-    "english_example": "After a long hospital stay, he became gaunt."
+    "english_example": "After a long hospital stay, he became gaunt.",
+    "id": "chapter1_3-0015"
   },
   {
     "japanese": "小柄",
     "hiragana": "こがら",
     "english": "Small/petite build; describes a person’s stature and frame.",
     "japanese_example": "<ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>小柄<rt>こがら</rt></ruby>だが、とても<ruby>力<rt>ちから</rt></ruby>が<ruby>強<rt>つよ</rt></ruby>い。",
-    "english_example": "She has a petite build, but she's very strong."
+    "english_example": "She has a petite build, but she's very strong.",
+    "id": "chapter1_3-0016"
   },
   {
     "japanese": "細身",
     "hiragana": "ほそみ",
     "english": "Slender build; describes someone thin and narrow-framed (often neutral or positive).",
     "japanese_example": "<ruby>兄<rt>あに</rt></ruby>は<ruby>細身<rt>ほそみ</rt></ruby>で、<ruby>服<rt>ふく</rt></ruby>がよく<ruby>似合<rt>にあ</rt></ruby>う。",
-    "english_example": "My older brother has a slender build, and clothes look good on him."
+    "english_example": "My older brother has a slender build, and clothes look good on him.",
+    "id": "chapter1_3-0017"
   },
   {
     "japanese": "〜で（連用形）",
     "hiragana": "〜で",
     "english": "Te-form of the copula used to connect nouns/な-adjectives: “being …, and … / because …”; links clauses smoothly.",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>で、<ruby>夜<rt>よる</rt></ruby>は<ruby>働<rt>はたら</rt></ruby>いている。",
-    "english_example": "He is a student, and he works at night."
+    "english_example": "He is a student, and he works at night.",
+    "id": "chapter1_3-0018"
   },
   {
     "japanese": "輝き",
     "hiragana": "かがやき",
     "english": "Radiance; shine; the noun form of 輝く, referring to a gleam or brilliance.",
     "japanese_example": "<ruby>朝日<rt>あさひ</rt></ruby>の<ruby>輝<rt>かがや</rt></ruby>きが<ruby>海<rt>うみ</rt></ruby>に<ruby>映<rt>うつ</rt></ruby>っていた。",
-    "english_example": "The radiance of the morning sun was reflected on the sea."
+    "english_example": "The radiance of the morning sun was reflected on the sea.",
+    "id": "chapter1_3-0019"
   },
   {
     "japanese": "くしゃくしゃな",
     "hiragana": "くしゃくしゃな",
     "english": "Crumpled or messy; a な-adjective used for wrinkled paper/clothes or a disheveled look.",
     "japanese_example": "<ruby>くしゃくしゃ</ruby>な<ruby>紙<rt>かみ</rt></ruby>を<ruby>伸<rt>の</rt></ruby>ばして<ruby>読<rt>よ</rt></ruby>んだ。",
-    "english_example": "I smoothed out the crumpled paper and read it."
+    "english_example": "I smoothed out the crumpled paper and read it.",
+    "id": "chapter1_3-0020"
   },
   {
     "japanese": "真っ黒",
     "hiragana": "まっくろ",
     "english": "Pitch-black; deep black; emphasizes the intensity of blackness.",
     "japanese_example": "<ruby>空<rt>そら</rt></ruby>が<ruby>真<rt>ま</rt></ruby>っ<ruby>黒<rt>くろ</rt></ruby>になって、<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>り<ruby>出<rt>だ</rt></ruby>した。",
-    "english_example": "The sky turned pitch-black, and it started to rain."
+    "english_example": "The sky turned pitch-black, and it started to rain.",
+    "id": "chapter1_3-0021"
   },
   {
     "japanese": "髪",
     "hiragana": "かみ",
     "english": "Hair; used for hair on the head (contrast: 毛 for body hair/fur in many contexts).",
     "japanese_example": "<ruby>髪<rt>かみ</rt></ruby>を<ruby>短<rt>みじか</rt></ruby>く<ruby>切<rt>き</rt></ruby>った。",
-    "english_example": "I cut my hair short."
+    "english_example": "I cut my hair short.",
+    "id": "chapter1_3-0022"
   },
   {
     "japanese": "額",
     "hiragana": "ひたい",
     "english": "Forehead; the front upper part of the face.",
     "japanese_example": "<ruby>額<rt>ひたい</rt></ruby>に<ruby>汗<rt>あせ</rt></ruby>がにじんだ。",
-    "english_example": "Sweat beaded on my forehead."
+    "english_example": "Sweat beaded on my forehead.",
+    "id": "chapter1_3-0023"
   },
   {
     "japanese": "うっすらと",
     "hiragana": "うっすらと",
     "english": "Faintly; lightly; describes something weakly visible or present.",
     "japanese_example": "<ruby>山<rt>やま</rt></ruby>が<ruby>霧<rt>きり</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に<ruby>うっすら</ruby>と<ruby>見<rt>み</rt></ruby>えた。",
-    "english_example": "The mountains were faintly visible in the mist."
+    "english_example": "The mountains were faintly visible in the mist.",
+    "id": "chapter1_3-0024"
   },
   {
     "japanese": "稲妻形",
     "hiragana": "いなずまがた",
     "english": "Lightning-shaped; used to describe something with a zigzag lightning-bolt shape.",
     "japanese_example": "<ruby>額<rt>ひたい</rt></ruby>に<ruby>稲妻形<rt>いなずまがた</rt></ruby>の<ruby>傷痕<rt>きずあと</rt></ruby>があった。",
-    "english_example": "There was a lightning-shaped scar on his forehead."
+    "english_example": "There was a lightning-shaped scar on his forehead.",
+    "id": "chapter1_3-0025"
   },
   {
     "japanese": "形",
     "hiragana": "かたち",
     "english": "Shape; form; the outline or configuration of something.",
     "japanese_example": "<ruby>この</ruby><ruby>雲<rt>くも</rt></ruby>は<ruby>星<rt>ほし</rt></ruby>の<ruby>形<rt>かたち</rt></ruby>に<ruby>見<rt>み</rt></ruby>える。",
-    "english_example": "This cloud looks like the shape of a star."
+    "english_example": "This cloud looks like the shape of a star.",
+    "id": "chapter1_3-0026"
   },
   {
     "japanese": "傷痕",
     "hiragana": "きずあと",
     "english": "Scar; a mark left after a wound has healed (more specific than 傷).",
     "japanese_example": "<ruby>古<rt>ふる</rt></ruby>い<ruby>傷痕<rt>きずあと</rt></ruby>が<ruby>腕<rt>うで</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>っている。",
-    "english_example": "An old scar remains on my arm."
+    "english_example": "An old scar remains on my arm.",
+    "id": "chapter1_3-0027"
   },
   {
     "japanese": "傷",
     "hiragana": "きず",
     "english": "Wound or injury; a general term for damage to the body or to objects.",
     "japanese_example": "<ruby>指<rt>ゆび</rt></ruby>に<ruby>傷<rt>きず</rt></ruby>ができたので<ruby>絆創膏<rt>ばんそうこう</rt></ruby>を<ruby>貼<rt>は</rt></ruby>った。",
-    "english_example": "I got a cut on my finger, so I put on a bandage."
+    "english_example": "I got a cut on my finger, so I put on a bandage.",
+    "id": "chapter1_3-0028"
   },
   {
     "japanese": "特別",
     "hiragana": "とくべつ",
     "english": "Special; exceptional; can describe something out of the ordinary or reserved for certain cases.",
     "japanese_example": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>特別<rt>とくべつ</rt></ruby>な<ruby>日<rt>ひ</rt></ruby>だから、<ruby>外食<rt>がいしょく</rt></ruby>しよう。",
-    "english_example": "Since today is a special day, let's eat out."
+    "english_example": "Since today is a special day, let's eat out.",
+    "id": "chapter1_3-0029"
   },
   {
     "japanese": "魔法界",
     "hiragana": "まほうかい",
     "english": "The wizarding world; a fictional society/world of magic users.",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>突然<rt>とつぜん</rt></ruby><ruby>魔法界<rt>まほうかい</rt></ruby>の<ruby>存在<rt>そんざい</rt></ruby>を<ruby>知<rt>し</rt></ruby>った。",
-    "english_example": "He suddenly learned of the existence of the wizarding world."
+    "english_example": "He suddenly learned of the existence of the wizarding world.",
+    "id": "chapter1_3-0030"
   },
   {
     "japanese": "でさえ",
     "hiragana": "でさえ",
     "english": "Emphatic “even”; highlights that something is true even for an extreme or unexpected case.",
     "japanese_example": "<ruby>子供<rt>こども</rt></ruby>でさえ<ruby>分<rt>わ</rt></ruby>かる<ruby>説明<rt>せつめい</rt></ruby>にしてほしい。",
-    "english_example": "I want an explanation that even a child can understand."
+    "english_example": "I want an explanation that even a child can understand.",
+    "id": "chapter1_3-0031"
   },
   {
     "japanese": "謎",
     "hiragana": "なぞ",
     "english": "Riddle; mystery; something puzzling that requires an explanation.",
     "japanese_example": "<ruby>その</ruby><ruby>出来事<rt>できごと</rt></ruby>は<ruby>今<rt>いま</rt></ruby>も<ruby>謎<rt>なぞ</rt></ruby>のままだ。",
-    "english_example": "That incident is still a mystery."
+    "english_example": "That incident is still a mystery.",
+    "id": "chapter1_3-0032"
   },
   {
     "japanese": "包む",
     "hiragana": "つつむ",
     "english": "To wrap or cover; can be literal (wrapping) or figurative (being enveloped).",
     "japanese_example": "<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>紙<rt>かみ</rt></ruby>で<ruby>包<rt>つつ</rt></ruby>んだ。",
-    "english_example": "I wrapped the package in paper."
+    "english_example": "I wrapped the package in paper.",
+    "id": "chapter1_3-0033"
   },
   {
     "japanese": "唯一",
     "hiragana": "ゆいいつ",
     "english": "Only; unique; emphasizes that there is just one (唯一の〜).",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>の<ruby>唯一<rt>ゆいいつ</rt></ruby>の<ruby>理解者<rt>りかいしゃ</rt></ruby>だ。",
-    "english_example": "He is my only person who truly understands me."
+    "english_example": "He is my only person who truly understands me.",
+    "id": "chapter1_3-0034"
   },
   {
     "japanese": "手がかり",
     "hiragana": "てがかり",
     "english": "Clue; lead; information or a hint used to solve a problem or mystery.",
     "japanese_example": "<ruby>小<rt>ちい</rt></ruby>さな<ruby>手<rt>て</rt></ruby>がかりを<ruby>頼<rt>たよ</rt></ruby>りに<ruby>犯人<rt>はんにん</rt></ruby>を<ruby>探<rt>さが</rt></ruby>した。",
-    "english_example": "Using a small clue as a lead, we searched for the culprit."
+    "english_example": "Using a small clue as a lead, we searched for the culprit.",
+    "id": "chapter1_3-0035"
   },
   {
     "japanese": "戸口",
     "hiragana": "とぐち",
     "english": "Doorway; entrance; the area at the door (not the door itself).",
     "japanese_example": "<ruby>戸口<rt>とぐち</rt></ruby>に<ruby>誰<rt>だれ</rt></ruby>かが<ruby>立<rt>た</rt></ruby>っていた。",
-    "english_example": "Someone was standing in the doorway."
+    "english_example": "Someone was standing in the doorway.",
+    "id": "chapter1_3-0036"
   },
   {
     "japanese": "置き去り",
     "hiragana": "おきざり",
     "english": "Leaving behind; abandonment; typically used as 置き去りにする or 置き去りにされる.",
     "japanese_example": "<ruby>駅<rt>えき</rt></ruby>に<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>置<rt>お</rt></ruby>き<ruby>去<rt>ざ</rt></ruby>りにしてしまった。",
-    "english_example": "I ended up leaving my luggage behind at the station."
+    "english_example": "I ended up leaving my luggage behind at the station.",
+    "id": "chapter1_3-0037"
   },
   {
     "japanese": "置き去りにする",
     "hiragana": "おきざりにする",
     "english": "To abandon or leave behind; to go away without taking someone or something along.",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>友達<rt>ともだち</rt></ruby>を<ruby>置<rt>お</rt></ruby>き<ruby>去<rt>ざ</rt></ruby>りにして<ruby>先<rt>さき</rt></ruby>に<ruby>行<rt>い</rt></ruby>った。",
-    "english_example": "He left his friend behind and went ahead."
+    "english_example": "He left his friend behind and went ahead.",
+    "id": "chapter1_3-0038"
   },
   {
     "japanese": "置き去りにされる",
     "hiragana": "おきざりにされる",
     "english": "Passive: to be abandoned or left behind by someone; focuses on the person/object left.",
     "japanese_example": "<ruby>暗<rt>くら</rt></ruby>い<ruby>道<rt>みち</rt></ruby>で<ruby>一人<rt>ひとり</rt></ruby><ruby>置<rt>お</rt></ruby>き<ruby>去<rt>ざ</rt></ruby>りにされた。",
-    "english_example": "I was left behind alone on a dark road."
+    "english_example": "I was left behind alone on a dark road.",
+    "id": "chapter1_3-0039"
   },
   {
     "japanese": "置き去りにされた",
     "hiragana": "おきざりにされた",
     "english": "Past passive: “was abandoned/was left behind”; a completed instance of 置き去りにされる.",
     "japanese_example": "<ruby>戸口<rt>とぐち</rt></ruby>に<ruby>置<rt>お</rt></ruby>き<ruby>去<rt>ざ</rt></ruby>りにされた<ruby>箱<rt>はこ</rt></ruby>があった。",
-    "english_example": "There was a box that had been left behind in the doorway."
+    "english_example": "There was a box that had been left behind in the doorway.",
+    "id": "chapter1_3-0040"
   },
   {
     "japanese": "理由",
     "hiragana": "りゆう",
     "english": "Reason; cause; an explanation for why something happened or is the case.",
     "japanese_example": "<ruby>遅刻<rt>ちこく</rt></ruby>した<ruby>理由<rt>りゆう</rt></ruby>を<ruby>説明<rt>せつめい</rt></ruby>してください。",
-    "english_example": "Please explain the reason you were late."
+    "english_example": "Please explain the reason you were late.",
+    "id": "chapter1_3-0041"
   },
   {
     "japanese": "知る",
     "hiragana": "しる",
     "english": "To know; to learn or find out (often becomes stative as 知っている for “know”).",
     "japanese_example": "<ruby>その</ruby><ruby>事実<rt>じじつ</rt></ruby>を<ruby>知<rt>し</rt></ruby>ったとき、<ruby>驚<rt>おどろ</rt></ruby>いた。",
-    "english_example": "When I learned that fact, I was surprised."
+    "english_example": "When I learned that fact, I was surprised.",
+    "id": "chapter1_3-0042"
   },
   {
     "japanese": "史上",
     "hiragana": "しじょう",
     "english": "In history; of all time; used in phrases like 史上最大 or 史上最強 to compare historically.",
     "japanese_example": "<ruby>それ</ruby>は<ruby>史上<rt>しじょう</rt></ruby><ruby>最大<rt>さいだい</rt></ruby>の<ruby>失敗<rt>しっぱい</rt></ruby>だと<ruby>言<rt>い</rt></ruby>われた。",
-    "english_example": "It was said to be the biggest failure in history."
+    "english_example": "It was said to be the biggest failure in history.",
+    "id": "chapter1_3-0043"
   },
   {
     "japanese": "最強",
     "hiragana": "さいきょう",
     "english": "Strongest; most powerful; often used in comparisons like 史上最強.",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>史上<rt>しじょう</rt></ruby><ruby>最強<rt>さいきょう</rt></ruby>の<ruby>選手<rt>せんしゅ</rt></ruby>だと<ruby>言<rt>い</rt></ruby>われている。",
-    "english_example": "He is said to be the strongest athlete of all time."
+    "english_example": "He is said to be the strongest athlete of all time.",
+    "id": "chapter1_3-0044"
   },
   {
     "japanese": "闇",
     "hiragana": "やみ",
     "english": "Darkness; also used figuratively for secrecy or the underworld.",
     "japanese_example": "<ruby>闇<rt>やみ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で<ruby>足音<rt>あしおと</rt></ruby>だけが<ruby>聞<rt>き</rt></ruby>こえた。",
-    "english_example": "In the darkness, only footsteps could be heard."
+    "english_example": "In the darkness, only footsteps could be heard.",
+    "id": "chapter1_3-0045"
   },
   {
     "japanese": "魔法使い",
     "hiragana": "まほうつかい",
     "english": "Wizard; magician; a person who uses magic (general term).",
     "japanese_example": "<ruby>魔法使<rt>まほうつか</rt></ruby>いが<ruby>杖<rt>つえ</rt></ruby>を<ruby>振<rt>ふ</rt></ruby>って<ruby>光<rt>ひかり</rt></ruby>を<ruby>出<rt>だ</rt></ruby>した。",
-    "english_example": "The wizard waved a wand and produced light."
+    "english_example": "The wizard waved a wand and produced light.",
+    "id": "chapter1_3-0046"
   },
   {
     "japanese": "魔女",
     "hiragana": "まじょ",
     "english": "Witch; a female magic user, and also used in folklore contexts.",
     "japanese_example": "<ruby>森<rt>もり</rt></ruby>に<ruby>住<rt>す</rt></ruby>む<ruby>魔女<rt>まじょ</rt></ruby>の<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いた。",
-    "english_example": "I heard a story about a witch who lives in the forest."
+    "english_example": "I heard a story about a witch who lives in the forest.",
+    "id": "chapter1_3-0047"
   },
   {
     "japanese": "卿",
     "hiragana": "きょう",
     "english": "Title meaning “lord” or “sir”; an honorific used in formal or stylized contexts.",
     "japanese_example": "<ruby>公爵卿<rt>こうしゃくきょう</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かに<ruby>席<rt>せき</rt></ruby>に<ruby>着<rt>つ</rt></ruby>いた。",
-    "english_example": "The duke took his seat quietly."
+    "english_example": "The duke took his seat quietly.",
+    "id": "chapter1_3-0048"
   },
   {
     "japanese": "呪い",
     "hiragana": "のろい",
     "english": "Curse; a spell or malediction that brings misfortune or harm.",
     "japanese_example": "<ruby>古<rt>ふる</rt></ruby>い<ruby>呪<rt>のろ</rt></ruby>いが<ruby>村<rt>むら</rt></ruby>を<ruby>包<rt>つつ</rt></ruby>んでいると<ruby>言<rt>い</rt></ruby>われた。",
-    "english_example": "It was said that an old curse was enveloping the village."
+    "english_example": "It was said that an old curse was enveloping the village.",
+    "id": "chapter1_3-0049"
   },
   {
     "japanese": "破る",
     "hiragana": "やぶる",
     "english": "To break (rules/promise) or to tear (paper); also used as “to defeat” in some contexts.",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>約束<rt>やくそく</rt></ruby>を<ruby>破<rt>やぶ</rt></ruby>ってしまった。",
-    "english_example": "He ended up breaking his promise."
+    "english_example": "He ended up breaking his promise.",
+    "id": "chapter1_3-0050"
   },
   {
     "japanese": "残る",
     "hiragana": "のこる",
     "english": "To remain; to be left over; describes something still existing after others are gone or used up.",
     "japanese_example": "<ruby>会議<rt>かいぎ</rt></ruby>の<ruby>後<rt>あと</rt></ruby>、<ruby>部屋<rt>へや</rt></ruby>に<ruby>私<rt>わたし</rt></ruby>だけが<ruby>残<rt>のこ</rt></ruby>った。",
-    "english_example": "After the meeting, only I remained in the room."
+    "english_example": "After the meeting, only I remained in the room.",
+    "id": "chapter1_3-0051"
   },
   {
     "japanese": "生き残る",
     "hiragana": "いきのこる",
     "english": "To survive; to remain alive (often after danger or disaster), and can also mean “survive” in competition.",
     "japanese_example": "<ruby>事故<rt>じこ</rt></ruby>から<ruby>生<rt>い</rt></ruby>き<ruby>残<rt>のこ</rt></ruby>った<ruby>人<rt>ひと</rt></ruby>は<ruby>少<rt>すく</rt></ruby>なかった。",
-    "english_example": "Few people survived the accident."
+    "english_example": "Few people survived the accident.",
+    "id": "chapter1_3-0052"
   },
   {
     "japanese": "生き延びる",
     "hiragana": "いきのびる",
     "english": "To live through and make it out alive; emphasizes enduring a difficult period or situation.",
     "japanese_example": "<ruby>厳<rt>きび</rt></ruby>しい<ruby>冬<rt>ふゆ</rt></ruby>を<ruby>生<rt>い</rt></ruby>き<ruby>延<rt>の</rt></ruby>びるために<ruby>食料<rt>しょくりょう</rt></ruby>を<ruby>蓄<rt>たくわ</rt></ruby>えた。",
-    "english_example": "To live through the harsh winter, we stored food."
+    "english_example": "To live through the harsh winter, we stored food.",
+    "id": "chapter1_3-0053"
   },
   {
     "japanese": "いまだに",
     "hiragana": "いまだに",
     "english": "Still; even now; indicates a situation has not changed despite time passing.",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>いまだに</ruby><ruby>その</ruby><ruby>名前<rt>なまえ</rt></ruby>を<ruby>覚<rt>おぼ</rt></ruby>えている。",
-    "english_example": "He still remembers that name even now."
+    "english_example": "He still remembers that name even now.",
+    "id": "chapter1_3-0054"
   },
   {
     "japanese": "恐れる",
     "hiragana": "おそれる",
     "english": "To fear; to be afraid of; somewhat formal compared with 怖がる.",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>失敗<rt>しっぱい</rt></ruby>を<ruby>恐<rt>おそ</rt></ruby>れて<ruby>挑戦<rt>ちょうせん</rt></ruby>しなかった。",
-    "english_example": "He feared failure and didn't take on the challenge."
+    "english_example": "He feared failure and didn't take on the challenge.",
+    "id": "chapter1_3-0055"
   },
   {
     "japanese": "襲われる",
     "hiragana": "おそわれる",
     "english": "Passive: to be attacked or assaulted; the subject is the one who suffers the attack.",
     "japanese_example": "<ruby>夜道<rt>よみち</rt></ruby>で<ruby>襲<rt>おそ</rt></ruby>われて、<ruby>財布<rt>さいふ</rt></ruby>を<ruby>取<rt>と</rt></ruby>られた。",
-    "english_example": "I was attacked on a dark street at night and had my wallet taken."
+    "english_example": "I was attacked on a dark street at night and had my wallet taken.",
+    "id": "chapter1_3-0056"
   },
   {
     "japanese": "襲う",
     "hiragana": "おそう",
     "english": "To attack or assault; an active verb describing the aggressor’s action.",
     "japanese_example": "<ruby>突然<rt>とつぜん</rt></ruby><ruby>犬<rt>いぬ</rt></ruby>が<ruby>彼<rt>かれ</rt></ruby>を<ruby>襲<rt>おそ</rt></ruby>った。",
-    "english_example": "Suddenly, a dog attacked him."
+    "english_example": "Suddenly, a dog attacked him.",
+    "id": "chapter1_3-0057"
   }
 ]

@@ -4,216 +4,247 @@
     "hiragana": "おかす",
     "english": "to take on (a risk); to dare (to do). Often collocates with <ruby>危険<rt>きけん</rt></ruby>.",
     "japanese_example": "<ruby>危険<rt>きけん</rt></ruby>を<ruby>冒<rt>おか</rt></ruby>して<ruby>山<rt>やま</rt></ruby>に<ruby>登<rt>のぼ</rt></ruby>った。",
-    "english_example": "I took a risk and climbed the mountain."
+    "english_example": "I took a risk and climbed the mountain.",
+    "id": "chapter1_b-0001"
   },
   {
     "japanese": "冒せない",
     "hiragana": "おかせない",
     "english": "cannot take on (a risk); cannot dare (to). This is the potential + negative of <ruby>冒<rt>おか</rt></ruby>す (not causative; causative would be <ruby>冒<rt>おか</rt></ruby>させる).",
     "japanese_example": "そんな<ruby>危険<rt>きけん</rt></ruby>は<ruby>冒<rt>おか</rt></ruby>せない。",
-    "english_example": "I can’t take that kind of risk."
+    "english_example": "I can’t take that kind of risk.",
+    "id": "chapter1_b-0002"
   },
   {
     "japanese": "卒業",
     "hiragana": "そつぎょう",
     "english": "graduation (from a school). Contrast with <ruby>授業<rt>じゅぎょう</rt></ruby> = 'class/lesson'.",
     "japanese_example": "<ruby>来年<rt>らいねん</rt></ruby><ruby>大学<rt>だいがく</rt></ruby>を<ruby>卒業<rt>そつぎょう</rt></ruby>します。",
-    "english_example": "I will graduate from university next year."
+    "english_example": "I will graduate from university next year.",
+    "id": "chapter1_b-0003"
   },
   {
     "japanese": "授業",
     "hiragana": "じゅぎょう",
     "english": "class; lesson (at school). Contrast with <ruby>卒業<rt>そつぎょう</rt></ruby> = 'graduation'.",
     "japanese_example": "<ruby>今日<rt>きょう</rt></ruby>の<ruby>授業<rt>じゅぎょう</rt></ruby>は<ruby>九時<rt>くじ</rt></ruby>からです。",
-    "english_example": "Today’s class starts at 9."
+    "english_example": "Today’s class starts at 9.",
+    "id": "chapter1_b-0004"
   },
   {
     "japanese": "半人前",
     "hiragana": "はんにんまえ",
     "english": "half-fledged; inexperienced; not yet fully competent. Used about skill/ability.",
     "japanese_example": "まだ<ruby>半人前<rt>はんにんまえ</rt></ruby>だから、もっと<ruby>練習<rt>れんしゅう</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>だ。",
-    "english_example": "You’re still inexperienced, so you need more practice."
+    "english_example": "You’re still inexperienced, so you need more practice.",
+    "id": "chapter1_b-0005"
   },
   {
     "japanese": "半人前魔法使い",
     "hiragana": "はんにんまえまほうつかい",
     "english": "half-baked wizard; an inexperienced wizard. With no の, it’s treated as a compound noun: <ruby>半人前<rt>はんにんまえ</rt></ruby> + <ruby>魔法使<rt>まほうつか</rt></ruby>い.",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>半人前魔法使<rt>はんにんまえまほうつか</rt></ruby>いだが、<ruby>根性<rt>こんじょう</rt></ruby>はある。",
-    "english_example": "He’s a half-baked wizard, but he has guts."
+    "english_example": "He’s a half-baked wizard, but he has guts.",
+    "id": "chapter1_b-0006"
   },
   {
     "japanese": "許されてはいない",
     "hiragana": "ゆるされてはいない",
     "english": "is not allowed; is not permitted. Pattern: Vては + いない (prohibition/denial). The は adds contrast/emphasis.",
     "japanese_example": "ここで<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>っては<ruby>許<rt>ゆる</rt></ruby>されてはいない。",
-    "english_example": "Taking photos here is not permitted."
+    "english_example": "Taking photos here is not permitted.",
+    "id": "chapter1_b-0007"
   },
   {
     "japanese": "フンコロガシ",
     "hiragana": "ふんころがし",
     "english": "dung beetle. (Common name; literally something like 'poop-roller'.)",
     "japanese_example": "<ruby>動物園<rt>どうぶつえん</rt></ruby>でフンコロガシを<ruby>見<rt>み</rt></ruby>た。",
-    "english_example": "I saw a dung beetle at the zoo."
+    "english_example": "I saw a dung beetle at the zoo.",
+    "id": "chapter1_b-0008"
   },
   {
     "japanese": "〜に変えられている",
     "hiragana": "にかえられている",
     "english": "is being changed into ~; has been changed into ~. Passive of <ruby>変<rt>か</rt></ruby>える: 変える → 変えられる; 〜ている shows ongoing state/result.",
     "japanese_example": "<ruby>水<rt>みず</rt></ruby>が<ruby>氷<rt>こおり</rt></ruby>に<ruby>変<rt>か</rt></ruby>えられている。",
-    "english_example": "The water has been changed into ice."
+    "english_example": "The water has been changed into ice.",
+    "id": "chapter1_b-0009"
   },
   {
     "japanese": "大変",
     "hiragana": "たいへん",
     "english": "tough; difficult; serious. Also used as an adverb meaning 'very' (context decides).",
     "japanese_example": "この<ruby>仕事<rt>しごと</rt></ruby>は<ruby>大変<rt>たいへん</rt></ruby>だ。",
-    "english_example": "This job is tough."
+    "english_example": "This job is tough.",
+    "id": "chapter1_b-0010"
   },
   {
     "japanese": "〜を怖がって",
     "hiragana": "をこわがって",
     "english": "to be afraid of ~ (showing fear). <ruby>怖<rt>こわ</rt></ruby>がる often describes observable fear (especially of others/animals/children).",
     "japanese_example": "<ruby>子<rt>こ</rt></ruby>どもが<ruby>犬<rt>いぬ</rt></ruby>を<ruby>怖<rt>こわ</rt></ruby>がっている。",
-    "english_example": "The child is afraid of dogs."
+    "english_example": "The child is afraid of dogs.",
+    "id": "chapter1_b-0011"
   },
   {
     "japanese": "だからこそ",
     "hiragana": "だからこそ",
     "english": "precisely because of that; that’s exactly why. Stronger/more emphatic than だから.",
     "japanese_example": "<ruby>難<rt>むずか</rt></ruby>しい。だからこそ、やる<ruby>価値<rt>かち</rt></ruby>がある。",
-    "english_example": "It’s difficult. That’s exactly why it’s worth doing."
+    "english_example": "It’s difficult. That’s exactly why it’s worth doing.",
+    "id": "chapter1_b-0012"
   },
   {
     "japanese": "一緒に",
     "hiragana": "いっしょに",
     "english": "together; jointly.",
     "japanese_example": "<ruby>明日<rt>あした</rt></ruby><ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>行<rt>い</rt></ruby>こう。",
-    "english_example": "Let’s go together tomorrow."
+    "english_example": "Let’s go together tomorrow.",
+    "id": "chapter1_b-0013"
   },
   {
     "japanese": "〜ようとする",
     "hiragana": "ようとする",
     "english": "to try to do ~; to be about to do ~. Intention/attempt right before the action.",
     "japanese_example": "ドアを<ruby>開<rt>あ</rt></ruby>けようとした。",
-    "english_example": "I tried to open the door."
+    "english_example": "I tried to open the door.",
+    "id": "chapter1_b-0014"
   },
   {
     "japanese": "〜ようとしなかった",
     "hiragana": "ようとしなかった",
     "english": "did not try to ~; had no intention of ~. Negative of 〜ようとする (no attempt / refusal / lack of intent).",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>謝<rt>あやま</rt></ruby>ろうとしなかった。",
-    "english_example": "He didn’t even try to apologize."
+    "english_example": "He didn’t even try to apologize.",
+    "id": "chapter1_b-0015"
   },
   {
     "japanese": "数週間",
     "hiragana": "すうしゅうかん",
     "english": "several weeks; a few weeks. <ruby>数<rt>すう</rt></ruby> here means 'several' (not an exact count).",
     "japanese_example": "<ruby>数週間<rt>すうしゅうかん</rt></ruby>で<ruby>結果<rt>けっか</rt></ruby>が<ruby>出<rt>で</rt></ruby>ます。",
-    "english_example": "You’ll get results in a few weeks."
+    "english_example": "You’ll get results in a few weeks.",
+    "id": "chapter1_b-0016"
   },
   {
     "japanese": "低い",
     "hiragana": "ひくい",
     "english": "low; short; (of voice) deep/low. Common: <ruby>低<rt>ひく</rt></ruby>い<ruby>声<rt>こえ</rt></ruby>.",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>低<rt>ひく</rt></ruby>い<ruby>声<rt>こえ</rt></ruby>で<ruby>話<rt>はな</rt></ruby>した。",
-    "english_example": "He spoke in a low voice."
+    "english_example": "He spoke in a low voice.",
+    "id": "chapter1_b-0017"
   },
   {
     "japanese": "出まかせ",
     "hiragana": "でまかせ",
     "english": "fabrication; made-up story; something said without basis. Often with <ruby>言<rt>い</rt></ruby>う.",
     "japanese_example": "それは<ruby>出<rt>で</rt></ruby>まかせだよ。",
-    "english_example": "That’s completely made up."
+    "english_example": "That’s completely made up.",
+    "id": "chapter1_b-0018"
   },
   {
     "japanese": "でっぷり",
     "hiragana": "でっぷり",
     "english": "plump; stout; portly (often about body shape). Nuance: noticeably chubby/heavyset.",
     "japanese_example": "でっぷりした<ruby>猫<rt>ねこ</rt></ruby>が<ruby>寝<rt>ね</rt></ruby>ている。",
-    "english_example": "A plump cat is sleeping."
+    "english_example": "A plump cat is sleeping.",
+    "id": "chapter1_b-0019"
   },
   {
     "japanese": "働かせる限り速く働かした",
     "hiragana": "はたらかせるかぎりはやくはたらかした",
     "english": "made (someone/something) work as fast as possible; pushed to the limit. <ruby>限<rt>かぎ</rt></ruby>り = 'as much as possible / to the limit'; <ruby>働<rt>はたら</rt></ruby>かせる is causative.",
     "japanese_example": "<ruby>馬<rt>うま</rt></ruby>を<ruby>働<rt>はたら</rt></ruby>かせる<ruby>限<rt>かぎ</rt></ruby>り<ruby>速<rt>はや</rt></ruby>く<ruby>走<rt>はし</rt></ruby>らせた。",
-    "english_example": "I made the horse run as fast as it possibly could."
+    "english_example": "I made the horse run as fast as it possibly could.",
+    "id": "chapter1_b-0020"
   },
   {
     "japanese": "逃げ出す",
     "hiragana": "にげだす",
     "english": "to run away; to bolt; to break into flight. Often implies sudden escape.",
     "japanese_example": "こわくて<ruby>家<rt>いえ</rt></ruby>から<ruby>逃<rt>に</rt></ruby>げ<ruby>出<rt>だ</rt></ruby>した。",
-    "english_example": "I got scared and ran out of the house."
+    "english_example": "I got scared and ran out of the house.",
+    "id": "chapter1_b-0021"
   },
   {
     "japanese": "楽しむ",
     "hiragana": "たのしむ",
     "english": "to enjoy; to take pleasure in.",
     "japanese_example": "<ruby>旅行<rt>りょこう</rt></ruby>を<ruby>楽<rt>たの</rt></ruby>しんだ。",
-    "english_example": "I enjoyed the trip."
+    "english_example": "I enjoyed the trip.",
+    "id": "chapter1_b-0022"
   },
   {
     "japanese": "連絡",
     "hiragana": "れんらく",
     "english": "contact; communication (with someone). Often: <ruby>連絡<rt>れんらく</rt></ruby>する = to contact.",
     "japanese_example": "あとで<ruby>連絡<rt>れんらく</rt></ruby>します。",
-    "english_example": "I’ll contact you later."
+    "english_example": "I’ll contact you later.",
+    "id": "chapter1_b-0023"
   },
   {
     "japanese": "切る",
     "hiragana": "きる",
     "english": "to cut; to sever. Also used metaphorically (e.g., to hang up: <ruby>電話<rt>でんわ</rt></ruby>を<ruby>切<rt>き</rt></ruby>る).",
     "japanese_example": "<ruby>電話<rt>でんわ</rt></ruby>を<ruby>切<rt>き</rt></ruby>ってもいい？",
-    "english_example": "Can I hang up?"
+    "english_example": "Can I hang up?",
+    "id": "chapter1_b-0024"
   },
   {
     "japanese": "離す",
     "hiragana": "はなす",
     "english": "to separate; to detach; to let go (physically). Not the 'to speak' <ruby>話<rt>はな</rt></ruby>す.",
     "japanese_example": "<ruby>手<rt>て</rt></ruby>を<ruby>離<rt>はな</rt></ruby>さないで。",
-    "english_example": "Don’t let go of my hand."
+    "english_example": "Don’t let go of my hand.",
+    "id": "chapter1_b-0025"
   },
   {
     "japanese": "切り離された",
     "hiragana": "きりはなされた",
     "english": "was disconnected; was cut off; was separated. Passive of <ruby>切<rt>き</rt></ruby>り<ruby>離<rt>はな</rt></ruby>す.",
     "japanese_example": "<ruby>島<rt>しま</rt></ruby>は<ruby>本土<rt>ほんど</rt></ruby>から<ruby>切<rt>き</rt></ruby>り<ruby>離<rt>はな</rt></ruby>された。",
-    "english_example": "The island was cut off from the mainland."
+    "english_example": "The island was cut off from the mainland.",
+    "id": "chapter1_b-0026"
   },
   {
     "japanese": "からかう",
     "hiragana": "からかう",
     "english": "to tease; to make fun of (lightly or annoyingly, depending on context).",
     "japanese_example": "<ruby>人<rt>ひと</rt></ruby>をからかうのはやめて。",
-    "english_example": "Stop teasing people."
+    "english_example": "Stop teasing people.",
+    "id": "chapter1_b-0027"
   },
   {
     "japanese": "どうでもいい",
     "hiragana": "どうでもいい",
     "english": "I don’t care; it doesn’t matter; whatever. Expresses indifference. (どうでもよい is more formal; meaning is essentially the same.)",
     "japanese_example": "どっちでもいいよ。どうでもいい。",
-    "english_example": "Either is fine. I don’t care."
+    "english_example": "Either is fine. I don’t care.",
+    "id": "chapter1_b-0028"
   },
   {
     "japanese": "どうでもよくなった",
     "hiragana": "どうでもよくなった",
     "english": "came to not care anymore; became indifferent. 〜くなる = 'to become (state)'.",
     "japanese_example": "<ruby>最近<rt>さいきん</rt></ruby>は<ruby>勝<rt>か</rt></ruby>ち<ruby>負<rt>ま</rt></ruby>けがどうでもよくなった。",
-    "english_example": "Lately, I’ve stopped caring about winning or losing."
+    "english_example": "Lately, I’ve stopped caring about winning or losing.",
+    "id": "chapter1_b-0029"
   },
   {
     "japanese": "動詞語幹＋さえ",
     "hiragana": "どうしごかん＋さえ",
     "english": "even just (do) ~; if only ~ (minimum condition). Pattern: verb stem + さえ. Meaning: 'even just X is enough / even X (unexpectedly minimal)'.",
     "japanese_example": "<ruby>君<rt>きみ</rt></ruby>が<ruby>来<rt>き</rt></ruby>さえすれば、うれしい。",
-    "english_example": "If you would just come, I’d be happy."
+    "english_example": "If you would just come, I’d be happy.",
+    "id": "chapter1_b-0030"
   },
   {
     "japanese": "宿敵",
     "hiragana": "しゅくてき",
     "english": "rival; nemesis; arch-enemy (often long-standing, fate-like rivalry).",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>宿敵<rt>しゅくてき</rt></ruby>と<ruby>再戦<rt>さいせん</rt></ruby>した。",
-    "english_example": "He fought his nemesis again."
+    "english_example": "He fought his nemesis again.",
+    "id": "chapter1_b-0031"
   }
 ]

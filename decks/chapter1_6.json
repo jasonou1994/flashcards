@@ -4,356 +4,407 @@
     "hiragana": "てじゅん",
     "english": "Procedure; sequence of steps. Commonly used as 手順を確認する “check the steps.”",
     "japanese_example": "<ruby>手順<rt>てじゅん</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>してから<ruby>作業<rt>さぎょう</rt></ruby>を<ruby>始<rt>はじ</rt></ruby>めよう。",
-    "english_example": "Let’s check the steps before starting the work."
+    "english_example": "Let’s check the steps before starting the work.",
+    "id": "chapter1_6-0001"
   },
   {
     "japanese": "復習する",
     "hiragana": "ふくしゅうする",
     "english": "To review (study). Noun form: 復習; commonly 授業を復習する “review the lesson.”",
     "japanese_example": "<ruby>授業<rt>じゅぎょう</rt></ruby>を<ruby>復習<rt>ふくしゅう</rt></ruby>した。",
-    "english_example": "I reviewed the lesson."
+    "english_example": "I reviewed the lesson.",
+    "id": "chapter1_6-0002"
   },
   {
     "japanese": "全員",
     "hiragana": "ぜんいん",
     "english": "Everyone; all members (of a group). Often paired with 集合 for commands.",
     "japanese_example": "<ruby>全員<rt>ぜんいん</rt></ruby><ruby>集合<rt>しゅうごう</rt></ruby>！",
-    "english_example": "Everyone, assemble!"
+    "english_example": "Everyone, assemble!",
+    "id": "chapter1_6-0003"
   },
   {
     "japanese": "位置",
     "hiragana": "いち",
     "english": "Position; location (often a fixed point or assigned spot).",
     "japanese_example": "<ruby>自分<rt>じぶん</rt></ruby>の<ruby>位置<rt>いち</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>してください。",
-    "english_example": "Please check your position."
+    "english_example": "Please check your position.",
+    "id": "chapter1_6-0004"
   },
   {
     "japanese": "〜に就く",
     "hiragana": "につく",
     "english": "To take up/assume (a post or position), as in 位置に就く “take your positions.” Commonly used for roles and duties.",
     "japanese_example": "<ruby>全員<rt>ぜんいん</rt></ruby>、<ruby>位置<rt>いち</rt></ruby>に<ruby>就<rt>つ</rt></ruby>け。",
-    "english_example": "Everyone, take your positions."
+    "english_example": "Everyone, take your positions.",
+    "id": "chapter1_6-0005"
   },
   {
     "japanese": "全員位置につく",
     "hiragana": "ぜんいんいちにつく",
     "english": "Command-like expression meaning “All hands to their positions,” literally “everyone takes their position.”",
     "japanese_example": "<ruby>全員<rt>ぜんいん</rt></ruby><ruby>位置<rt>いち</rt></ruby>に<ruby>就<rt>つ</rt></ruby>け。",
-    "english_example": "All hands to their positions."
+    "english_example": "All hands to their positions.",
+    "id": "chapter1_6-0006"
   },
   {
     "japanese": "応接間",
     "hiragana": "おうせつま",
     "english": "Drawing room; sitting room for receiving guests (similar term: 応接室).",
     "japanese_example": "<ruby>応接間<rt>おうせつま</rt></ruby>で<ruby>客<rt>きゃく</rt></ruby>を<ruby>待<rt>ま</rt></ruby>つ。",
-    "english_example": "I wait for the guest in the drawing room."
+    "english_example": "I wait for the guest in the drawing room.",
+    "id": "chapter1_6-0007"
   },
   {
     "japanese": "即座に",
     "hiragana": "そくざに",
     "english": "Immediately; on the spot, without delay.",
     "japanese_example": "<ruby>即座<rt>そくざ</rt></ruby>に<ruby>返事<rt>へんじ</rt></ruby>した。",
-    "english_example": "I replied immediately."
+    "english_example": "I replied immediately.",
+    "id": "chapter1_6-0008"
   },
   {
     "japanese": "丁寧に",
     "hiragana": "ていねいに",
     "english": "Politely; carefully (adverb of 丁寧).",
     "japanese_example": "<ruby>丁寧<rt>ていねい</rt></ruby>に<ruby>謝<rt>あやま</rt></ruby>った。",
-    "english_example": "I apologized politely."
+    "english_example": "I apologized politely.",
+    "id": "chapter1_6-0009"
   },
   {
     "japanese": "お迎え",
     "hiragana": "おむかえ",
     "english": "Honorific noun for welcoming/receiving someone (especially guests). Often used in expressions like お迎えの準備.",
     "japanese_example": "<ruby>お迎<rt>むか</rt></ruby>えの<ruby>準備<rt>じゅんび</rt></ruby>をしている。",
-    "english_example": "We’re preparing to welcome them."
+    "english_example": "We’re preparing to welcome them.",
+    "id": "chapter1_6-0010"
   },
   {
     "japanese": "待機する",
     "hiragana": "たいきする",
     "english": "To stand by; to remain on standby, ready to act.",
     "japanese_example": "ロビーで<ruby>待機<rt>たいき</rt></ruby>しています。",
-    "english_example": "I’m standing by in the lobby."
+    "english_example": "I’m standing by in the lobby.",
+    "id": "chapter1_6-0011"
   },
   {
     "japanese": "玄関",
     "hiragana": "げんかん",
     "english": "Entryway/foyer of a house or building, where shoes are taken off.",
     "japanese_example": "<ruby>玄関<rt>げんかん</rt></ruby>で<ruby>靴<rt>くつ</rt></ruby>を<ruby>脱<rt>ぬ</rt></ruby>ぐ。",
-    "english_example": "I take off my shoes at the entryway."
+    "english_example": "I take off my shoes at the entryway.",
+    "id": "chapter1_6-0012"
   },
   {
     "japanese": "玄関のドアを開けるために待っているんだ",
     "hiragana": "げんかんのどあをあけるためにまっているんだ",
     "english": "Means “I’m waiting in order to open the front door,” using ために for purpose and 〜ている for an ongoing state.",
     "japanese_example": "<ruby>玄関<rt>げんかん</rt></ruby>のドアを<ruby>開<rt>あ</rt></ruby>けるために<ruby>待<rt>ま</rt></ruby>っているんだ。",
-    "english_example": "I’m waiting so I can open the front door."
+    "english_example": "I’m waiting so I can open the front door.",
+    "id": "chapter1_6-0013"
   },
   {
     "japanese": "バカみたいな",
     "hiragana": "ばかみたいな",
     "english": "“Like an idiot; ridiculously,” used before nouns to criticize something as silly or stupid.",
     "japanese_example": "バカみたいな<ruby>顔<rt>かお</rt></ruby>をしている。",
-    "english_example": "You’ve got a ridiculous look on your face."
+    "english_example": "You’ve got a ridiculous look on your face.",
+    "id": "chapter1_6-0014"
   },
   {
     "japanese": "浮かべる",
     "hiragana": "うかべる",
     "english": "To float; also to show/wear an expression (e.g., 笑みを浮かべる).",
     "japanese_example": "<ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>笑<rt>え</rt></ruby>みを<ruby>浮<rt>う</rt></ruby>かべた。",
-    "english_example": "She wore a smile."
+    "english_example": "She wore a smile.",
+    "id": "chapter1_6-0015"
   },
   {
     "japanese": "台詞",
     "hiragana": "せりふ",
     "english": "A line in a play/script; also a remark (often a set phrase someone says).",
     "japanese_example": "<ruby>台詞<rt>せりふ</rt></ruby>を<ruby>覚<rt>おぼ</rt></ruby>える。",
-    "english_example": "I memorize my lines."
+    "english_example": "I memorize my lines.",
+    "id": "chapter1_6-0016"
   },
   {
     "japanese": "奥様",
     "hiragana": "おくさま",
     "english": "Madam; (your) wife (honorific), used respectfully when addressing or referring to someone’s wife.",
     "japanese_example": "<ruby>奥様<rt>おくさま</rt></ruby>が<ruby>到着<rt>とうちゃく</rt></ruby>なさいました。",
-    "english_example": "Madam has arrived."
+    "english_example": "Madam has arrived.",
+    "id": "chapter1_6-0017"
   },
   {
     "japanese": "お預かり",
     "hiragana": "おあずかり",
     "english": "Polite term meaning “receiving (something) for safekeeping.” Often used in service speech: お荷物をお預かりします.",
     "japanese_example": "<ruby>お荷物<rt>にもつ</rt></ruby>を<ruby>お預<rt>あず</rt></ruby>かりします。",
-    "english_example": "I’ll take your baggage."
+    "english_example": "I’ll take your baggage.",
+    "id": "chapter1_6-0018"
   },
   {
     "japanese": "いたしましょうか？",
     "hiragana": "いたしましょうか",
     "english": "Humble offer meaning “Shall I do it?” Using いたす (humble of する) + ましょうか to offer politely.",
     "japanese_example": "<ruby>お手伝<rt>てつだ</rt></ruby>い<ruby>致<rt>いた</rt></ruby>しましょうか。",
-    "english_example": "Shall I help you?"
+    "english_example": "Shall I help you?",
+    "id": "chapter1_6-0019"
   },
   {
     "japanese": "コートをお預かりいたしましょうか？",
     "hiragana": "こーとをおあずかりいたしましょうか",
     "english": "Very polite “May I take your coat?” using お預かり (polite) + いたす (humble) + ましょうか (offer).",
     "japanese_example": "コートを<ruby>お預<rt>あず</rt></ruby>かり<ruby>致<rt>いた</rt></ruby>しましょうか。",
-    "english_example": "May I take your coat?"
+    "english_example": "May I take your coat?",
+    "id": "chapter1_6-0020"
   },
   {
     "japanese": "夢中になる",
     "hiragana": "むちゅうになる",
     "english": "To become absorbed in; to be captivated by (often with に).",
     "japanese_example": "<ruby>本<rt>ほん</rt></ruby>に<ruby>夢中<rt>むちゅう</rt></ruby>になった。",
-    "english_example": "I got absorbed in a book."
+    "english_example": "I got absorbed in a book.",
+    "id": "chapter1_6-0021"
   },
   {
     "japanese": "狂喜する",
     "hiragana": "きょうきする",
     "english": "To be ecstatic; to rejoice wildly. Note the contrast with 狂気（きょうき） “madness.”",
     "japanese_example": "<ruby>合格<rt>ごうかく</rt></ruby>に<ruby>狂喜<rt>きょうき</rt></ruby>した。",
-    "english_example": "I was ecstatic about passing."
+    "english_example": "I was ecstatic about passing.",
+    "id": "chapter1_6-0022"
   },
   {
     "japanese": "叫んだ",
     "hiragana": "さけんだ",
     "english": "Shouted; cried out (past of 叫ぶ), often used with quoted speech.",
     "japanese_example": "「<ruby>助<rt>たす</rt></ruby>けて！」と<ruby>叫<rt>さけ</rt></ruby>んだ。",
-    "english_example": "I shouted, “Help!”"
+    "english_example": "I shouted, “Help!”",
+    "id": "chapter1_6-0023"
   },
   {
     "japanese": "上出来だ",
     "hiragana": "じょうできだ",
     "english": "Well done; turned out great (often evaluating a result or performance).",
     "japanese_example": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>上出来<rt>じょうでき</rt></ruby>だ。",
-    "english_example": "You did great today."
+    "english_example": "You did great today.",
+    "id": "chapter1_6-0024"
   },
   {
     "japanese": "突然",
     "hiragana": "とつぜん",
     "english": "Suddenly; abruptly (adverb/noun). Often used as 突然〜する／突然のN.",
     "japanese_example": "<ruby>突然<rt>とつぜん</rt></ruby><ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>り<ruby>出<rt>だ</rt></ruby>した。",
-    "english_example": "It suddenly started to rain."
+    "english_example": "It suddenly started to rain.",
+    "id": "chapter1_6-0025"
   },
   {
     "japanese": "荒々しく",
     "hiragana": "あらあらしく",
     "english": "Wildly; roughly; in a violent or harsh manner (adverb of 荒々しい).",
     "japanese_example": "<ruby>荒々<rt>あらあら</rt></ruby>しく<ruby>押<rt>お</rt></ruby>し<ruby>入<rt>い</rt></ruby>った。",
-    "english_example": "He forced his way in roughly."
+    "english_example": "He forced his way in roughly.",
+    "id": "chapter1_6-0026"
   },
   {
     "japanese": "向き直った",
     "hiragana": "むきなおった",
     "english": "Turned back and faced (past of 向き直る), implying turning toward someone/something again to confront or address them.",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>に<ruby>向<rt>む</rt></ruby>き<ruby>直<rt>なお</rt></ruby>った。",
-    "english_example": "He turned back to face me."
+    "english_example": "He turned back to face me.",
+    "id": "chapter1_6-0027"
   },
   {
     "japanese": "それで",
     "hiragana": "それで",
     "english": "So; and then; used to connect a reason to a result or to move the conversation forward to the next point.",
     "japanese_example": "それで、<ruby>次<rt>つぎ</rt></ruby>はどうする？",
-    "english_example": "So, what do we do next?"
+    "english_example": "So, what do we do next?",
+    "id": "chapter1_6-0028"
   },
   {
     "japanese": "物音",
     "hiragana": "ものおと",
     "english": "A noise/sound made by movement or objects (often a suspicious or noticeable sound).",
     "japanese_example": "<ruby>階段<rt>かいだん</rt></ruby>で<ruby>物音<rt>ものおと</rt></ruby>がした。",
-    "english_example": "I heard a noise on the stairs."
+    "english_example": "I heard a noise on the stairs.",
+    "id": "chapter1_6-0029"
   },
   {
     "japanese": "立てる（音を〜）",
     "hiragana": "たてる",
     "english": "To make/raise (a sound), as in 音を立てる “make a noise.” Used for causing a noticeable sound.",
     "japanese_example": "<ruby>音<rt>おと</rt></ruby>を<ruby>立<rt>た</rt></ruby>てないで。",
-    "english_example": "Don’t make any noise."
+    "english_example": "Don’t make any noise.",
+    "id": "chapter1_6-0030"
   },
   {
     "japanese": "いないふりをする",
     "hiragana": "いないふりをする",
     "english": "To pretend not to be there; to act as if one is absent.",
     "japanese_example": "<ruby>先生<rt>せんせい</rt></ruby>が<ruby>来<rt>き</rt></ruby>ても、いないふりをする。",
-    "english_example": "Even if the teacher comes, I pretend I’m not there."
+    "english_example": "Even if the teacher comes, I pretend I’m not there.",
+    "id": "chapter1_6-0031"
   },
   {
     "japanese": "一本調子で",
     "hiragana": "いっぽんちょうしで",
     "english": "Monotonously; in a single tone, lacking variation (often describing speech).",
     "japanese_example": "<ruby>一本調子<rt>いっぽんちょうし</rt></ruby>で<ruby>話<rt>はな</rt></ruby>した。",
-    "english_example": "He spoke in a monotone."
+    "english_example": "He spoke in a monotone.",
+    "id": "chapter1_6-0032"
   },
   {
     "japanese": "その通りだ",
     "hiragana": "そのとおりだ",
     "english": "That’s right; exactly; “just as stated.” Often used to agree strongly.",
     "japanese_example": "その<ruby>通<rt>とお</rt></ruby>りだ。",
-    "english_example": "That’s exactly right."
+    "english_example": "That’s exactly right.",
+    "id": "chapter1_6-0033"
   },
   {
     "japanese": "嫌味",
     "hiragana": "いやみ",
     "english": "Sarcasm; a snide remark. Commonly 嫌味を言う.",
     "japanese_example": "<ruby>嫌味<rt>いやみ</rt></ruby>を<ruby>言<rt>い</rt></ruby>うのはやめて。",
-    "english_example": "Stop making snide remarks."
+    "english_example": "Stop making snide remarks.",
+    "id": "chapter1_6-0034"
   },
   {
     "japanese": "嫌味ったらしい",
     "hiragana": "いやみったらしい",
     "english": "Snide; dripping with sarcasm (pejorative -ったらしい), often describing tone or wording.",
     "japanese_example": "<ruby>嫌味<rt>いやみ</rt></ruby>ったらしい<ruby>言<rt>い</rt></ruby>い<ruby>方<rt>かた</rt></ruby>だ。",
-    "english_example": "That’s a really snide way of speaking."
+    "english_example": "That’s a really snide way of speaking.",
+    "id": "chapter1_6-0035"
   },
   {
     "japanese": "大人らしい",
     "hiragana": "おとならしい",
     "english": "Adult-like; mature; acting one’s age (generally positive). Often used as 大人らしい振る舞い.",
     "japanese_example": "<ruby>大人<rt>おとな</rt></ruby>らしい<ruby>振<rt>ふ</rt></ruby>る<ruby>舞<rt>ま</rt></ruby>いをしよう。",
-    "english_example": "Let’s act like adults."
+    "english_example": "Let’s act like adults.",
+    "id": "chapter1_6-0036"
   },
   {
     "japanese": "子供らしい",
     "hiragana": "こどもらしい",
     "english": "Childlike in a positive, fitting way (e.g., innocence). Contrast: 子供っぽい can sound immature.",
     "japanese_example": "<ruby>子供<rt>こども</rt></ruby>らしい<ruby>笑顔<rt>えがお</rt></ruby>だ。",
-    "english_example": "That’s a childlike smile."
+    "english_example": "That’s a childlike smile.",
+    "id": "chapter1_6-0037"
   },
   {
     "japanese": "案内する",
     "hiragana": "あんないする",
     "english": "To guide; to show (someone) to a place; to show around. Polite/humble: ご案内いたします.",
     "japanese_example": "<ruby>会場<rt>かいじょう</rt></ruby>へ<ruby>案内<rt>あんない</rt></ruby>します。",
-    "english_example": "I’ll guide you to the venue."
+    "english_example": "I’ll guide you to the venue.",
+    "id": "chapter1_6-0038"
   },
   {
     "japanese": "紹介する",
     "hiragana": "しょうかいする",
     "english": "To introduce (a person, item, or information). Commonly: 人を紹介する.",
     "japanese_example": "<ruby>友人<rt>ゆうじん</rt></ruby>を<ruby>紹介<rt>しょうかい</rt></ruby>します。",
-    "english_example": "Let me introduce my friend."
+    "english_example": "Let me introduce my friend.",
+    "id": "chapter1_6-0039"
   },
   {
     "japanese": "客人",
     "hiragana": "きゃくじん",
     "english": "Guest (formal). Often used for visitors; contrast with お客様, which is polite for customers/clients.",
     "japanese_example": "<ruby>客人<rt>きゃくじん</rt></ruby>を<ruby>迎<rt>むか</rt></ruby>えた。",
-    "english_example": "We welcomed a guest."
+    "english_example": "We welcomed a guest.",
+    "id": "chapter1_6-0040"
   },
   {
     "japanese": "注ぐ",
     "hiragana": "そそぐ",
     "english": "To pour. For drinks, 注ぐ is often read つぐ (e.g., 酒を注ぐ／注ぐ), but both readings exist depending on context.",
     "japanese_example": "<ruby>酒<rt>さけ</rt></ruby>を<ruby>注<rt>つ</rt></ruby>いだ。",
-    "english_example": "I poured some sake."
+    "english_example": "I poured some sake.",
+    "id": "chapter1_6-0041"
   },
   {
     "japanese": "お注ぎ",
     "hiragana": "おつぎ",
     "english": "Polite term for pouring a drink (from 注ぐ read as つぐ), used when offering service.",
     "japanese_example": "<ruby>お注<rt>つ</rt></ruby>ぎしましょうか。",
-    "english_example": "May I pour you a drink?"
+    "english_example": "May I pour you a drink?",
+    "id": "chapter1_6-0042"
   },
   {
     "japanese": "食堂",
     "hiragana": "しょくどう",
     "english": "Dining room; cafeteria. Used for a school/company cafeteria or a dining hall.",
     "japanese_example": "<ruby>食堂<rt>しょくどう</rt></ruby>で<ruby>昼食<rt>ちゅうしょく</rt></ruby>を<ruby>食<rt>た</rt></ruby>べた。",
-    "english_example": "I ate lunch in the cafeteria."
+    "english_example": "I ate lunch in the cafeteria.",
+    "id": "chapter1_6-0043"
   },
   {
     "japanese": "案内させていただく",
     "hiragana": "あんないさせていただく",
     "english": "Very polite humble expression meaning “allow me to guide (you),” using 〜させていただく to ask/acknowledge permission humbly.",
     "japanese_example": "<ruby>私<rt>わたし</rt></ruby>がご<ruby>案内<rt>あんない</rt></ruby>させていただきます。",
-    "english_example": "Allow me to guide you."
+    "english_example": "Allow me to guide you.",
+    "id": "chapter1_6-0044"
   },
   {
     "japanese": "奥様、食堂へご案内させていただけますか？",
     "hiragana": "おくさましょくどうへごあんないさせていただけますか",
     "english": "Very polite/humble: “Madam, may I guide you to the dining room?” Uses ご案内させていただく + いただけますか to ask permission.",
     "japanese_example": "<ruby>奥様<rt>おくさま</rt></ruby>、<ruby>食堂<rt>しょくどう</rt></ruby>へご<ruby>案内<rt>あんない</rt></ruby>させていただけますか。",
-    "english_example": "Madam, may I guide you to the dining room?"
+    "english_example": "Madam, may I guide you to the dining room?",
+    "id": "chapter1_6-0045"
   },
   {
     "japanese": "ぶくっと",
     "hiragana": "ぶくっと",
     "english": "Onomatopoeia suggesting being puffed up/chubby, often describing a plump look or getting chubby (ぶくっと太る).",
     "japanese_example": "<ruby>冬<rt>ふゆ</rt></ruby>にぶくっと<ruby>太<rt>ふと</rt></ruby>った。",
-    "english_example": "I got chubby in the winter."
+    "english_example": "I got chubby in the winter.",
+    "id": "chapter1_6-0046"
   },
   {
     "japanese": "太った",
     "hiragana": "ふとった",
     "english": "Got fat; became chubby (past of 太る). Also used attributively: 太った腕 “a chubby arm.”",
     "japanese_example": "<ruby>太<rt>ふと</rt></ruby>った<ruby>腕<rt>うで</rt></ruby>が<ruby>目立<rt>めだ</rt></ruby>った。",
-    "english_example": "His chubby arms stood out."
+    "english_example": "His chubby arms stood out.",
+    "id": "chapter1_6-0047"
   },
   {
     "japanese": "仕種（＝仕草）",
     "hiragana": "しぐさ",
     "english": "Gesture; mannerism. The common spelling is 仕草, but 仕種 may appear in texts with the same reading しぐさ.",
     "japanese_example": "<ruby>上品<rt>じょうひん</rt></ruby>な<ruby>仕草<rt>しぐさ</rt></ruby>が<ruby>印象的<rt>いんしょうてき</rt></ruby>だった。",
-    "english_example": "Her refined gestures were impressive."
+    "english_example": "Her refined gestures were impressive.",
+    "id": "chapter1_6-0048"
   },
   {
     "japanese": "差し出す",
     "hiragana": "さしだす",
     "english": "To hold out; to extend; to present (e.g., an arm, a hand, a business card).",
     "japanese_example": "<ruby>名刺<rt>めいし</rt></ruby>を<ruby>差<rt>さ</rt></ruby>し<ruby>出<rt>だ</rt></ruby>した。",
-    "english_example": "I held out my business card."
+    "english_example": "I held out my business card.",
+    "id": "chapter1_6-0049"
   },
   {
     "japanese": "差し出す仕種",
     "hiragana": "さしだすしぐさ",
     "english": "A gesture of holding out or extending something (hand/arm, etc.). Often appears as 〜を差し出す仕種をする.",
     "japanese_example": "<ruby>腕<rt>うで</rt></ruby>を<ruby>差<rt>さ</rt></ruby>し<ruby>出<rt>だ</rt></ruby>す<ruby>仕草<rt>しぐさ</rt></ruby>をした。",
-    "english_example": "He made a gesture of holding out his arm."
+    "english_example": "He made a gesture of holding out his arm.",
+    "id": "chapter1_6-0050"
   },
   {
     "japanese": "ダドリーはぶくっと太った腕を女性に差し出す仕種をした",
     "hiragana": "だどりーはぶくっとふとったうでをじょせいにさしだすすしぐさをした",
     "english": "Means “Dudley made a gesture of holding out his plump arm to the woman,” using 〜を〜に差し出す仕草をする to describe an offering gesture.",
     "japanese_example": "ダドリーはぶくっと<ruby>太<rt>ふと</rt></ruby>った<ruby>腕<rt>うで</rt></ruby>を<ruby>女性<rt>じょせい</rt></ruby>に<ruby>差<rt>さ</rt></ruby>し<ruby>出<rt>だ</rt></ruby>す<ruby>仕草<rt>しぐさ</rt></ruby>をした。",
-    "english_example": "Dudley made a gesture of holding out his plump arm to the woman."
+    "english_example": "Dudley made a gesture of holding out his plump arm to the woman.",
+    "id": "chapter1_6-0051"
   }
 ]

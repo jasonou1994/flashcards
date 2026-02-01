@@ -58,7 +58,7 @@ When editing code, run these quick checks
 
 Testing policy
  - All code changes should include accompanying tests covering the new or changed behavior.
- - Keep all tests consolidated in a single file: `src/App.test.tsx`. Do not create additional test files (e.g., avoid `*.behavior.test.tsx` or files under `src/__tests__`).
+ - App UI tests live in `src/App.test.tsx`. Library/provider units may include dedicated test files (e.g., `src/stats/LocalStorageStatsProvider.test.ts`).
  - After making changes, always run the test suite locally (`npm test`) and fix any failures before committing.
 
 If you (the agent) make changes, include in the PR description:

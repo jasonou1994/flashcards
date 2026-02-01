@@ -4,202 +4,231 @@
     "hiragana": "さえしたら",
     "english": "If only ~ happens (even once), then that alone is enough; さえ adds an “even/only” minimum condition. Often implies “I don’t need anything else if just that happens.”",
     "japanese_example": "<ruby>一度<rt>いちど</rt></ruby>でも<ruby>連絡<rt>れんらく</rt></ruby>が<ruby>来<rt>き</rt></ruby>さえしたら、もう<ruby>十分<rt>じゅうぶん</rt></ruby>だ。",
-    "english_example": "If I get even a single message, that alone is enough."
+    "english_example": "If I get even a single message, that alone is enough.",
+    "id": "chapter1_c-0001"
   },
   {
     "japanese": "一つでも",
     "hiragana": "ひとつでも",
     "english": "Even one; even a single ~ (emphasizes that the minimum of one is sufficient or notable). Often used with さえ/だけ/なら, etc.",
     "japanese_example": "<ruby>一<rt>ひと</rt></ruby>つでも<ruby>証拠<rt>しょうこ</rt></ruby>があれば、<ruby>話<rt>はなし</rt></ruby>は<ruby>進<rt>すす</rt></ruby>む。",
-    "english_example": "If there’s even a single piece of evidence, things will move forward."
+    "english_example": "If there’s even a single piece of evidence, things will move forward.",
+    "id": "chapter1_c-0002"
   },
   {
     "japanese": "あとは",
     "hiragana": "あとは",
     "english": "After that; as for the rest. Often marks what follows once the first condition is met.",
     "japanese_example": "<ruby>準備<rt>じゅんび</rt></ruby>が<ruby>終<rt>お</rt></ruby>わったら、あとは<ruby>待<rt>ま</rt></ruby>つだけだ。",
-    "english_example": "Once the preparations are done, all that’s left is to wait."
+    "english_example": "Once the preparations are done, all that’s left is to wait.",
+    "id": "chapter1_c-0003"
   },
   {
     "japanese": "姿を見せる",
     "hiragana": "すがたをみせる",
     "english": "To show oneself; to appear (one’s presence becomes visible). Often used when someone finally comes or makes an appearance.",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>会議<rt>かいぎ</rt></ruby>に<ruby>一度<rt>いちど</rt></ruby>も<ruby>姿<rt>すがた</rt></ruby>を<ruby>見<rt>み</rt></ruby>せなかった。",
-    "english_example": "He didn’t show up to the meeting even once."
+    "english_example": "He didn’t show up to the meeting even once.",
+    "id": "chapter1_c-0004"
   },
   {
     "japanese": "〜だけでも",
     "hiragana": "だけでも",
     "english": "Even just ~; if only ~ (emphasizes that the minimum alone is meaningful). Often expresses relief or strong feeling from a small condition.",
     "japanese_example": "そう<ruby>思<rt>おも</rt></ruby>えるだけでも、どんなに<ruby>救<rt>すく</rt></ruby>われるか。",
-    "english_example": "Even just being able to think that—how much it would help me."
+    "english_example": "Even just being able to think that—how much it would help me.",
+    "id": "chapter1_c-0005"
   },
   {
     "japanese": "どんなに〜か",
     "hiragana": "どんなにか",
     "english": "How very ~; to what extent ~ (strong emphasis on degree). Common in emotional statements like どんなに嬉しいか.",
     "japanese_example": "あなたに<ruby>会<rt>あ</rt></ruby>えたら、どんなに<ruby>嬉<rt>うれ</rt></ruby>しいか。",
-    "english_example": "If I could see you, how happy I would be."
+    "english_example": "If I could see you, how happy I would be.",
+    "id": "chapter1_c-0006"
   },
   {
     "japanese": "〜ばかりではない",
     "hiragana": "ばかりではない",
     "english": "Not only ~; it’s not all ~ (counters the idea that something is exclusively one thing). Past form: 〜ばかりではなかった.",
     "japanese_example": "<ruby>人生<rt>じんせい</rt></ruby>は<ruby>楽<rt>たの</rt></ruby>しいことばかりではない。",
-    "english_example": "Life isn’t all fun things."
+    "english_example": "Life isn’t all fun things.",
+    "id": "chapter1_c-0007"
   },
   {
     "japanese": "学年末",
     "hiragana": "がくねんまつ",
     "english": "End of the school year (academic year-end). Often used around finals, closing ceremonies, and report cards.",
     "japanese_example": "<ruby>学年末<rt>がくねんまつ</rt></ruby>は<ruby>試験<rt>しけん</rt></ruby>が<ruby>続<rt>つづ</rt></ruby>いて<ruby>忙<rt>いそが</rt></ruby>しい。",
-    "english_example": "At the end of the school year, exams continue and it gets busy."
+    "english_example": "At the end of the school year, exams continue and it gets busy.",
+    "id": "chapter1_c-0008"
   },
   {
     "japanese": "一対一",
     "hiragana": "いったいいち",
     "english": "One-on-one; one versus one. Used for lessons, talks, matches, etc.",
     "japanese_example": "<ruby>先生<rt>せんせい</rt></ruby>と<ruby>一対一<rt>いったいいち</rt></ruby>で<ruby>練習<rt>れんしゅう</rt></ruby>した。",
-    "english_example": "I practiced one-on-one with the teacher."
+    "english_example": "I practiced one-on-one with the teacher.",
+    "id": "chapter1_c-0009"
   },
   {
     "japanese": "対決",
     "hiragana": "たいけつ",
     "english": "Showdown; face-off; confrontation (often dramatic or competitive).",
     "japanese_example": "<ruby>決勝<rt>けっしょう</rt></ruby>で<ruby>宿敵<rt>しゅくてき</rt></ruby>との<ruby>対決<rt>たいけつ</rt></ruby>が<ruby>実現<rt>じつげん</rt></ruby>した。",
-    "english_example": "A showdown with our archrival happened in the final."
+    "english_example": "A showdown with our archrival happened in the final.",
+    "id": "chapter1_c-0010"
   },
   {
     "japanese": "影",
     "hiragana": "かげ",
     "english": "Shadow; shade; also a presence/trace depending on context. Often contrasts with light or suggests something hidden.",
     "japanese_example": "<ruby>月明<rt>つきあ</rt></ruby>かりで<ruby>木<rt>き</rt></ruby>の<ruby>影<rt>かげ</rt></ruby>が<ruby>長<rt>なが</rt></ruby>く<ruby>伸<rt>の</rt></ruby>びていた。",
-    "english_example": "In the moonlight, the tree’s shadow stretched long."
+    "english_example": "In the moonlight, the tree’s shadow stretched long.",
+    "id": "chapter1_c-0011"
   },
   {
     "japanese": "見る影",
     "hiragana": "みるかげ",
     "english": "A former likeness/semblance (usually in the fixed phrase 見る影もない: not even a trace of what it used to be).",
     "japanese_example": "<ruby>昔<rt>むかし</rt></ruby>の<ruby>元気<rt>げんき</rt></ruby>な<ruby>姿<rt>すがた</rt></ruby>は<ruby>見<rt>み</rt></ruby>る<ruby>影<rt>かげ</rt></ruby>もない。",
-    "english_example": "There’s not even a trace of the energetic person they used to be."
+    "english_example": "There’s not even a trace of the energetic person they used to be.",
+    "id": "chapter1_c-0012"
   },
   {
     "japanese": "衰える",
     "hiragana": "おとろえる",
     "english": "To decline; to weaken; to wane (strength, health, power, ability). Intransitive.",
     "japanese_example": "<ruby>体力<rt>たいりょく</rt></ruby>が<ruby>衰<rt>おとろ</rt></ruby>えると、<ruby>疲<rt>つか</rt></ruby>れやすくなる。",
-    "english_example": "When your stamina declines, you get tired more easily."
+    "english_example": "When your stamina declines, you get tired more easily.",
+    "id": "chapter1_c-0013"
   },
   {
     "japanese": "〜ものの",
     "hiragana": "ものの",
     "english": "Although ~; but (literary/formal contrast). States a fact then contrasts with an unexpected result or limitation.",
     "japanese_example": "<ruby>謝<rt>あやま</rt></ruby>ったものの、<ruby>彼<rt>かれ</rt></ruby>はまだ<ruby>納得<rt>なっとく</rt></ruby>していない。",
-    "english_example": "Although I apologized, he still isn’t convinced."
+    "english_example": "Although I apologized, he still isn’t convinced.",
+    "id": "chapter1_c-0014"
   },
   {
     "japanese": "狡猾",
     "hiragana": "こうかつ",
     "english": "Cunning; sly; crafty (often negative, suggesting scheming). Typically used in more formal writing.",
     "japanese_example": "<ruby>狡猾<rt>こうかつ</rt></ruby>な<ruby>手口<rt>てぐち</rt></ruby>に<ruby>皆<rt>みな</rt></ruby>がだまされた。",
-    "english_example": "Everyone was deceived by the cunning trick."
+    "english_example": "Everyone was deceived by the cunning trick.",
+    "id": "chapter1_c-0015"
   },
   {
     "japanese": "権力",
     "hiragana": "けんりょく",
     "english": "Power; authority (especially political/organizational power). Often used with 握る, 持つ, 行使する.",
     "japanese_example": "<ruby>権力<rt>けんりょく</rt></ruby>を<ruby>持<rt>も</rt></ruby>つ<ruby>人<rt>ひと</rt></ruby>ほど<ruby>責任<rt>せきにん</rt></ruby>が<ruby>重<rt>おも</rt></ruby>い。",
-    "english_example": "The more power someone has, the heavier their responsibility is."
+    "english_example": "The more power someone has, the heavier their responsibility is.",
+    "id": "chapter1_c-0016"
   },
   {
     "japanese": "取り戻す",
     "hiragana": "とりもどす",
     "english": "To take back; to regain (lost time, trust, health, territory, etc.).",
     "japanese_example": "<ruby>失<rt>うしな</rt></ruby>った<ruby>信頼<rt>しんらい</rt></ruby>を<ruby>取<rt>と</rt></ruby>り<ruby>戻<rt>もど</rt></ruby>すのは<ruby>難<rt>むずか</rt></ruby>しい。",
-    "english_example": "It’s difficult to regain lost trust."
+    "english_example": "It’s difficult to regain lost trust.",
+    "id": "chapter1_c-0017"
   },
   {
     "japanese": "取り戻そう",
     "hiragana": "とりもどそう",
     "english": "Volitional of 取り戻す: “let’s regain it / I’ll take it back.” Expresses intention or a proposal.",
     "japanese_example": "<ruby>自信<rt>じしん</rt></ruby>を<ruby>取<rt>と</rt></ruby>り<ruby>戻<rt>もど</rt></ruby>そう。",
-    "english_example": "Let’s regain our confidence."
+    "english_example": "Let’s regain our confidence.",
+    "id": "chapter1_c-0018"
   },
   {
     "japanese": "執念",
     "hiragana": "しゅうねん",
     "english": "Obsession; tenacity; persistent fixation (often intense, sometimes negative). Common: 執念深い.",
     "japanese_example": "<ruby>執念<rt>しゅうねん</rt></ruby>だけで<ruby>最後<rt>さいご</rt></ruby>までやり<ruby>抜<rt>ぬ</rt></ruby>いた。",
-    "english_example": "I pushed through to the end on sheer tenacity."
+    "english_example": "I pushed through to the end on sheer tenacity.",
+    "id": "chapter1_c-0019"
   },
   {
     "japanese": "燃やす",
     "hiragana": "もやす",
     "english": "To burn (something); also to kindle/ignite emotions (e.g., passion, fighting spirit, obsession). Transitive.",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>復讐心<rt>ふくしゅうしん</rt></ruby>を<ruby>燃<rt>も</rt></ruby>やしていた。",
-    "english_example": "He was burning with a desire for revenge."
+    "english_example": "He was burning with a desire for revenge.",
+    "id": "chapter1_c-0020"
   },
   {
     "japanese": "二度目",
     "hiragana": "にどめ",
     "english": "The second time; the second occurrence. Used for repeating an event or attempt.",
     "japanese_example": "<ruby>二度目<rt>にどめ</rt></ruby>はもっと<ruby>慎重<rt>しんちょう</rt></ruby>にやった。",
-    "english_example": "The second time, I did it more carefully."
+    "english_example": "The second time, I did it more carefully.",
+    "id": "chapter1_c-0021"
   },
   {
     "japanese": "辛くも",
     "hiragana": "からくも",
     "english": "Barely; narrowly; just barely managed to (set adverbial expression). The も is part of the fixed phrase, not “also.”",
     "japanese_example": "<ruby>辛<rt>から</rt></ruby>くも<ruby>試験<rt>しけん</rt></ruby>に<ruby>合格<rt>ごうかく</rt></ruby>した。",
-    "english_example": "I barely passed the exam."
+    "english_example": "I barely passed the exam.",
+    "id": "chapter1_c-0022"
   },
   {
     "japanese": "逃れる",
     "hiragana": "のがれる",
     "english": "To escape; to evade; to avoid (danger, responsibility, control). Often used with 〜から: 〜から逃れる.",
     "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>追跡<rt>ついせき</rt></ruby>を<ruby>逃<rt>のが</rt></ruby>れて<ruby>路地<rt>ろじ</rt></ruby>に<ruby>入<rt>はい</rt></ruby>った。",
-    "english_example": "He evaded pursuit and slipped into an alley."
+    "english_example": "He evaded pursuit and slipped into an alley.",
+    "id": "chapter1_c-0023"
   },
   {
     "japanese": "危機一髪",
     "hiragana": "ききいっぱつ",
     "english": "A close call; by a hair’s breadth (literally “crisis, one hair”). Often used with で or の: 危機一髪で助かる.",
     "japanese_example": "<ruby>危機一髪<rt>ききいっぱつ</rt></ruby>で<ruby>事故<rt>じこ</rt></ruby>を<ruby>免<rt>まぬが</rt></ruby>れた。",
-    "english_example": "I narrowly avoided an accident."
+    "english_example": "I narrowly avoided an accident.",
+    "id": "chapter1_c-0024"
   },
   {
     "japanese": "経つ",
     "hiragana": "たつ",
     "english": "To elapse; to pass (time). Often written in kana in set forms like たった (e.g., たった三日).",
     "japanese_example": "<ruby>一<rt>いち</rt></ruby><ruby>年<rt>ねん</rt></ruby>が<ruby>経<rt>た</rt></ruby>っても、まだ<ruby>覚<rt>おぼ</rt></ruby>えている。",
-    "english_example": "Even after a year has passed, I still remember it."
+    "english_example": "Even after a year has passed, I still remember it.",
+    "id": "chapter1_c-0025"
   },
   {
     "japanese": "いまだに",
     "hiragana": "いまだに",
     "english": "Even now; still (often with a nuance that something remains unresolved or unexpectedly continues). Frequently used with negative or ongoing states.",
     "japanese_example": "その<ruby>理由<rt>りゆう</rt></ruby>は、いまだに<ruby>分<rt>わ</rt></ruby>からない。",
-    "english_example": "Even now, I still don’t know the reason."
+    "english_example": "Even now, I still don’t know the reason.",
+    "id": "chapter1_c-0026"
   },
   {
     "japanese": "いまでも",
     "hiragana": "いまでも",
     "english": "Even now; still (more neutral than いまだに, often simply stating continuation without implying an unresolved issue).",
     "japanese_example": "いまでもその<ruby>歌<rt>うた</rt></ruby>を<ruby>聞<rt>き</rt></ruby>くと<ruby>思<rt>おも</rt></ruby>い<ruby>出<rt>だ</rt></ruby>す。",
-    "english_example": "Even now, when I hear that song, I remember."
+    "english_example": "Even now, when I hear that song, I remember.",
+    "id": "chapter1_c-0027"
   },
   {
     "japanese": "寝汗",
     "hiragana": "ねあせ",
     "english": "Night sweats (sweat while sleeping). Often used with かく: 寝汗をかく.",
     "japanese_example": "<ruby>暑<rt>あつ</rt></ruby>くて<ruby>寝汗<rt>ねあせ</rt></ruby>をかいた。",
-    "english_example": "It was hot, and I broke out in night sweats."
+    "english_example": "It was hot, and I broke out in night sweats.",
+    "id": "chapter1_c-0028"
   },
   {
     "japanese": "びっしょり",
     "hiragana": "びっしょり",
     "english": "Soaked through; drenched (adverb/na-adj-like). Used for clothes, hair, body, etc.",
     "japanese_example": "<ruby>雨<rt>あめ</rt></ruby>で<ruby>服<rt>ふく</rt></ruby>がびっしょりになった。",
-    "english_example": "My clothes got soaked through in the rain."
+    "english_example": "My clothes got soaked through in the rain.",
+    "id": "chapter1_c-0029"
   }
 ]

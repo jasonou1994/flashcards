@@ -1,170 +1,194 @@
 [
-{
-"japanese": "惨め",
-"hiragana": "みじめ",
-"english": "Miserable; pitiable; wretched (often with a humiliating or pathetic nuance). Na-adjective: 惨めな.",
-"japanese_example": "<ruby>負<rt>ま</rt></ruby>けて<ruby>惨<rt>みじ</rt></ruby>めな<ruby>気持<rt>きも</rt></ruby>ちになった。",
-"english_example": "I lost and felt miserable."
-},
-{
-"japanese": "生垣",
-"hiragana": "いけがき",
-"english": "A hedge; a living fence made of shrubs/trees used as a boundary.",
-"japanese_example": "<ruby>家<rt>いえ</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に<ruby>生垣<rt>いけがき</rt></ruby>がある。",
-"english_example": "There is a hedge in front of the house."
-},
-{
-"japanese": "見つめる",
-"hiragana": "みつめる",
-"english": "To stare at; to gaze at intently (sustained, focused looking).",
-"japanese_example": "その<ruby>子<rt>こ</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>の<ruby>顔<rt>かお</rt></ruby>をずっと<ruby>見<rt>み</rt></ruby>つめていた。",
-"english_example": "The child kept staring at my face."
-},
-{
-"japanese": "寂しい",
-"hiragana": "さびしい",
-"english": "Lonely; lonesome; can also describe a desolate/forlorn atmosphere.",
-"japanese_example": "<ruby>夜<rt>よる</rt></ruby>は<ruby>一人<rt>ひとり</rt></ruby>だと<ruby>寂<rt>さび</rt></ruby>しい。",
-"english_example": "At night, I feel lonely when I’m alone."
-},
-{
-"japanese": "今までになく寂しかった",
-"hiragana": "いままでになくさびしかった",
-"english": "Was lonelier than ever before; “今までになく/今までにない” means “unprecedentedly; more than ever.”",
-"japanese_example": "<ruby>引<rt>ひ</rt></ruby>っ<ruby>越<rt>こ</rt></ruby>してから、<ruby>今<rt>いま</rt></ruby>までになく<ruby>寂<rt>さび</rt></ruby>しかった。",
-"english_example": "After moving, I was lonelier than ever before."
-},
-{
-"japanese": "それよりも",
-"hiragana": "それよりも",
-"english": "More than that; rather than that; used to shift focus to something more important or relevant.",
-"japanese_example": "それよりも、<ruby>早<rt>はや</rt></ruby>く<ruby>帰<rt>かえ</rt></ruby>ろう。",
-"english_example": "More importantly, let’s go home soon."
-},
-{
-"japanese": "親友",
-"hiragana": "しんゆう",
-"english": "A close/best friend; stronger than 友達, implying deep trust and intimacy.",
-"japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>の<ruby>親友<rt>しんゆう</rt></ruby>です。",
-"english_example": "He is my best friend."
-},
-{
-"japanese": "それなのに",
-"hiragana": "それなのに",
-"english": "And yet; despite that; connects a prior situation to an unexpected/contradictory result.",
-"japanese_example": "<ruby>一生懸命<rt>いっしょうけんめい</rt></ruby><ruby>勉強<rt>べんきょう</rt></ruby>した。それなのに、<ruby>試験<rt>しけん</rt></ruby>に<ruby>落<rt>お</rt></ruby>ちた。",
-"english_example": "I studied hard. And yet, I failed the exam."
-},
-{
-"japanese": "二人",
-"hiragana": "ふたり",
-"english": "Two people (counter for people); special reading (not ににん).",
-"japanese_example": "<ruby>二人<rt>ふたり</rt></ruby>で<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>に<ruby>行<rt>い</rt></ruby>った。",
-"english_example": "The two of us went to see a movie."
-},
-{
-"japanese": "二人はハリーに会いたいとも思ってないらしい",
-"hiragana": "ふたりははりーにあいたいともおもってないらしい",
-"english": "It seems the two don’t even want to meet Harry. 〜たいとも思ってない emphasizes “don’t even want to…,” and らしい indicates a judgment based on indirect information.",
-"japanese_example": "<ruby>二人<rt>ふたり</rt></ruby>はハリーに<ruby>会<rt>あ</rt></ruby>いたいとも<ruby>思<rt>おも</rt></ruby>ってないらしい。",
-"english_example": "It seems the two don’t even want to meet Harry."
-},
-{
-"japanese": "どちらも",
-"hiragana": "どちらも",
-"english": "Both (of two); どちら is “which (one of two),” and adding も commonly yields “both.”",
-"japanese_example": "コーヒーもお<ruby>茶<rt>ちゃ</rt></ruby>も、どちらも<ruby>好<rt>す</rt></ruby>きです。",
-"english_example": "I like both coffee and tea."
-},
-{
-"japanese": "夏休みに入って",
-"hiragana": "なつやすみにはいって",
-"english": "Since summer vacation started; upon entering summer vacation. Often used as 〜に入ってから to mean “from the start of ….”",
-"japanese_example": "<ruby>夏休<rt>なつやす</rt></ruby>みに<ruby>入<rt>はい</rt></ruby>ってから、ずっと<ruby>忙<rt>いそが</rt></ruby>しい。",
-"english_example": "Since summer vacation started, I’ve been busy the whole time."
-},
-{
-"japanese": "泊まり",
-"hiragana": "とまり",
-"english": "An overnight stay (noun), often implying staying somewhere for the night.",
-"japanese_example": "<ruby>今夜<rt>こんや</rt></ruby>は<ruby>泊<rt>と</rt></ruby>まりにする。",
-"english_example": "I’ll stay overnight tonight."
-},
-{
-"japanese": "泊まりに来る",
-"hiragana": "とまりにくる",
-"english": "To come to stay overnight. Pattern: Vます-stem + に来る = “come in order to do V.”",
-"japanese_example": "<ruby>友達<rt>ともだち</rt></ruby>がうちに<ruby>泊<rt>と</rt></ruby>まりに<ruby>来<rt>く</rt></ruby>る。",
-"english_example": "A friend is coming to stay overnight at my place."
-},
-{
-"japanese": "来い",
-"hiragana": "こい",
-"english": "Come! (imperative of 来る). Strong/direct command; a softer alternative is 来て.",
-"japanese_example": "こっちへ<ruby>来<rt>こ</rt></ruby>い！",
-"english_example": "Come here!"
-},
-{
-"japanese": "〜って言った",
-"hiragana": "っていった",
-"english": "Casual quoting: “(someone) said ‘…’.” って functions like と as an informal quotation marker.",
-"japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は「<ruby>明日<rt>あした</rt></ruby><ruby>行<rt>い</rt></ruby>く」って<ruby>言<rt>い</rt></ruby>った。",
-"english_example": "He said, “I’m going tomorrow.”"
-},
-{
-"japanese": "招待",
-"hiragana": "しょうたい",
-"english": "An invitation (noun), typically inviting someone to an event or to visit (distinct from hospitality, もてなし).",
-"japanese_example": "パーティーの<ruby>招待<rt>しょうたい</rt></ruby>を<ruby>受<rt>う</rt></ruby>けた。",
-"english_example": "I received an invitation to a party."
-},
-{
-"japanese": "招待する",
-"hiragana": "しょうたいする",
-"english": "To invite (someone). Common pattern: 人を招待する.",
-"japanese_example": "<ruby>友達<rt>ともだち</rt></ruby>を<ruby>家<rt>いえ</rt></ruby>に<ruby>招待<rt>しょうたい</rt></ruby>した。",
-"english_example": "I invited my friend to my home."
-},
-{
-"japanese": "はずだった",
-"hiragana": "はずだった",
-"english": "Was supposed to (but did not happen). はず expresses an expected outcome based on plan/logic, and はずだった often implies the reality differed.",
-"japanese_example": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>休<rt>やす</rt></ruby>みのはずだったのに、<ruby>働<rt>はたら</rt></ruby>くことになった。",
-"english_example": "I was supposed to have today off, but I ended up working."
-},
-{
-"japanese": "送る",
-"hiragana": "おくる",
-"english": "To send; to mail. Common objects include 手紙 and メール.",
-"japanese_example": "<ruby>母<rt>はは</rt></ruby>にプレゼントを<ruby>送<rt>おく</rt></ruby>った。",
-"english_example": "I sent a present to my mother."
-},
-{
-"japanese": "送ろう",
-"hiragana": "おくろう",
-"english": "Volitional of 送る: “I’ll send (it)” or “let’s send (it),” expressing intention or a proposal.",
-"japanese_example": "じゃあ、メールを<ruby>送<rt>おく</rt></ruby>ろう。",
-"english_example": "Okay, let’s send an email."
-},
-{
-"japanese": "送ろうか",
-"hiragana": "おくろうか",
-"english": "Volitional + か: “Shall I send it?” (an offer) or “Should I send it?” depending on context.",
-"japanese_example": "<ruby>資料<rt>しりょう</rt></ruby>、<ruby>送<rt>おく</rt></ruby>ろうか？",
-"english_example": "Shall I send you the materials?"
-},
-{
-"japanese": "持たせる",
-"hiragana": "もたせる",
-"english": "Causative of 持つ: to make/let someone hold or carry something.",
-"japanese_example": "<ruby>子<rt>こ</rt></ruby>どもに<ruby>水<rt>みず</rt></ruby>を<ruby>持<rt>も</rt></ruby>たせた。",
-"english_example": "I made the child carry the water."
-},
-{
-"japanese": "何度も何度も考えた",
-"hiragana": "なんどもなんどもかんがえた",
-"english": "I thought about it over and over; repeating 何度も intensifies the sense of repeated action.",
-"japanese_example": "そのことを<ruby>何度<rt>なんど</rt></ruby>も<ruby>何度<rt>なんど</rt></ruby>も<ruby>考<rt>かんが</rt></ruby>えた。",
-"english_example": "I thought about it again and again."
-}
+  {
+    "japanese": "惨め",
+    "hiragana": "みじめ",
+    "english": "Miserable; pitiable; wretched (often with a humiliating or pathetic nuance). Na-adjective: 惨めな.",
+    "japanese_example": "<ruby>負<rt>ま</rt></ruby>けて<ruby>惨<rt>みじ</rt></ruby>めな<ruby>気持<rt>きも</rt></ruby>ちになった。",
+    "english_example": "I lost and felt miserable.",
+    "id": "chapter1_a-0001"
+  },
+  {
+    "japanese": "生垣",
+    "hiragana": "いけがき",
+    "english": "A hedge; a living fence made of shrubs/trees used as a boundary.",
+    "japanese_example": "<ruby>家<rt>いえ</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に<ruby>生垣<rt>いけがき</rt></ruby>がある。",
+    "english_example": "There is a hedge in front of the house.",
+    "id": "chapter1_a-0002"
+  },
+  {
+    "japanese": "見つめる",
+    "hiragana": "みつめる",
+    "english": "To stare at; to gaze at intently (sustained, focused looking).",
+    "japanese_example": "その<ruby>子<rt>こ</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>の<ruby>顔<rt>かお</rt></ruby>をずっと<ruby>見<rt>み</rt></ruby>つめていた。",
+    "english_example": "The child kept staring at my face.",
+    "id": "chapter1_a-0003"
+  },
+  {
+    "japanese": "寂しい",
+    "hiragana": "さびしい",
+    "english": "Lonely; lonesome; can also describe a desolate/forlorn atmosphere.",
+    "japanese_example": "<ruby>夜<rt>よる</rt></ruby>は<ruby>一人<rt>ひとり</rt></ruby>だと<ruby>寂<rt>さび</rt></ruby>しい。",
+    "english_example": "At night, I feel lonely when I’m alone.",
+    "id": "chapter1_a-0004"
+  },
+  {
+    "japanese": "今までになく寂しかった",
+    "hiragana": "いままでになくさびしかった",
+    "english": "Was lonelier than ever before; “今までになく/今までにない” means “unprecedentedly; more than ever.”",
+    "japanese_example": "<ruby>引<rt>ひ</rt></ruby>っ<ruby>越<rt>こ</rt></ruby>してから、<ruby>今<rt>いま</rt></ruby>までになく<ruby>寂<rt>さび</rt></ruby>しかった。",
+    "english_example": "After moving, I was lonelier than ever before.",
+    "id": "chapter1_a-0005"
+  },
+  {
+    "japanese": "それよりも",
+    "hiragana": "それよりも",
+    "english": "More than that; rather than that; used to shift focus to something more important or relevant.",
+    "japanese_example": "それよりも、<ruby>早<rt>はや</rt></ruby>く<ruby>帰<rt>かえ</rt></ruby>ろう。",
+    "english_example": "More importantly, let’s go home soon.",
+    "id": "chapter1_a-0006"
+  },
+  {
+    "japanese": "親友",
+    "hiragana": "しんゆう",
+    "english": "A close/best friend; stronger than 友達, implying deep trust and intimacy.",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>の<ruby>親友<rt>しんゆう</rt></ruby>です。",
+    "english_example": "He is my best friend.",
+    "id": "chapter1_a-0007"
+  },
+  {
+    "japanese": "それなのに",
+    "hiragana": "それなのに",
+    "english": "And yet; despite that; connects a prior situation to an unexpected/contradictory result.",
+    "japanese_example": "<ruby>一生懸命<rt>いっしょうけんめい</rt></ruby><ruby>勉強<rt>べんきょう</rt></ruby>した。それなのに、<ruby>試験<rt>しけん</rt></ruby>に<ruby>落<rt>お</rt></ruby>ちた。",
+    "english_example": "I studied hard. And yet, I failed the exam.",
+    "id": "chapter1_a-0008"
+  },
+  {
+    "japanese": "二人",
+    "hiragana": "ふたり",
+    "english": "Two people (counter for people); special reading (not ににん).",
+    "japanese_example": "<ruby>二人<rt>ふたり</rt></ruby>で<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>に<ruby>行<rt>い</rt></ruby>った。",
+    "english_example": "The two of us went to see a movie.",
+    "id": "chapter1_a-0009"
+  },
+  {
+    "japanese": "二人はハリーに会いたいとも思ってないらしい",
+    "hiragana": "ふたりははりーにあいたいともおもってないらしい",
+    "english": "It seems the two don’t even want to meet Harry. 〜たいとも思ってない emphasizes “don’t even want to…,” and らしい indicates a judgment based on indirect information.",
+    "japanese_example": "<ruby>二人<rt>ふたり</rt></ruby>はハリーに<ruby>会<rt>あ</rt></ruby>いたいとも<ruby>思<rt>おも</rt></ruby>ってないらしい。",
+    "english_example": "It seems the two don’t even want to meet Harry.",
+    "id": "chapter1_a-0010"
+  },
+  {
+    "japanese": "どちらも",
+    "hiragana": "どちらも",
+    "english": "Both (of two); どちら is “which (one of two),” and adding も commonly yields “both.”",
+    "japanese_example": "コーヒーもお<ruby>茶<rt>ちゃ</rt></ruby>も、どちらも<ruby>好<rt>す</rt></ruby>きです。",
+    "english_example": "I like both coffee and tea.",
+    "id": "chapter1_a-0011"
+  },
+  {
+    "japanese": "夏休みに入って",
+    "hiragana": "なつやすみにはいって",
+    "english": "Since summer vacation started; upon entering summer vacation. Often used as 〜に入ってから to mean “from the start of ….”",
+    "japanese_example": "<ruby>夏休<rt>なつやす</rt></ruby>みに<ruby>入<rt>はい</rt></ruby>ってから、ずっと<ruby>忙<rt>いそが</rt></ruby>しい。",
+    "english_example": "Since summer vacation started, I’ve been busy the whole time.",
+    "id": "chapter1_a-0012"
+  },
+  {
+    "japanese": "泊まり",
+    "hiragana": "とまり",
+    "english": "An overnight stay (noun), often implying staying somewhere for the night.",
+    "japanese_example": "<ruby>今夜<rt>こんや</rt></ruby>は<ruby>泊<rt>と</rt></ruby>まりにする。",
+    "english_example": "I’ll stay overnight tonight.",
+    "id": "chapter1_a-0013"
+  },
+  {
+    "japanese": "泊まりに来る",
+    "hiragana": "とまりにくる",
+    "english": "To come to stay overnight. Pattern: Vます-stem + に来る = “come in order to do V.”",
+    "japanese_example": "<ruby>友達<rt>ともだち</rt></ruby>がうちに<ruby>泊<rt>と</rt></ruby>まりに<ruby>来<rt>く</rt></ruby>る。",
+    "english_example": "A friend is coming to stay overnight at my place.",
+    "id": "chapter1_a-0014"
+  },
+  {
+    "japanese": "来い",
+    "hiragana": "こい",
+    "english": "Come! (imperative of 来る). Strong/direct command; a softer alternative is 来て.",
+    "japanese_example": "こっちへ<ruby>来<rt>こ</rt></ruby>い！",
+    "english_example": "Come here!",
+    "id": "chapter1_a-0015"
+  },
+  {
+    "japanese": "〜って言った",
+    "hiragana": "っていった",
+    "english": "Casual quoting: “(someone) said ‘…’.” って functions like と as an informal quotation marker.",
+    "japanese_example": "<ruby>彼<rt>かれ</rt></ruby>は「<ruby>明日<rt>あした</rt></ruby><ruby>行<rt>い</rt></ruby>く」って<ruby>言<rt>い</rt></ruby>った。",
+    "english_example": "He said, “I’m going tomorrow.”",
+    "id": "chapter1_a-0016"
+  },
+  {
+    "japanese": "招待",
+    "hiragana": "しょうたい",
+    "english": "An invitation (noun), typically inviting someone to an event or to visit (distinct from hospitality, もてなし).",
+    "japanese_example": "パーティーの<ruby>招待<rt>しょうたい</rt></ruby>を<ruby>受<rt>う</rt></ruby>けた。",
+    "english_example": "I received an invitation to a party.",
+    "id": "chapter1_a-0017"
+  },
+  {
+    "japanese": "招待する",
+    "hiragana": "しょうたいする",
+    "english": "To invite (someone). Common pattern: 人を招待する.",
+    "japanese_example": "<ruby>友達<rt>ともだち</rt></ruby>を<ruby>家<rt>いえ</rt></ruby>に<ruby>招待<rt>しょうたい</rt></ruby>した。",
+    "english_example": "I invited my friend to my home.",
+    "id": "chapter1_a-0018"
+  },
+  {
+    "japanese": "はずだった",
+    "hiragana": "はずだった",
+    "english": "Was supposed to (but did not happen). はず expresses an expected outcome based on plan/logic, and はずだった often implies the reality differed.",
+    "japanese_example": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>休<rt>やす</rt></ruby>みのはずだったのに、<ruby>働<rt>はたら</rt></ruby>くことになった。",
+    "english_example": "I was supposed to have today off, but I ended up working.",
+    "id": "chapter1_a-0019"
+  },
+  {
+    "japanese": "送る",
+    "hiragana": "おくる",
+    "english": "To send; to mail. Common objects include 手紙 and メール.",
+    "japanese_example": "<ruby>母<rt>はは</rt></ruby>にプレゼントを<ruby>送<rt>おく</rt></ruby>った。",
+    "english_example": "I sent a present to my mother.",
+    "id": "chapter1_a-0020"
+  },
+  {
+    "japanese": "送ろう",
+    "hiragana": "おくろう",
+    "english": "Volitional of 送る: “I’ll send (it)” or “let’s send (it),” expressing intention or a proposal.",
+    "japanese_example": "じゃあ、メールを<ruby>送<rt>おく</rt></ruby>ろう。",
+    "english_example": "Okay, let’s send an email.",
+    "id": "chapter1_a-0021"
+  },
+  {
+    "japanese": "送ろうか",
+    "hiragana": "おくろうか",
+    "english": "Volitional + か: “Shall I send it?” (an offer) or “Should I send it?” depending on context.",
+    "japanese_example": "<ruby>資料<rt>しりょう</rt></ruby>、<ruby>送<rt>おく</rt></ruby>ろうか？",
+    "english_example": "Shall I send you the materials?",
+    "id": "chapter1_a-0022"
+  },
+  {
+    "japanese": "持たせる",
+    "hiragana": "もたせる",
+    "english": "Causative of 持つ: to make/let someone hold or carry something.",
+    "japanese_example": "<ruby>子<rt>こ</rt></ruby>どもに<ruby>水<rt>みず</rt></ruby>を<ruby>持<rt>も</rt></ruby>たせた。",
+    "english_example": "I made the child carry the water.",
+    "id": "chapter1_a-0023"
+  },
+  {
+    "japanese": "何度も何度も考えた",
+    "hiragana": "なんどもなんどもかんがえた",
+    "english": "I thought about it over and over; repeating 何度も intensifies the sense of repeated action.",
+    "japanese_example": "そのことを<ruby>何度<rt>なんど</rt></ruby>も<ruby>何度<rt>なんど</rt></ruby>も<ruby>考<rt>かんが</rt></ruby>えた。",
+    "english_example": "I thought about it again and again.",
+    "id": "chapter1_a-0024"
+  }
 ]
