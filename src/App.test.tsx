@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import App, { HtmlOrText, Card, CardItem } from './App';
+import App from './App';
+import type { CardItem } from './utils';
 
 // Mock the sample deck imported by App to keep tests small and deterministic
 jest.mock('../decks/chapter1_1.json', () => [
@@ -24,22 +25,6 @@ jest.mock('../decks/chapter1_1.json', () => [
   },
 ]);
 
-describe('HtmlOrText', () => {
-  it('renders plain text when no ruby markup', () => {
-    render(<HtmlOrText className="plain" text="Hello" />);
-    const el = screen.getByText('Hello');
-    expect(el).toBeInTheDocument();
-    expect(el).toHaveClass('plain');
-  });
-
-  it('renders inner HTML when ruby markup present', () => {
-    const ruby = '<ruby>危険<rt>きけん</rt></ruby>';
-    const { container } = render(<HtmlOrText className="ruby" text={ruby} />);
-    const div = container.querySelector('.ruby');
-    expect(div).toBeInTheDocument();
-    expect(div!.innerHTML).toBe(ruby);
-  });
-});
 
 describe('App behavior', () => {
   function getCardElement() {
@@ -280,36 +265,3 @@ describe('Random deck aggregation and dedupe', () => {
   });
 });
 
-describe('Card', () => {
-  const base: CardItem = {
-    id: 'test-1',
-    japanese: '<ruby>卒業<rt>そつぎょう</rt></ruby>',
-    hiragana: 'そつぎょう',
-    english: 'graduation',
-  };
-
-  it('renders required fields in order', () => {
-    const { container } = render(<Card card={base} flipped={false} onFlip={() => {}} frontField="japanese" />);
-    const front = container.querySelector('.side.front');
-    const back = container.querySelector('.side.back');
-    expect(front).toBeInTheDocument();
-    expect(back).toBeInTheDocument();
-
-    const children = Array.from(back!.children);
-    expect(children[0]).toHaveClass('japanese');
-    expect(children[1]).toHaveClass('hiragana');
-    expect(children[2]).toHaveClass('english');
-  });
-
-  it('renders optional examples after english in order', () => {
-    const card: CardItem = { ...base, id: 'test-2', japanese_example: '<ruby>例<rt>れい</rt></ruby> 文', english_example: 'Example sentence' };
-    const { container } = render(<Card card={card} flipped={true} onFlip={() => {}} frontField="japanese" />);
-    const back = container.querySelector('.side.back');
-    const children = Array.from(back!.children);
-    expect(children[0]).toHaveClass('japanese');
-    expect(children[1]).toHaveClass('hiragana');
-    expect(children[2]).toHaveClass('english');
-    expect(children[3]).toHaveClass('japanese-example');
-    expect(children[4]).toHaveClass('english-example');
-  });
-});

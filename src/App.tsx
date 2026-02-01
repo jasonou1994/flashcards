@@ -4,41 +4,14 @@ import { LocalStorageStatsProvider } from './stats/LocalStorageStatsProvider';
 import type { CardStats } from './stats/StatsProvider';
 import type { CardItem } from './utils';
 import { validateDeckIds, aggregateAndDedupe as dedupeCards, shuffle, sampleN } from './utils';
+import Card from './Card';
+import { LocalStorageDifficultProvider } from './stats/LocalStorageDifficultProvider';
 
 export type { CardItem };
 
 // shuffle() moved to utils.ts
 
-// Render text that may contain <ruby>…<rt>…</rt></ruby> markup
-export function HtmlOrText({ className, text }: { className?: string; text?: string }) {
-  const hasRuby = typeof text === 'string' && /<\s*(ruby|rb|rt|rp)\b/i.test(text);
-  if (hasRuby) {
-    return <div className={className} dangerouslySetInnerHTML={{ __html: text! }} />;
-  }
-  return <div className={className}>{text}</div>;
-}
-
-export function Card({ card, flipped, onFlip, frontField, counts }: { card: CardItem; flipped: boolean; onFlip: () => void; frontField: 'japanese' | 'english'; counts?: CardStats }) {
-  return (
-    <div className={`card ${flipped ? 'flipped' : ''}`} onClick={onFlip}>
-      {counts ? (
-        <div className="card-stats-overlay">{counts.success} / {counts.success + counts.failure}</div>
-      ) : null}
-      <HtmlOrText className="side front" text={card[frontField]} />
-      <div className="side back">
-        <HtmlOrText className="japanese" text={card.japanese} />
-        <HtmlOrText className="hiragana" text={card.hiragana} />
-        <HtmlOrText className="english" text={card.english} />
-        {card.japanese_example ? (
-          <HtmlOrText className="japanese-example" text={card.japanese_example} />
-        ) : null}
-        {card.english_example ? (
-          <HtmlOrText className="english-example" text={card.english_example} />
-        ) : null}
-      </div>
-    </div>
-  );
-}
+// Components extracted to ./HtmlOrText and ./Card
 
 export default function App() {
   // discover decks from /decks using webpack require.context
@@ -55,6 +28,7 @@ export default function App() {
   }, []);
 
   const statsProvider = useMemo(() => new LocalStorageStatsProvider(), []);
+  const difficultProvider = useMemo(() => new LocalStorageDifficultProvider(), []);
   // Track which card IDs have been counted in the current deck run
   const countedThisRun = useRef<Set<string>>(new Set());
 
@@ -79,6 +53,7 @@ export default function App() {
   const [flipped, setFlipped] = useState<boolean>(false);
   const [frontField, setFrontField] = useState<'japanese' | 'english'>('japanese');
   const [counts, setCounts] = useState<CardStats>({ success: 0, failure: 0 });
+  const [difficult, setDifficult] = useState<boolean>(false);
 
   function aggregateAllAndDedupe(): CardItem[] {
     // Aggregate all cards across discovered decks and dedupe by any of the fields
@@ -98,7 +73,8 @@ export default function App() {
     } catch {
       all = sampleDeck as CardItem[];
     }
-    return dedupeCards(all);
+    const deduped = dedupeCards(all);
+    return deduped;
   }
 
   // sampleN() moved to utils.ts
@@ -148,6 +124,16 @@ export default function App() {
       setCounts({ success: 0, failure: 0 });
     }
   }, [current, statsProvider]);
+
+  // Update difficult flag when current card or deck changes
+  useEffect(() => {
+    if (current && (current as any).id && selectedDeckKey) {
+      setDifficult(difficultProvider.isDifficult(selectedDeckKey, (current as any).id as string));
+    } else {
+      setDifficult(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [current, selectedDeckKey]);
 
   function markKnown() {
     if (!current) return;
@@ -336,7 +322,20 @@ export default function App() {
           <button onClick={() => { setDeck(shuffle(deck)); setFlipped(false); }}>Reshuffle</button>
         </div>
 
-        <Card card={current} flipped={flipped} onFlip={() => setFlipped((f) => !f)} frontField={frontField} counts={counts} />
+        <Card
+          card={current}
+          flipped={flipped}
+          onFlip={() => setFlipped((f) => !f)}
+          frontField={frontField}
+          counts={counts}
+          difficult={difficult}
+          onToggleDifficult={(e) => {
+            e.stopPropagation();
+            if (!current || !(current as any).id) return;
+            const newState = difficultProvider.toggleDifficult(selectedDeckKey, (current as any).id as string);
+            setDifficult(newState);
+          }}
+        />
 
         <div className="actions">
           <button onClick={markKnown}>Known</button>
