@@ -135,6 +135,26 @@ describe('App behavior', () => {
     expect(screen.getByRole('heading', { name: /Japanese Flashcards/i })).toBeInTheDocument();
     expect(getCardsLeftCount()).toBeGreaterThan(0);
   });
+
+  it('Front-side toggle switches between Japanese and English', () => {
+    render(<App />);
+    const frontEl = document.querySelector('.side.front') as HTMLElement;
+    expect(frontEl).toBeInTheDocument();
+
+    // Switch to English
+    const englishRadio = screen.getByRole('radio', { name: /English/i });
+    fireEvent.click(englishRadio);
+
+    // Front should now show one of the english values
+    expect(frontEl.textContent || '').toMatch(/card\s+(one|two|three)/i);
+
+    // Switch back to Japanese
+    const japaneseRadio = screen.getByRole('radio', { name: /Japanese/i });
+    fireEvent.click(japaneseRadio);
+
+    // Front should now be non-empty and likely contain カードX
+    expect(frontEl.textContent || '').not.toEqual('');
+  });
 });
 
 describe('Card', () => {
@@ -145,25 +165,27 @@ describe('Card', () => {
   };
 
   it('renders required fields in order', () => {
-    const { container } = render(<Card card={base} flipped={false} onFlip={() => {}} />);
+    const { container } = render(<Card card={base} flipped={false} onFlip={() => {}} frontField="japanese" />);
     const front = container.querySelector('.side.front');
     const back = container.querySelector('.side.back');
     expect(front).toBeInTheDocument();
     expect(back).toBeInTheDocument();
 
     const children = Array.from(back!.children);
-    expect(children[0]).toHaveClass('hiragana');
-    expect(children[1]).toHaveClass('english');
+    expect(children[0]).toHaveClass('japanese');
+    expect(children[1]).toHaveClass('hiragana');
+    expect(children[2]).toHaveClass('english');
   });
 
   it('renders optional examples after english in order', () => {
     const card: CardItem = { ...base, japanese_example: '<ruby>例<rt>れい</rt></ruby> 文', english_example: 'Example sentence' };
-    const { container } = render(<Card card={card} flipped={true} onFlip={() => {}} />);
+    const { container } = render(<Card card={card} flipped={true} onFlip={() => {}} frontField="japanese" />);
     const back = container.querySelector('.side.back');
     const children = Array.from(back!.children);
-    expect(children[0]).toHaveClass('hiragana');
-    expect(children[1]).toHaveClass('english');
-    expect(children[2]).toHaveClass('japanese-example');
-    expect(children[3]).toHaveClass('english-example');
+    expect(children[0]).toHaveClass('japanese');
+    expect(children[1]).toHaveClass('hiragana');
+    expect(children[2]).toHaveClass('english');
+    expect(children[3]).toHaveClass('japanese-example');
+    expect(children[4]).toHaveClass('english-example');
   });
 });

@@ -27,11 +27,12 @@ export function HtmlOrText({ className, text }: { className?: string; text?: str
   return <div className={className}>{text}</div>;
 }
 
-export function Card({ card, flipped, onFlip }: { card: CardItem; flipped: boolean; onFlip: () => void }) {
+export function Card({ card, flipped, onFlip, frontField }: { card: CardItem; flipped: boolean; onFlip: () => void; frontField: 'japanese' | 'english' }) {
   return (
     <div className={`card ${flipped ? 'flipped' : ''}`} onClick={onFlip}>
-      <HtmlOrText className="side front" text={card.japanese} />
+      <HtmlOrText className="side front" text={card[frontField]} />
       <div className="side back">
+        <HtmlOrText className="japanese" text={card.japanese} />
         <HtmlOrText className="hiragana" text={card.hiragana} />
         <HtmlOrText className="english" text={card.english} />
         {card.japanese_example ? (
@@ -69,6 +70,7 @@ export default function App() {
   }); 
 
   const [flipped, setFlipped] = useState<boolean>(false);
+  const [frontField, setFrontField] = useState<'japanese' | 'english'>('japanese');
 
   // react to deck selection changes
   useEffect(() => {
@@ -130,6 +132,29 @@ export default function App() {
               </li>
             ))}
           </ul>
+          <div className="front-toggle">
+            <h4>Front Side</h4>
+            <label>
+              <input
+                type="radio"
+                name="frontSide"
+                value="japanese"
+                checked={frontField === 'japanese'}
+                onChange={() => setFrontField('japanese')}
+              />
+              Japanese
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="frontSide"
+                value="english"
+                checked={frontField === 'english'}
+                onChange={() => setFrontField('english')}
+              />
+              English
+            </label>
+          </div>
         </aside>
         <main className="main">
           <h1>All done 🎉</h1>
@@ -158,6 +183,29 @@ export default function App() {
             </li>
           ))}
         </ul>
+        <div className="front-toggle">
+          <h4>Front Side</h4>
+          <label>
+            <input
+              type="radio"
+              name="frontSide"
+              value="japanese"
+              checked={frontField === 'japanese'}
+              onChange={() => setFrontField('japanese')}
+            />
+            Japanese
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="frontSide"
+              value="english"
+              checked={frontField === 'english'}
+              onChange={() => setFrontField('english')}
+            />
+            English
+          </label>
+        </div>
       </aside>
 
       <main className="main">
@@ -166,7 +214,7 @@ export default function App() {
           <button onClick={() => { setDeck(shuffle(deck)); setFlipped(false); }}>Reshuffle</button>
         </div>
 
-        <Card card={current} flipped={flipped} onFlip={() => setFlipped((f) => !f)} />
+        <Card card={current} flipped={flipped} onFlip={() => setFlipped((f) => !f)} frontField={frontField} />
 
         <div className="actions">
           <button onClick={markKnown}>Known</button>

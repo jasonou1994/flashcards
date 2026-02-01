@@ -8,12 +8,19 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helv
 .sidebar li.active button { background:#eef; }
 .main { flex:1; }
 .hint { margin-top:8px; color:#777; font-size:0.9rem; }
-.card { width:100%; height:300px; margin:24px 0; perspective:1000px; cursor:pointer; position:relative; will-change:transform; }
-.card .side { position:absolute; top:0; left:0; width:100%; height:100%; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:2rem; backface-visibility: hidden; box-shadow:0 6px 18px rgba(0,0,0,0.12); }
+.card { width:100%; height:auto; margin:24px 0; perspective:1000px; cursor:pointer; position:relative; will-change:transform; display:grid; }
+.card .side { grid-area: 1 / 1; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:2rem; backface-visibility: hidden; box-shadow:0 6px 18px rgba(0,0,0,0.12); }
 .card .front { background:white; }
-.card .back { background:#fffbe6; transform:rotateY(180deg); flex-direction:column; gap:8px; }
+.card .back { background:#fffbe6; transform:rotateY(180deg); flex-direction:column; gap:8px; align-items:center; justify-content:flex-start; padding:16px; }
+/* Center-align each content line on back side */
+.card .back > div { text-align:center; width:100%; }
 .card.flipped { transform: rotateY(180deg); }
 .card { transition: transform 150ms ease; transform-style: preserve-3d; }
 .actions { display:flex; gap:8px; justify-content:center; }
 .controls { display:flex; gap:8px; justify-content:center; }
 .progress { margin-top:12px; color:#666; }
+
+/* Front-side toggle stacked options */
+.front-toggle { margin-top:12px; text-align:left; }
+.front-toggle h4 { margin:8px 0 4px; }
+.front-toggle label { display:block; margin:4px 0; }
