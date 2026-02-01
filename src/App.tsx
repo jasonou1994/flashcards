@@ -60,7 +60,9 @@ export default function App() {
     return deckContext.keys().map((k: string) => ({ name: k.replace(/^\.\//, ''), key: k, loader: () => deckContext(k) as CardItem[] }));
   }, []);
 
+  const RANDOM_KEY = '__random__';
   const [selectedDeckKey, setSelectedDeckKey] = useState<string>(() => (availableDecks[0] && availableDecks[0].key) || '../deck.json');
+  const [randomCount, setRandomCount] = useState<number>(30);
   const [deck, setDeck] = useState<CardItem[]>(() => {
     // load initial deck
     try {
@@ -72,8 +74,65 @@ export default function App() {
   const [flipped, setFlipped] = useState<boolean>(false);
   const [frontField, setFrontField] = useState<'japanese' | 'english'>('japanese');
 
+  function aggregateAndDedupe(): CardItem[] {
+    // Aggregate all cards across discovered decks and dedupe by any of the fields
+    let all: CardItem[] = [];
+    try {
+      if (deckContext) {
+        const keys: string[] = deckContext.keys();
+        for (const k of keys) {
+          const arr = deckContext(k) as CardItem[];
+          if (Array.isArray(arr)) {
+            all = all.concat(arr);
+          }
+        }
+      } else {
+        all = sampleDeck as CardItem[];
+      }
+    } catch {
+      all = sampleDeck as CardItem[];
+    }
+
+    const seenJ = new Set<string>();
+    const seenH = new Set<string>();
+    const seenE = new Set<string>();
+    const deduped: CardItem[] = [];
+    for (const c of all) {
+      const j = (c.japanese || '').trim();
+      const h = (c.hiragana || '').trim();
+      const e = (c.english || '').trim();
+      if (seenJ.has(j) || seenH.has(h) || seenE.has(e)) continue;
+      deduped.push(c);
+      if (j) seenJ.add(j);
+      if (h) seenH.add(h);
+      if (e) seenE.add(e);
+    }
+    return deduped;
+  }
+
+  function sampleN<T>(arr: T[], n: number): T[] {
+    if (n <= 0) return [];
+    const shuffled = shuffle(arr);
+    return shuffled.slice(0, Math.min(n, shuffled.length));
+  }
+
+  function startRandomDeck() {
+    const deduped = aggregateAndDedupe();
+    const sampled = sampleN<CardItem>(deduped, randomCount);
+    setSelectedDeckKey(RANDOM_KEY);
+    setDeck(shuffle(sampled));
+    setFlipped(false);
+  }
+
   // react to deck selection changes
   useEffect(() => {
+    if (selectedDeckKey === RANDOM_KEY) {
+      const deduped = aggregateAndDedupe();
+      const sampled = sampleN<CardItem>(deduped, randomCount);
+      setDeck(shuffle(sampled));
+      setFlipped(false);
+      return;
+    }
     let loaded: CardItem[] = sampleDeck as CardItem[];
     try {
       if (deckContext && selectedDeckKey) {
@@ -132,6 +191,22 @@ export default function App() {
               </li>
             ))}
           </ul>
+          <div className="random-controls">
+            <h4>Random</h4>
+            <div className="random-row">
+              <button onClick={startRandomDeck}>Random</button>
+              <label>
+                Quantity
+                <select value={randomCount} onChange={(e) => setRandomCount(parseInt(e.target.value))}>
+                  <option value={10}>10</option>
+                  <option value={20}>20</option>
+                  <option value={30}>30</option>
+                  <option value={50}>50</option>
+                  <option value={100}>100</option>
+                </select>
+              </label>
+            </div>
+          </div>
           <div className="front-toggle">
             <h4>Front Side</h4>
             <label>
@@ -160,6 +235,12 @@ export default function App() {
           <h1>All done 🎉</h1>
           <p>You completed the deck.</p>
           <button onClick={() => {
+            if (selectedDeckKey === RANDOM_KEY) {
+              const deduped = aggregateAndDedupe();
+              const sampled = sampleN<CardItem>(deduped, randomCount);
+              setDeck(shuffle(sampled));
+              return;
+            }
             try {
               const loaded = deckContext && selectedDeckKey ? (deckContext(selectedDeckKey) as CardItem[]) : (sampleDeck as CardItem[]);
               setDeck(shuffle(loaded));
@@ -183,6 +264,22 @@ export default function App() {
             </li>
           ))}
         </ul>
+        <div className="random-controls">
+          <h4>Random</h4>
+          <div className="random-row">
+            <button onClick={startRandomDeck}>Random</button>
+            <label>
+              Quantity
+              <select value={randomCount} onChange={(e) => setRandomCount(parseInt(e.target.value))}>
+                <option value={10}>10</option>
+                <option value={20}>20</option>
+                <option value={30}>30</option>
+                <option value={50}>50</option>
+                <option value={100}>100</option>
+              </select>
+            </label>
+          </div>
+        </div>
         <div className="front-toggle">
           <h4>Front Side</h4>
           <label>

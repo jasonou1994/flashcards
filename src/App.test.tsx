@@ -157,6 +157,59 @@ describe('App behavior', () => {
   });
 });
 
+describe('Random deck aggregation and dedupe', () => {
+  function mockDeckContext(maps: Record<string, CardItem[]>) {
+    const loader = (key: string) => maps[key];
+    (loader as any).keys = () => Object.keys(maps);
+    (require as any).context = jest.fn(() => loader);
+  }
+
+  afterEach(() => {
+    // Restore default behavior
+    (require as any).context = undefined;
+  });
+
+  it('shows Random controls and can start a random deck with quantity', () => {
+    render(<App />);
+    expect(screen.getByRole('heading', { name: /Random/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Random/i })).toBeInTheDocument();
+    expect(screen.getByLabelText(/Quantity/i)).toBeInTheDocument();
+  });
+
+  it('dedupes across japanese/hiragana/english and respects quantity on start and restart', () => {
+    const decks: Record<string, CardItem[]> = {
+      './a.json': [
+        { japanese: 'A', hiragana: 'あ', english: 'alpha' },
+        { japanese: 'B', hiragana: 'ぶ', english: 'beta' },
+      ],
+      './b.json': [
+        { japanese: 'A', hiragana: 'あ2', english: 'alpha2' }, // duplicate japanese
+        { japanese: 'C', hiragana: 'ぶ', english: 'gamma' }, // duplicate hiragana
+        { japanese: 'D', hiragana: 'で', english: 'beta' }, // duplicate english
+        { japanese: 'E', hiragana: 'え', english: 'epsilon' }, // unique
+      ],
+    };
+    mockDeckContext(decks);
+
+    render(<App />);
+    // Set quantity to 10 (default is 30)
+    fireEvent.change(screen.getByLabelText(/Quantity/i), { target: { value: '10' } });
+    fireEvent.click(screen.getByRole('button', { name: /Random/i }));
+
+    // Deduped length should be 3 (A, B, E)
+    expect(screen.getByText(/Cards left:\s*3/i)).toBeInTheDocument();
+
+    // Complete the deck
+    fireEvent.click(screen.getByRole('button', { name: 'Known' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Known' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Known' }));
+
+    // Restart should re-sample and keep deduped count
+    fireEvent.click(screen.getByRole('button', { name: /Restart/i }));
+    expect(screen.getByText(/Cards left:\s*3/i)).toBeInTheDocument();
+  });
+});
+
 describe('Card', () => {
   const base: CardItem = {
     japanese: '<ruby>卒業<rt>そつぎょう</rt></ruby>',
