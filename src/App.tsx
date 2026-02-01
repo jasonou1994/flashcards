@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
 import sampleDeck from '../decks/chapter1_1.json';
 import { LocalStorageStatsProvider } from './stats/LocalStorageStatsProvider';
 import type { CardStats } from './stats/StatsProvider';
@@ -67,6 +67,8 @@ export default function App() {
   }, []);
 
   const statsProvider = useMemo(() => new LocalStorageStatsProvider(), []);
+  // Track which card IDs have been counted in the current deck run
+  const countedThisRun = useRef<Set<string>>(new Set());
 
   function validateDeckIds(cards: CardItem[]): void {
     const seen = new Set<string>();
@@ -149,6 +151,7 @@ export default function App() {
     const deduped = aggregateAndDedupe();
     const sampled = sampleN<CardItem>(deduped, randomCount);
     setSelectedDeckKey(RANDOM_KEY);
+    countedThisRun.current.clear();
     validateDeckIds(sampled);
     setDeck(shuffle(sampled));
     setFlipped(false);
@@ -159,6 +162,7 @@ export default function App() {
     if (selectedDeckKey === RANDOM_KEY) {
       const deduped = aggregateAndDedupe();
       const sampled = sampleN<CardItem>(deduped, randomCount);
+      countedThisRun.current.clear();
       validateDeckIds(sampled);
       setDeck(shuffle(sampled));
       setFlipped(false);
@@ -172,6 +176,7 @@ export default function App() {
     } catch (e) {
       loaded = sampleDeck as CardItem[];
     }
+    countedThisRun.current.clear();
     validateDeckIds(loaded);
     setDeck(shuffle(loaded));
     setFlipped(false);
@@ -192,7 +197,11 @@ export default function App() {
     if (!current) return;
     // Record success for current card
     if ((current as any).id) {
-      statsProvider.incrementSuccess((current as any).id);
+      const id = (current as any).id as string;
+      if (!countedThisRun.current.has(id)) {
+        statsProvider.incrementSuccess(id);
+        countedThisRun.current.add(id);
+      }
     }
     const remaining = deck.slice(1);
     setDeck(remaining);
@@ -203,7 +212,11 @@ export default function App() {
     if (!current) return;
     // Record failure for current card
     if ((current as any).id) {
-      statsProvider.incrementFailure((current as any).id);
+      const id = (current as any).id as string;
+      if (!countedThisRun.current.has(id)) {
+        statsProvider.incrementFailure(id);
+        countedThisRun.current.add(id);
+      }
     }
     // reinsert this card at random position after shuffling remaining
     const remaining = deck.slice(1);
@@ -287,16 +300,19 @@ export default function App() {
             if (selectedDeckKey === RANDOM_KEY) {
               const deduped = aggregateAndDedupe();
               const sampled = sampleN<CardItem>(deduped, randomCount);
+              countedThisRun.current.clear();
               validateDeckIds(sampled);
               setDeck(shuffle(sampled));
               return;
             }
             try {
               const loaded = deckContext && selectedDeckKey ? (deckContext(selectedDeckKey) as CardItem[]) : (sampleDeck as CardItem[]);
+              countedThisRun.current.clear();
               validateDeckIds(loaded);
               setDeck(shuffle(loaded));
             } catch (e) {
               const fallback = sampleDeck as CardItem[];
+              countedThisRun.current.clear();
               validateDeckIds(fallback);
               setDeck(shuffle(fallback));
             }

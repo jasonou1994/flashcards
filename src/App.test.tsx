@@ -160,6 +160,73 @@ describe('App behavior', () => {
   });
 });
 
+describe('Stats gating for a single deck run', () => {
+  it('Unknown on same card twice increments failure once', () => {
+    const randSpy = jest.spyOn(Math, 'random');
+    // Initial shuffle: keep order unchanged
+    randSpy
+      .mockReturnValueOnce(0.99) // i=2 -> j=2
+      .mockReturnValueOnce(0.99); // i=1 -> j=1
+    // Deck-load effect shuffle: also keep order unchanged
+    randSpy
+      .mockReturnValueOnce(0.99)
+      .mockReturnValueOnce(0.99);
+
+    window.localStorage.clear();
+    render(<App />);
+    const frontElA = document.querySelector('.side.front') as HTMLElement;
+    expect(frontElA.textContent || '').toMatch(/カード1/);
+    // First Unknown: shuffle remaining+current so current stays at front
+    randSpy
+      .mockReturnValueOnce(0.0)  // i=2 -> j=0 (move current to index 0)
+      .mockReturnValueOnce(0.99); // i=1 -> j=1 (keep current at 0)
+    fireEvent.click(screen.getByRole('button', { name: 'Unknown' }));
+
+    // Second Unknown on the same card at front
+    randSpy
+      .mockReturnValueOnce(0.0)  // i=2 -> j=0
+      .mockReturnValueOnce(0.99); // i=1 -> j=1
+    fireEvent.click(screen.getByRole('button', { name: 'Unknown' }));
+
+    const key = 'flashcards:stats:v1:mock-0001';
+    const counts = JSON.parse(window.localStorage.getItem(key) || '{"success":0,"failure":0}');
+    expect(counts.failure).toBe(1);
+    expect(counts.success).toBe(0);
+    randSpy.mockRestore();
+  });
+
+  it('Unknown then Known on same card results in single increment (failure)', () => {
+    const randSpy = jest.spyOn(Math, 'random');
+    // Initial shuffle: keep order unchanged
+    randSpy
+      .mockReturnValueOnce(0.99) // i=2 -> j=2
+      .mockReturnValueOnce(0.99); // i=1 -> j=1
+    // Deck-load effect shuffle: also keep order unchanged
+    randSpy
+      .mockReturnValueOnce(0.99)
+      .mockReturnValueOnce(0.99);
+
+    window.localStorage.clear();
+    render(<App />);
+    const frontElB = document.querySelector('.side.front') as HTMLElement;
+    expect(frontElB.textContent || '').toMatch(/カード1/);
+    // Unknown: keep same card at front
+    randSpy
+      .mockReturnValueOnce(0.0)  // i=2 -> j=0
+      .mockReturnValueOnce(0.99); // i=1 -> j=1
+    fireEvent.click(screen.getByRole('button', { name: 'Unknown' }));
+
+    // Known: remove the same front card; no additional increment due to gating
+    fireEvent.click(screen.getByRole('button', { name: 'Known' }));
+
+    const key = 'flashcards:stats:v1:mock-0001';
+    const counts = JSON.parse(window.localStorage.getItem(key) || '{"success":0,"failure":0}');
+    expect(counts.failure).toBe(1);
+    expect(counts.success).toBe(0);
+    randSpy.mockRestore();
+  });
+});
+
 describe('Random deck aggregation and dedupe', () => {
   function mockDeckContext(maps: Record<string, CardItem[]>) {
     const loader = (key: string) => maps[key];
