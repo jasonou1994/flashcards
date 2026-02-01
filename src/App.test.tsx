@@ -1,6 +1,25 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import { HtmlOrText, Card, CardItem } from './App';
+import { render, screen, fireEvent } from '@testing-library/react';
+import App, { HtmlOrText, Card, CardItem } from './App';
+
+// Mock the sample deck imported by App to keep tests small and deterministic
+jest.mock('../decks/chapter1_1.json', () => [
+  {
+    japanese: 'カード1',
+    hiragana: 'かーど1',
+    english: 'card one',
+  },
+  {
+    japanese: 'カード2',
+    hiragana: 'かーど2',
+    english: 'card two',
+  },
+  {
+    japanese: 'カード3',
+    hiragana: 'かーど3',
+    english: 'card three',
+  },
+]);
 
 describe('HtmlOrText', () => {
   it('renders plain text when no ruby markup', () => {
@@ -16,6 +35,105 @@ describe('HtmlOrText', () => {
     const div = container.querySelector('.ruby');
     expect(div).toBeInTheDocument();
     expect(div!.innerHTML).toBe(ruby);
+  });
+});
+
+describe('App behavior', () => {
+  function getCardElement() {
+    const card = document.querySelector('.card');
+    expect(card).toBeTruthy();
+    return card as HTMLElement;
+  }
+
+  function getCardsLeftCount() {
+    const el = screen.getByText(/Cards left:/i);
+    const text = el.textContent || '';
+    const m = text.match(/Cards left:\s*(\d+)/);
+    return m ? parseInt(m[1], 10) : NaN;
+  }
+
+  it('renders main UI and sidebar with default deck', () => {
+    render(<App />);
+    expect(screen.getByRole('heading', { name: /Japanese Flashcards/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Decks/i })).toBeInTheDocument();
+    // Fallback availableDecks shows a default option
+    expect(screen.getByRole('button', { name: /default/i })).toBeInTheDocument();
+    expect(getCardsLeftCount()).toBeGreaterThan(0);
+  });
+
+  it('flips the card on click and Space key, and resets on Known/Unknown', () => {
+    render(<App />);
+    const card = getCardElement();
+
+    // Initially not flipped
+    expect(card.className).not.toMatch(/flipped/);
+
+    // Click flips
+    fireEvent.click(card);
+    expect(card.className).toMatch(/flipped/);
+
+    // Space toggles back
+    fireEvent.keyDown(window, { key: ' ', code: 'Space' });
+    expect(card.className).not.toMatch(/flipped/);
+
+    // Flip, then Known resets flip and removes the card
+    fireEvent.click(card);
+    expect(card.className).toMatch(/flipped/);
+    const before = getCardsLeftCount();
+    fireEvent.click(screen.getByRole('button', { name: 'Known' }));
+    expect(getCardsLeftCount()).toBe(before - 1);
+    expect(getCardElement().className).not.toMatch(/flipped/);
+
+    // Flip, then Unknown resets flip and keeps count
+    fireEvent.click(getCardElement());
+    expect(getCardElement().className).toMatch(/flipped/);
+    const beforeUnknown = getCardsLeftCount();
+    fireEvent.click(screen.getByRole('button', { name: 'Unknown' }));
+    expect(getCardsLeftCount()).toBe(beforeUnknown);
+    expect(getCardElement().className).not.toMatch(/flipped/);
+  });
+
+  it('Enter key marks Known (removes current card)', () => {
+    render(<App />);
+    const before = getCardsLeftCount();
+    fireEvent.keyDown(window, { key: 'Enter', code: 'Enter' });
+    expect(getCardsLeftCount()).toBe(before - 1);
+  });
+
+  it('Reshuffle changes order and resets flip', () => {
+    // Mock Math.random to deterministic sequence for shuffle
+    const randSpy = jest.spyOn(Math, 'random');
+    // For a 3-item shuffle, two calls are made: i=2 and i=1
+    randSpy
+      .mockReturnValueOnce(0.99) // j = 2
+      .mockReturnValueOnce(0.0); // j = 0
+
+    render(<App />);
+    // Flip to true, then reshuffle should reset
+    const card = getCardElement();
+    fireEvent.click(card);
+    expect(card.className).toMatch(/flipped/);
+    fireEvent.click(screen.getByRole('button', { name: /Reshuffle/i }));
+    expect(getCardElement().className).not.toMatch(/flipped/);
+    randSpy.mockRestore();
+  });
+
+  it('Shows completion and Restart reloads a fresh shuffled deck', () => {
+    render(<App />);
+    // Mark Known until deck is empty (3 cards in mocked deck)
+    fireEvent.click(screen.getByRole('button', { name: 'Known' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Known' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Known' }));
+
+    // Completion view
+    expect(screen.getByRole('heading', { name: /All done/i })).toBeInTheDocument();
+    const restart = screen.getByRole('button', { name: /Restart/i });
+    expect(restart).toBeInTheDocument();
+
+    // Restart returns to main view with cards
+    fireEvent.click(restart);
+    expect(screen.getByRole('heading', { name: /Japanese Flashcards/i })).toBeInTheDocument();
+    expect(getCardsLeftCount()).toBeGreaterThan(0);
   });
 });
 

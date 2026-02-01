@@ -57,8 +57,9 @@ When editing code, run these quick checks
  - npm test — ensure the unit tests pass before and after changes.
 
 Testing policy
-- All code changes should include accompanying tests covering the new or changed behavior.
-- After making changes, always run the test suite locally (`npm test`) and fix any failures before committing.
+ - All code changes should include accompanying tests covering the new or changed behavior.
+ - Keep all tests consolidated in a single file: `src/App.test.tsx`. Do not create additional test files (e.g., avoid `*.behavior.test.tsx` or files under `src/__tests__`).
+ - After making changes, always run the test suite locally (`npm test`) and fix any failures before committing.
 
 If you (the agent) make changes, include in the PR description:
 - What user-visible behavior changed (one sentence).
