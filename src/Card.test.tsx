@@ -79,10 +79,15 @@ describe('Card structure', () => {
   } as CardItem;
 
   it('renders required fields in order', () => {
-    const { container } = render(<Card card={base} flipped={false} onFlip={() => {}} frontField="japanese" />);
+    const { container, rerender } = render(<Card card={base} flipped={false} onFlip={() => {}} frontField="japanese" />);
     const front = container.querySelector('.side.front');
-    const back = container.querySelector('.side.back');
+    const backInitial = container.querySelector('.side.back');
     expect(front).toBeInTheDocument();
+    expect(backInitial).toBeNull();
+
+    // Flip to back and ensure order
+    rerender(<Card card={base} flipped={true} onFlip={() => {}} frontField="japanese" />);
+    const back = container.querySelector('.side.back');
     expect(back).toBeInTheDocument();
 
     const children = Array.from(back!.children);

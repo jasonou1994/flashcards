@@ -2,6 +2,12 @@ import React from 'react';
 import HtmlOrText from './HtmlOrText';
 import type { CardItem } from './utils';
 import type { CardStats } from './stats/StatsProvider';
+import MUICard from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import FlagIcon from '@mui/icons-material/Flag';
 
 export function Card({
   card,
@@ -21,40 +27,54 @@ export function Card({
   onToggleDifficult?: (e: React.MouseEvent) => void;
 }) {
   return (
-    <div className={`card ${flipped ? 'flipped' : ''}`} onClick={onFlip}>
+    <MUICard className={`card ${flipped ? 'flipped' : ''}`} onClick={onFlip} sx={{ position: 'relative', p: 2 }}>
       {/* Actions bar: flag (left) + counts (right) */}
-      <div className="card-actions" onClick={(e) => e.stopPropagation()}>
-        <button
-          type="button"
+      <Box className="card-actions" onClick={(e) => e.stopPropagation()} sx={{
+        position: 'absolute',
+        top: 8,
+        left: 8,
+        right: 8,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      }}>
+        <IconButton
           className={`flag-button ${difficult ? 'active' : ''}`}
           aria-label="Flag Difficult"
           aria-pressed={!!difficult}
+          color={difficult ? 'error' : 'default'}
+          size="small"
           onClick={onToggleDifficult}
         >
-          ⚑
-        </button>
+          <FlagIcon />
+        </IconButton>
         {counts ? (
-          <span className="card-stats-overlay">
+          <Typography className="card-stats-overlay" variant="caption">
             {counts.success} / {counts.success + counts.failure}
-          </span>
+          </Typography>
         ) : (
-          <span className="card-stats-overlay" />
+          <Typography className="card-stats-overlay" variant="caption" />
         )}
-      </div>
+      </Box>
 
-      <HtmlOrText className="side front" text={card[frontField]} />
-      <div className="side back">
-        <HtmlOrText className="japanese" text={card.japanese} />
-        <HtmlOrText className="hiragana" text={card.hiragana} />
-        <HtmlOrText className="english" text={card.english} />
-        {card.japanese_example ? (
-          <HtmlOrText className="japanese-example" text={card.japanese_example} />
-        ) : null}
-        {card.english_example ? (
-          <HtmlOrText className="english-example" text={card.english_example} />
-        ) : null}
-      </div>
-    </div>
+      <CardContent>
+        {!flipped ? (
+          <HtmlOrText className="side front" text={card[frontField]} />
+        ) : (
+          <Box className="side back" sx={{ mt: 2 }}>
+            <HtmlOrText className="japanese" text={card.japanese} />
+            <HtmlOrText className="hiragana" text={card.hiragana} />
+            <HtmlOrText className="english" text={card.english} />
+            {card.japanese_example ? (
+              <HtmlOrText className="japanese-example" text={card.japanese_example} />
+            ) : null}
+            {card.english_example ? (
+              <HtmlOrText className="english-example" text={card.english_example} />
+            ) : null}
+          </Box>
+        )}
+      </CardContent>
+    </MUICard>
   );
 }
 

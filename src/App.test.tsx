@@ -22,34 +22,38 @@ describe('App routing', () => {
 
   it('redirects / to /study and shows Study UI', () => {
     renderTestApp('/');
-    expect(screen.getByRole('heading', { name: /Japanese Flashcards/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Decks/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Reshuffle/i })).toBeInTheDocument();
     // Active tab should be Study
-    const studyTab = screen.getByRole('link', { name: /Study/i });
-    expect(studyTab).toHaveClass('active');
+    const studyTab = screen.getByRole('tab', { name: /Study/i });
+    expect(studyTab).toHaveAttribute('aria-selected', 'true');
   });
 
   it('deep-links to /stats and shows Stats UI', () => {
     renderTestApp('/stats');
     expect(screen.getByRole('heading', { name: /Stats/i })).toBeInTheDocument();
-    const statsTab = screen.getByRole('link', { name: /Stats/i });
-    expect(statsTab).toHaveClass('active');
-    // Study heading should be absent
-    expect(screen.queryByRole('heading', { name: /Japanese Flashcards/i })).toBeNull();
+    const statsTab = screen.getByRole('tab', { name: /Stats/i });
+    expect(statsTab).toHaveAttribute('aria-selected', 'true');
+    // Study controls should be absent
+    expect(screen.queryByRole('heading', { name: /Decks/i })).toBeNull();
+    expect(screen.queryByRole('button', { name: /Reshuffle/i })).toBeNull();
   });
 
   it('unknown route redirects to /study', () => {
     renderTestApp('/nope');
-    expect(screen.getByRole('heading', { name: /Japanese Flashcards/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Decks/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Reshuffle/i })).toBeInTheDocument();
   });
 
   it('clicking tabs navigates between routes', () => {
     renderTestApp('/study');
-    const statsLink = screen.getByRole('link', { name: /Stats/i });
-    fireEvent.click(statsLink);
+    const statsTab = screen.getByRole('tab', { name: /Stats/i });
+    fireEvent.click(statsTab);
     expect(screen.getByRole('heading', { name: /Stats/i })).toBeInTheDocument();
-    const studyLink = screen.getByRole('link', { name: /Study/i });
-    fireEvent.click(studyLink);
-    expect(screen.getByRole('heading', { name: /Japanese Flashcards/i })).toBeInTheDocument();
+    const studyTab = screen.getByRole('tab', { name: /Study/i });
+    fireEvent.click(studyTab);
+    expect(screen.getByRole('heading', { name: /Decks/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Reshuffle/i })).toBeInTheDocument();
   });
 });
 

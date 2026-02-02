@@ -1,4 +1,20 @@
 import React, { useEffect, useState, useMemo, useRef } from 'react';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Paper from '@mui/material/Paper';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Divider from '@mui/material/Divider';
+import Stack from '@mui/material/Stack';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Radio from '@mui/material/Radio';
 import sampleDeck from '../decks/chapter1_1.json';
 import { LocalStorageStatsProvider } from './stats/LocalStorageStatsProvider';
 import type { CardStats } from './stats/StatsProvider';
@@ -10,6 +26,8 @@ import { LocalStorageDifficultProvider } from './stats/LocalStorageDifficultProv
 
 export type { CardItem };
 
+type DeckOption = { name: string; key: string; loader: () => CardItem[] };
+
 export default function Study() {
   // discover decks from /decks using webpack require.context
   let deckContext: any = null;
@@ -19,7 +37,7 @@ export default function Study() {
     deckContext = null;
   }
 
-  const availableDecks = useMemo(() => {
+  const availableDecks = useMemo<DeckOption[]>(() => {
     if (!deckContext) return [{ name: 'default', key: '../deck.json', loader: () => sampleDeck as CardItem[] }];
     return deckContext.keys().map((k: string) => ({ name: k.replace(/^\.\//, ''), key: k, loader: () => deckContext(k) as CardItem[] }));
   }, []);
@@ -191,19 +209,28 @@ export default function Study() {
     return () => window.removeEventListener('keydown', onKey);
   }, [deck, current]);
 
-  if (!current) {
-    return (
-      <div className="study">
-        <div className="app layout">
-        <aside className="sidebar">
-          <h3>Decks</h3>
-          <ul>
+  const sidebarWidth = 280;
+
+  // Single layout: sidebar + main; main renders content conditionally
+
+  return (
+    <Box>
+      <Box sx={{ display: 'flex' }}>
+        <Paper elevation={0} sx={{ width: sidebarWidth, flexShrink: 0 }}>
+          <Box sx={{ p: 2 }}>
+          <Typography variant="h6" gutterBottom>
+            Decks
+          </Typography>
+          <List>
             {availableDecks.map((d) => (
-              <li key={d.key} className={d.key === selectedDeckKey ? 'active' : ''}>
-                <button onClick={() => setSelectedDeckKey(d.key)}>{d.name}</button>
-              </li>
+              <ListItem key={d.key} disablePadding>
+                <ListItemButton selected={d.key === selectedDeckKey} onClick={() => setSelectedDeckKey(d.key)}>
+                  <ListItemText primary={d.name} />
+                </ListItemButton>
+              </ListItem>
             ))}
-          </ul>
+          </List>
+          <Divider sx={{ my: 2 }} />
           <RandomControls
             onStartRandom={startRandomDeck}
             randomCount={randomCount}
@@ -211,134 +238,92 @@ export default function Study() {
             prioritizeDifficult={prioritizeDifficult}
             onTogglePrioritizeDifficult={(v) => setPrioritizeDifficult(v)}
           />
-          <div className="front-toggle">
-            <h4>Front Side</h4>
-            <label>
-              <input
-                type="radio"
-                name="frontSide"
-                value="japanese"
-                checked={frontField === 'japanese'}
-                onChange={() => setFrontField('japanese')}
-              />
-              Japanese
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="frontSide"
-                value="english"
-                checked={frontField === 'english'}
-                onChange={() => setFrontField('english')}
-              />
-              English
-            </label>
-          </div>
-        </aside>
-        <main className="main">
-          <h1>All done 🎉</h1>
-          <p>You completed the deck.</p>
-          <button onClick={() => {
-            if (selectedDeckKey === RANDOM_KEY) {
-              const deduped = aggregateAllAndDedupe();
-              const sampled = sampleRandomRun(deduped);
-              countedThisRun.current.clear();
-              validateDeckIds(sampled);
-              setDeck(shuffle(sampled));
-              return;
-            }
-            try {
-              const loaded = deckContext && selectedDeckKey ? (deckContext(selectedDeckKey) as CardItem[]) : (sampleDeck as CardItem[]);
-              countedThisRun.current.clear();
-              validateDeckIds(loaded);
-              setDeck(shuffle(loaded));
-            } catch (e) {
-              const fallback = sampleDeck as CardItem[];
-              countedThisRun.current.clear();
-              validateDeckIds(fallback);
-              setDeck(shuffle(fallback));
-            }
-          }}>Restart</button>
-        </main>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="study">
-      <div className="app layout">
-      <aside className="sidebar">
-        <h3>Decks</h3>
-        <ul>
-          {availableDecks.map((d) => (
-            <li key={d.key} className={d.key === selectedDeckKey ? 'active' : ''}>
-              <button onClick={() => setSelectedDeckKey(d.key)}>{d.name}</button>
-            </li>
-          ))}
-        </ul>
-        <RandomControls
-          onStartRandom={startRandomDeck}
-          randomCount={randomCount}
-          onChangeRandomCount={(n) => setRandomCount(n)}
-          prioritizeDifficult={prioritizeDifficult}
-          onTogglePrioritizeDifficult={(v) => setPrioritizeDifficult(v)}
-        />
-        <div className="front-toggle">
-          <h4>Front Side</h4>
-          <label>
-            <input
-              type="radio"
+          <Divider sx={{ my: 2 }} />
+          <FormControl component="fieldset">
+            <FormLabel component="legend">Front Side</FormLabel>
+            <RadioGroup
               name="frontSide"
-              value="japanese"
-              checked={frontField === 'japanese'}
-              onChange={() => setFrontField('japanese')}
-            />
-            Japanese
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="frontSide"
-              value="english"
-              checked={frontField === 'english'}
-              onChange={() => setFrontField('english')}
-            />
-            English
-          </label>
-        </div>
-      </aside>
+              value={frontField}
+              onChange={(_, v) => setFrontField(v as 'japanese' | 'english')}
+            >
+              <FormControlLabel value="japanese" control={<Radio />} label="Japanese" />
+              <FormControlLabel value="english" control={<Radio />} label="English" />
+            </RadioGroup>
+          </FormControl>
+          </Box>
+        </Paper>
 
-      <main className="main">
-        <h1>Japanese Flashcards</h1>
-        <div className="controls">
-          <button onClick={() => { setDeck(shuffle(deck)); setFlipped(false); }}>Reshuffle</button>
-        </div>
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          {!current ? (
+            <>
+              <Typography variant="h4" gutterBottom>
+                All done 🎉
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                You completed the deck.
+              </Typography>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => {
+                  if (selectedDeckKey === RANDOM_KEY) {
+                    const deduped = aggregateAllAndDedupe();
+                    const sampled = sampleRandomRun(deduped);
+                    countedThisRun.current.clear();
+                    validateDeckIds(sampled);
+                    setDeck(shuffle(sampled));
+                    return;
+                  }
+                  try {
+                    const loaded = deckContext && selectedDeckKey ? (deckContext(selectedDeckKey) as CardItem[]) : (sampleDeck as CardItem[]);
+                    countedThisRun.current.clear();
+                    validateDeckIds(loaded);
+                    setDeck(shuffle(loaded));
+                  } catch (e) {
+                    const fallback = sampleDeck as CardItem[];
+                    countedThisRun.current.clear();
+                    validateDeckIds(fallback);
+                    setDeck(shuffle(fallback));
+                  }
+                }}
+              >
+                Restart
+              </Button>
+            </>
+          ) : (
+            <>
+              <Box sx={{ mb: 2 }}>
+                <Button variant="outlined" onClick={() => { setDeck(shuffle(deck)); setFlipped(false); }}>Reshuffle</Button>
+              </Box>
 
-        <Card
-          card={current}
-          flipped={flipped}
-          onFlip={() => setFlipped((f) => !f)}
-          frontField={frontField}
-          counts={counts}
-          difficult={difficult}
-          onToggleDifficult={(e) => {
-            e.stopPropagation();
-            if (!current || !(current as any).id) return;
-            const newState = difficultProvider.toggleDifficult(selectedDeckKey, (current as any).id as string);
-            setDifficult(newState);
-          }}
-        />
+              <Card
+                card={current}
+                flipped={flipped}
+                onFlip={() => setFlipped((f) => !f)}
+                frontField={frontField}
+                counts={counts}
+                difficult={difficult}
+                onToggleDifficult={(e) => {
+                  e.stopPropagation();
+                  if (!current || !(current as any).id) return;
+                  const newState = difficultProvider.toggleDifficult(selectedDeckKey, (current as any).id as string);
+                  setDifficult(newState);
+                }}
+              />
 
-        <div className="actions">
-          <button onClick={markKnown}>Known</button>
-          <button onClick={markUnknown}>Unknown</button>
-        </div>
+              <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
+                <Button variant="contained" color="success" onClick={markKnown}>Known</Button>
+                <Button variant="contained" color="warning" onClick={markUnknown}>Unknown</Button>
+              </Stack>
 
-        <div className="progress">Cards left: {deck.length}</div>
-        <div className="hint">Tip: press Space to flip, Enter to mark Known</div>
-      </main>
-      </div>
-    </div>
+              <Typography variant="body2" sx={{ mt: 2 }}>Cards left: {deck.length}</Typography>
+              <Typography variant="caption" sx={{ mt: 1, color: 'text.secondary' }}>
+                Tip: press Space to flip, Enter to mark Known
+              </Typography>
+            </>
+          )}
+        </Box>
+      </Box>
+    </Box>
   );
 }

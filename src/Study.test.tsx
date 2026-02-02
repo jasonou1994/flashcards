@@ -41,10 +41,10 @@ describe('Study behavior', () => {
 
   it('renders main UI and sidebar with default deck', () => {
     render(<Study />);
-    expect(screen.getByRole('heading', { name: /Japanese Flashcards/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /Decks/i })).toBeInTheDocument();
     // Fallback availableDecks shows a default option
     expect(screen.getByRole('button', { name: /default/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Reshuffle/i })).toBeInTheDocument();
     expect(getCardsLeftCount()).toBeGreaterThan(0);
   });
 
@@ -119,7 +119,7 @@ describe('Study behavior', () => {
 
     // Restart returns to main view with cards
     fireEvent.click(restart);
-    expect(screen.getByRole('heading', { name: /Japanese Flashcards/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Reshuffle/i })).toBeInTheDocument();
     expect(getCardsLeftCount()).toBeGreaterThan(0);
   });
 
