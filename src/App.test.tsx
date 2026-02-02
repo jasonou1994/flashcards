@@ -23,7 +23,7 @@ describe('App routing', () => {
   it('redirects / to /study and shows Study UI', () => {
     renderTestApp('/');
     expect(screen.getByRole('heading', { name: /Decks/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Reshuffle/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Select a deck to begin/i })).toBeInTheDocument();
     // Active tab should be Study
     const studyTab = screen.getByRole('tab', { name: /Study/i });
     expect(studyTab).toHaveAttribute('aria-selected', 'true');
@@ -42,7 +42,7 @@ describe('App routing', () => {
   it('unknown route redirects to /study', () => {
     renderTestApp('/nope');
     expect(screen.getByRole('heading', { name: /Decks/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Reshuffle/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Select a deck to begin/i })).toBeInTheDocument();
   });
 
   it('clicking tabs navigates between routes', () => {
@@ -53,7 +53,7 @@ describe('App routing', () => {
     const studyTab = screen.getByRole('tab', { name: /Study/i });
     fireEvent.click(studyTab);
     expect(screen.getByRole('heading', { name: /Decks/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Reshuffle/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Select a deck to begin/i })).toBeInTheDocument();
   });
 });
 

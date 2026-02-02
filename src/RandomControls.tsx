@@ -26,7 +26,7 @@ export default function RandomControls({
 }: RandomControlsProps) {
   return (
     <Box role="group" aria-labelledby="random-legend">
-      <Typography id="random-legend" variant="subtitle1" gutterBottom>
+      <Typography id="random-legend" variant="h6" component="h6" gutterBottom sx={{ fontSize: '1rem', color: 'text.secondary' }}>
         Random
       </Typography>
       <Stack direction="row" spacing={2} alignItems="center" aria-label="Random options bar">

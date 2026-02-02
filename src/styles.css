@@ -27,7 +27,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helv
 .study .card-actions { position:absolute; top:8px; left:8px; right:8px; display:flex; align-items:center; justify-content:space-between; }
 .study .flag-button { background:transparent; border:0; cursor:pointer; font-size:1.5rem; color:#888; }
 .study .flag-button.active { color:#d32f2f; }
-.study .card .front { padding-top:36px; }
+.study .card .front { padding-top:52px; }
 .study .card .back { padding-top:52px; }
 .study .actions { display:flex; gap:8px; justify-content:center; }
 .study .controls { display:flex; gap:8px; justify-content:center; }
@@ -47,3 +47,20 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helv
 .study .random-controls .checkbox-label { display:flex; align-items:center; gap:6px; }
 .study .random-start-button { width:100%; background:#2e7d32; border:0; padding:8px 10px; border-radius:6px; text-align:center; cursor:pointer; }
 /* Keep the Start button consistently green; no hover-only color change */
+
+/* === Unscoped modern components (MUI-based) === */
+/* Ensure all card text is centered and consistently sized on both sides */
+.card .side { text-align:center; font-size:2rem; }
+.card .back > div { text-align:center; font-size:2rem; width:100%; }
+.card .back { text-align:center; }
+
+/* Ensure Japanese example matches main Japanese size, including nested tags */
+.card .back .japanese-example { font-size:2rem !important; line-height:1.3; }
+.card .back .japanese-example * { font-size:inherit; }
+
+/* Increase example sizes and unify English size with main fields */
+.card .back .japanese-example,
+.card .back .english,
+.card .back .english-example,
+.card .back .japanese,
+.card .back .hiragana { font-size:2rem; }

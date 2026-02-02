@@ -3,29 +3,27 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import Study from './Study';
 import type { CardItem } from './utils';
 
-// Mock the sample deck imported by Study to keep tests small and deterministic
-jest.mock('../decks/chapter1_1.json', () => [
-  {
-    id: 'mock-0001',
-    japanese: 'カード1',
-    hiragana: 'かーど1',
-    english: 'card one',
-  },
-  {
-    id: 'mock-0002',
-    japanese: 'カード2',
-    hiragana: 'かーど2',
-    english: 'card two',
-  },
-  {
-    id: 'mock-0003',
-    japanese: 'カード3',
-    hiragana: 'かーど3',
-    english: 'card three',
-  },
-]);
+function mockSingleDeck() {
+    const maps: Record<string, CardItem[]> = {
+      './test.json': [
+        { id: 'mock-0001', japanese: 'カード1', hiragana: 'かーど1', english: 'card one' },
+        { id: 'mock-0002', japanese: 'カード2', hiragana: 'かーど2', english: 'card two' },
+        { id: 'mock-0003', japanese: 'カード3', hiragana: 'かーど3', english: 'card three' },
+      ],
+    };
+    const loader = (key: string) => maps[key];
+    (loader as any).keys = () => Object.keys(maps);
+    (require as any).context = jest.fn(() => loader);
+    (globalThis as any).__TEST_DECKS__ = maps;
+  }
+
+afterEach(() => {
+  (require as any).context = undefined;
+  delete (globalThis as any).__TEST_DECKS__;
+});
 
 describe('Study behavior', () => {
+
   function getCardElement() {
     const card = document.querySelector('.card');
     expect(card).toBeTruthy();
@@ -39,17 +37,21 @@ describe('Study behavior', () => {
     return m ? parseInt(m[1], 10) : NaN;
   }
 
-  it('renders main UI and sidebar with default deck', () => {
+  it('renders empty-state until a deck is selected, then can start Random run to show cards', () => {
+    mockSingleDeck();
     render(<Study />);
     expect(screen.getByRole('heading', { name: /Decks/i })).toBeInTheDocument();
-    // Fallback availableDecks shows a default option
-    expect(screen.getByRole('button', { name: /default/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Select a deck to begin/i })).toBeInTheDocument();
+    // Start Random run instead of selecting deck
+    fireEvent.click(screen.getByRole('button', { name: /Start Random Run/i }));
     expect(screen.getByRole('button', { name: /Reshuffle/i })).toBeInTheDocument();
     expect(getCardsLeftCount()).toBeGreaterThan(0);
   });
 
   it('flips the card on click and Space key, and resets on Known/Unknown', () => {
+    mockSingleDeck();
     render(<Study />);
+    fireEvent.click(screen.getByRole('button', { name: /Start Random Run/i }));
     const card = getCardElement();
 
     // Initially not flipped
@@ -81,7 +83,9 @@ describe('Study behavior', () => {
   });
 
   it('Enter key marks Known (removes current card)', () => {
+    mockSingleDeck();
     render(<Study />);
+    fireEvent.click(screen.getByRole('button', { name: /Start Random Run/i }));
     const before = getCardsLeftCount();
     fireEvent.keyDown(window, { key: 'Enter', code: 'Enter' });
     expect(getCardsLeftCount()).toBe(before - 1);
@@ -94,8 +98,9 @@ describe('Study behavior', () => {
     randSpy
       .mockReturnValueOnce(0.99) // j = 2
       .mockReturnValueOnce(0.0); // j = 0
-
+    mockSingleDeck();
     render(<Study />);
+    fireEvent.click(screen.getByRole('button', { name: /Start Random Run/i }));
     // Flip to true, then reshuffle should reset
     const card = getCardElement();
     fireEvent.click(card);
@@ -106,7 +111,9 @@ describe('Study behavior', () => {
   });
 
   it('Shows completion and Restart reloads a fresh shuffled deck', () => {
+    mockSingleDeck();
     render(<Study />);
+    fireEvent.click(screen.getByRole('button', { name: /Start Random Run/i }));
     // Mark Known until deck is empty (3 cards in mocked deck)
     fireEvent.click(screen.getByRole('button', { name: 'Known' }));
     fireEvent.click(screen.getByRole('button', { name: 'Known' }));
@@ -124,7 +131,9 @@ describe('Study behavior', () => {
   });
 
   it('Front-side toggle switches between Japanese and English', () => {
+    mockSingleDeck();
     render(<Study />);
+    fireEvent.click(screen.getByRole('button', { name: /Start Random Run/i }));
     const frontEl = document.querySelector('.side.front') as HTMLElement;
     expect(frontEl).toBeInTheDocument();
 
@@ -157,7 +166,9 @@ describe('Stats gating for a single deck run', () => {
       .mockReturnValueOnce(0.99);
 
     window.localStorage.clear();
+    mockSingleDeck();
     render(<Study />);
+    fireEvent.click(screen.getByRole('button', { name: /test\.json/i }));
     const frontElA = document.querySelector('.side.front') as HTMLElement;
     expect(frontElA.textContent || '').toMatch(/カード1/);
     // First Unknown: shuffle remaining+current so current stays at front
@@ -172,10 +183,10 @@ describe('Stats gating for a single deck run', () => {
       .mockReturnValueOnce(0.99); // i=1 -> j=1
     fireEvent.click(screen.getByRole('button', { name: 'Unknown' }));
 
-    const key = 'flashcards:stats:v1:mock-0001';
-    const counts = JSON.parse(window.localStorage.getItem(key) || '{"success":0,"failure":0}');
-    expect(counts.failure).toBe(1);
-    expect(counts.success).toBe(0);
+    const tableRaw = window.localStorage.getItem('flashcards:carddata:v1') || '{}';
+    const table = JSON.parse(tableRaw || '{}');
+    expect(table['mock-0001'].failure).toBe(1);
+    expect(table['mock-0001'].success).toBe(0);
     randSpy.mockRestore();
   });
 
@@ -191,7 +202,9 @@ describe('Stats gating for a single deck run', () => {
       .mockReturnValueOnce(0.99);
 
     window.localStorage.clear();
+    mockSingleDeck();
     render(<Study />);
+    fireEvent.click(screen.getByRole('button', { name: /test\.json/i }));
     const frontElB = document.querySelector('.side.front') as HTMLElement;
     expect(frontElB.textContent || '').toMatch(/カード1/);
     // Unknown: keep same card at front
@@ -203,10 +216,10 @@ describe('Stats gating for a single deck run', () => {
     // Known: remove the same front card; no additional increment due to gating
     fireEvent.click(screen.getByRole('button', { name: 'Known' }));
 
-    const key = 'flashcards:stats:v1:mock-0001';
-    const counts = JSON.parse(window.localStorage.getItem(key) || '{"success":0,"failure":0}');
-    expect(counts.failure).toBe(1);
-    expect(counts.success).toBe(0);
+    const tableRaw = window.localStorage.getItem('flashcards:carddata:v1') || '{}';
+    const table = JSON.parse(tableRaw || '{}');
+    expect(table['mock-0001'].failure).toBe(1);
+    expect(table['mock-0001'].success).toBe(0);
     randSpy.mockRestore();
   });
 });
@@ -216,11 +229,13 @@ describe('Random deck aggregation and dedupe', () => {
     const loader = (key: string) => maps[key];
     (loader as any).keys = () => Object.keys(maps);
     (require as any).context = jest.fn(() => loader);
+    (globalThis as any).__TEST_DECKS__ = maps;
   }
 
   afterEach(() => {
     // Restore default behavior
     (require as any).context = undefined;
+    delete (globalThis as any).__TEST_DECKS__;
   });
 
   it('shows Random controls and can start a random deck with count', () => {

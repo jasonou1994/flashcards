@@ -1,28 +1,15 @@
 import React, { useEffect, useState, useMemo, useRef } from 'react';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
 import Paper from '@mui/material/Paper';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Radio from '@mui/material/Radio';
-import sampleDeck from '../decks/chapter1_1.json';
-import { LocalStorageStatsProvider } from './stats/LocalStorageStatsProvider';
-import type { CardStats } from './stats/StatsProvider';
+import type { CardStats } from './stats/CardDataProvider';
+import { LocalStorageCardDataProvider } from './stats/LocalStorageCardDataProvider';
 import type { CardItem } from './utils';
 import { validateDeckIds, aggregateAndDedupe as dedupeCards, shuffle, sampleN, sampleMixedByPriority, sampleFlagFirst } from './utils';
 import Card from './Card';
-import RandomControls from './RandomControls';
-import { LocalStorageDifficultProvider } from './stats/LocalStorageDifficultProvider';
+import Sidebar from './Sidebar';
 
 export type { CardItem };
 
@@ -36,34 +23,30 @@ export default function Study() {
   } catch (e) {
     deckContext = null;
   }
+  // Test fallback: allow injected test decks when require.context isn't available
+  if (!deckContext && (globalThis as any).__TEST_DECKS__) {
+    const maps = (globalThis as any).__TEST_DECKS__ as Record<string, CardItem[]>;
+    const loader = (key: string) => maps[key];
+    (loader as any).keys = () => Object.keys(maps);
+    deckContext = loader;
+  }
 
   const availableDecks = useMemo<DeckOption[]>(() => {
-    if (!deckContext) return [{ name: 'default', key: '../deck.json', loader: () => sampleDeck as CardItem[] }];
+    if (!deckContext) return [];
     return deckContext.keys().map((k: string) => ({ name: k.replace(/^\.\//, ''), key: k, loader: () => deckContext(k) as CardItem[] }));
   }, []);
 
-  const statsProvider = useMemo(() => new LocalStorageStatsProvider(), []);
-  const difficultProvider = useMemo(() => new LocalStorageDifficultProvider(), []);
+  const dataProvider = useMemo(() => new LocalStorageCardDataProvider(), []);
   // Track which card IDs have been counted in the current deck run
   const countedThisRun = useRef<Set<string>>(new Set());
 
-  const RANDOM_KEY = '__random__';
-  const [selectedDeckKey, setSelectedDeckKey] = useState<string>(() => (availableDecks[0] && availableDecks[0].key) || '../deck.json');
+  const [selectedDeckKey, setSelectedDeckKey] = useState<string>('');
+  const [isRandomRun, setIsRandomRun] = useState<boolean>(false);
   const [randomCount, setRandomCount] = useState<number>(30);
   const [prioritizeDifficult, setPrioritizeDifficult] = useState<boolean>(false);
-  const [deck, setDeck] = useState<CardItem[]>(() => {
-    // load initial deck
-    try {
-      if (deckContext && selectedDeckKey && selectedDeckKey !== '../deck.json') {
-        const initial = deckContext(selectedDeckKey) as CardItem[];
-        validateDeckIds(initial);
-        return shuffle(initial);
-      }
-    } catch (e) {}
-    const initial = sampleDeck as CardItem[];
-    validateDeckIds(initial);
-    return shuffle(initial);
-  });
+  const [deck, setDeck] = useState<CardItem[]>([]);
+  // Preserve the initially sampled random deck to support restart without changing cards
+  const initialRandomDeckRef = useRef<CardItem[] | null>(null);
 
   const [flipped, setFlipped] = useState<boolean>(false);
   const [frontField, setFrontField] = useState<'japanese' | 'english'>('japanese');
@@ -82,25 +65,23 @@ export default function Study() {
             all = all.concat(arr);
           }
         }
-      } else {
-        all = sampleDeck as CardItem[];
       }
     } catch {
-      all = sampleDeck as CardItem[];
+      all = [];
     }
     const deduped = dedupeCards(all);
     return deduped;
   }
 
   function failureRatioFor(card: CardItem): number {
-    const { success, failure } = statsProvider.getCounts((card as any).id as string);
+    const { success, failure } = dataProvider.getCounts((card as any).id as string);
     const total = success + failure;
     return total > 0 ? failure / total : 0;
   }
 
   function sampleRandomRun(deduped: CardItem[]): CardItem[] {
     if (prioritizeDifficult) {
-      const flaggedIds = new Set<string>(difficultProvider.getDifficult(RANDOM_KEY));
+      const flaggedIds = new Set<string>(dataProvider.getDifficult());
       return sampleFlagFirst<CardItem>(deduped, flaggedIds, randomCount, failureRatioFor);
     }
     return sampleMixedByPriority<CardItem>(deduped, randomCount, failureRatioFor);
@@ -109,53 +90,54 @@ export default function Study() {
   function startRandomDeck() {
     const deduped = aggregateAllAndDedupe();
     const sampled = sampleRandomRun(deduped);
-    setSelectedDeckKey(RANDOM_KEY);
+    setIsRandomRun(true);
     countedThisRun.current.clear();
     validateDeckIds(sampled);
-    setDeck(shuffle(sampled));
+    const initial = shuffle(sampled);
+    initialRandomDeckRef.current = initial;
+    setDeck(initial);
     setFlipped(false);
   }
 
   // react to deck selection changes
   useEffect(() => {
-    if (selectedDeckKey === RANDOM_KEY) {
-      const deduped = aggregateAllAndDedupe();
-      const sampled = sampleRandomRun(deduped);
+    if (isRandomRun) {
+      // Preserve current random run; do not reload on deck key changes until user selects a deck
+      return;
+    }
+    if (!selectedDeckKey || !deckContext) {
       countedThisRun.current.clear();
-      validateDeckIds(sampled);
-      setDeck(shuffle(sampled));
+      setDeck([]);
       setFlipped(false);
       return;
     }
-    let loaded: CardItem[] = sampleDeck as CardItem[];
+    let loaded: CardItem[] = [];
     try {
-      if (deckContext && selectedDeckKey) {
-        loaded = deckContext(selectedDeckKey) as CardItem[];
-      }
+      loaded = deckContext(selectedDeckKey) as CardItem[];
     } catch (e) {
-      loaded = sampleDeck as CardItem[];
+      loaded = [];
     }
     countedThisRun.current.clear();
     validateDeckIds(loaded);
     setDeck(shuffle(loaded));
     setFlipped(false);
-  }, [selectedDeckKey]);
+  }, [selectedDeckKey, isRandomRun]);
 
   const current = deck[0];
 
   // Update counts when current card changes
   useEffect(() => {
     if (current && (current as any).id) {
-      setCounts(statsProvider.getCounts((current as any).id));
+      setCounts(dataProvider.getCounts((current as any).id));
     } else {
       setCounts({ success: 0, failure: 0 });
     }
-  }, [current, statsProvider]);
+  }, [current, dataProvider]);
 
   // Update difficult flag when current card or deck changes
   useEffect(() => {
-    if (current && (current as any).id && selectedDeckKey) {
-      setDifficult(difficultProvider.isDifficult(selectedDeckKey, (current as any).id as string));
+    if (current && (current as any).id) {
+      setDifficult(dataProvider.isDifficult((current as any).id as string));
     } else {
       setDifficult(false);
     }
@@ -168,7 +150,7 @@ export default function Study() {
     if ((current as any).id) {
       const id = (current as any).id as string;
       if (!countedThisRun.current.has(id)) {
-        statsProvider.incrementSuccess(id);
+        dataProvider.incrementSuccess(id);
         countedThisRun.current.add(id);
       }
     }
@@ -183,7 +165,7 @@ export default function Study() {
     if ((current as any).id) {
       const id = (current as any).id as string;
       if (!countedThisRun.current.has(id)) {
-        statsProvider.incrementFailure(id);
+        dataProvider.incrementFailure(id);
         countedThisRun.current.add(id);
       }
     }
@@ -215,81 +197,73 @@ export default function Study() {
 
   return (
     <Box>
-      <Box sx={{ display: 'flex' }}>
+      <Box sx={{ display: 'flex', mt: 1 }}>
         <Paper elevation={0} sx={{ width: sidebarWidth, flexShrink: 0 }}>
-          <Box sx={{ p: 2 }}>
-          <Typography variant="h6" gutterBottom>
-            Decks
-          </Typography>
-          <List>
-            {availableDecks.map((d) => (
-              <ListItem key={d.key} disablePadding>
-                <ListItemButton selected={d.key === selectedDeckKey} onClick={() => setSelectedDeckKey(d.key)}>
-                  <ListItemText primary={d.name} />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
-          <Divider sx={{ my: 2 }} />
-          <RandomControls
+          <Sidebar
+            availableDecks={availableDecks}
+            selectedDeckKey={selectedDeckKey}
+            onSelectDeck={(key) => { setIsRandomRun(false); setSelectedDeckKey(key); }}
             onStartRandom={startRandomDeck}
             randomCount={randomCount}
-            onChangeRandomCount={(n) => setRandomCount(n)}
+            onChangeRandomCount={setRandomCount}
             prioritizeDifficult={prioritizeDifficult}
-            onTogglePrioritizeDifficult={(v) => setPrioritizeDifficult(v)}
+            onTogglePrioritizeDifficult={setPrioritizeDifficult}
+            frontField={frontField}
+            onChangeFrontField={(v) => setFrontField(v)}
           />
-          <Divider sx={{ my: 2 }} />
-          <FormControl component="fieldset">
-            <FormLabel component="legend">Front Side</FormLabel>
-            <RadioGroup
-              name="frontSide"
-              value={frontField}
-              onChange={(_, v) => setFrontField(v as 'japanese' | 'english')}
-            >
-              <FormControlLabel value="japanese" control={<Radio />} label="Japanese" />
-              <FormControlLabel value="english" control={<Radio />} label="English" />
-            </RadioGroup>
-          </FormControl>
-          </Box>
         </Paper>
 
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           {!current ? (
-            <>
-              <Typography variant="h4" gutterBottom>
-                All done 🎉
-              </Typography>
-              <Typography variant="body1" gutterBottom>
-                You completed the deck.
-              </Typography>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={() => {
-                  if (selectedDeckKey === RANDOM_KEY) {
-                    const deduped = aggregateAllAndDedupe();
-                    const sampled = sampleRandomRun(deduped);
-                    countedThisRun.current.clear();
-                    validateDeckIds(sampled);
-                    setDeck(shuffle(sampled));
-                    return;
-                  }
-                  try {
-                    const loaded = deckContext && selectedDeckKey ? (deckContext(selectedDeckKey) as CardItem[]) : (sampleDeck as CardItem[]);
-                    countedThisRun.current.clear();
-                    validateDeckIds(loaded);
-                    setDeck(shuffle(loaded));
-                  } catch (e) {
-                    const fallback = sampleDeck as CardItem[];
-                    countedThisRun.current.clear();
-                    validateDeckIds(fallback);
-                    setDeck(shuffle(fallback));
-                  }
-                }}
-              >
-                Restart
-              </Button>
-            </>
+            !isRandomRun && !selectedDeckKey ? (
+              <>
+                <Typography variant="h4" gutterBottom>
+                  Select a deck to begin
+                </Typography>
+                <Typography variant="body1" gutterBottom>
+                  Choose a deck from the sidebar or start a Random run.
+                </Typography>
+              </>
+            ) : (
+              <>
+                <Typography variant="h4" gutterBottom>
+                  All done 🎉
+                </Typography>
+                <Typography variant="body1" gutterBottom>
+                  You completed the deck.
+                </Typography>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={() => {
+                    if (isRandomRun) {
+                      // Restart random run using the same initially sampled cards
+                      countedThisRun.current.clear();
+                      const initial = initialRandomDeckRef.current || [];
+                      if (initial.length > 0) {
+                        validateDeckIds(initial);
+                        // Restore the same order as the beginning of the run
+                        setDeck(initial.slice());
+                      }
+                      return;
+                    }
+                    if (!selectedDeckKey || !deckContext) {
+                      return;
+                    }
+                    try {
+                      const loaded = deckContext(selectedDeckKey) as CardItem[];
+                      countedThisRun.current.clear();
+                      validateDeckIds(loaded);
+                      setDeck(shuffle(loaded));
+                    } catch (e) {
+                      // no-op when reload fails
+                    }
+                  }}
+                >
+                  Restart
+                </Button>
+              </>
+            )
           ) : (
             <>
               <Box sx={{ mb: 2 }}>
@@ -306,14 +280,14 @@ export default function Study() {
                 onToggleDifficult={(e) => {
                   e.stopPropagation();
                   if (!current || !(current as any).id) return;
-                  const newState = difficultProvider.toggleDifficult(selectedDeckKey, (current as any).id as string);
+                  const newState = dataProvider.toggleDifficult((current as any).id as string);
                   setDifficult(newState);
                 }}
               />
 
               <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
-                <Button variant="contained" color="success" onClick={markKnown}>Known</Button>
-                <Button variant="contained" color="warning" onClick={markUnknown}>Unknown</Button>
+                <Button variant="contained" color="primary" onClick={markKnown}>Known</Button>
+                <Button variant="outlined" color="primary" sx={{ bgcolor: 'common.white' }} onClick={markUnknown}>Unknown</Button>
               </Stack>
 
               <Typography variant="body2" sx={{ mt: 2 }}>Cards left: {deck.length}</Typography>

@@ -25,3 +25,8 @@ Completion & Restart
 Glossary
 - Session: The entire time a user is using the app. Each browser tab/window is a separate session.
 - Deck run: A single pass of a selected deck from start (load + shuffle) to completion or restart.
+
+Coding Guidelines
+- Comments should reflect current behavior: keep comments accurate to what the code does now. Avoid change-log style notes like "we changed X" or "used to do Y".
+- Remove or update outdated comments when modifying code so they never drift.
+- Prefer tests and this README for higher-level rationale; keep source comments concise and truthful to the present implementation.

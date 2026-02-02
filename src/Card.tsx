@@ -1,7 +1,7 @@
 import React from 'react';
 import HtmlOrText from './HtmlOrText';
 import type { CardItem } from './utils';
-import type { CardStats } from './stats/StatsProvider';
+import type { CardStats } from './stats/CardDataProvider';
 import MUICard from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Box from '@mui/material/Box';
@@ -61,7 +61,7 @@ export function Card({
         {!flipped ? (
           <HtmlOrText className="side front" text={card[frontField]} />
         ) : (
-          <Box className="side back" sx={{ mt: 2 }}>
+          <Box className="side back">
             <HtmlOrText className="japanese" text={card.japanese} />
             <HtmlOrText className="hiragana" text={card.hiragana} />
             <HtmlOrText className="english" text={card.english} />
