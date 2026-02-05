@@ -14,6 +14,8 @@ export interface CardDataProvider {
   decrementSuccess(cardId: string): void;
   decrementFailure(cardId: string): void;
   getCounts(cardId: string): CardStats;
+  // Bulk snapshot for performance-sensitive reads
+  getAllRecords(): Record<string, CardRecord>;
 
   // Difficult (global)
   isDifficult(cardId: string): boolean;

@@ -17,6 +17,8 @@ export function Card({
   counts,
   difficult,
   onToggleDifficult,
+  contentCenter = false,
+  backVariant = 'full',
 }: {
   card: CardItem;
   flipped: boolean;
@@ -25,9 +27,11 @@ export function Card({
   counts?: CardStats;
   difficult?: boolean;
   onToggleDifficult?: (e: React.MouseEvent) => void;
+  contentCenter?: boolean;
+  backVariant?: 'full' | 'englishOnly';
 }) {
   return (
-    <MUICard className={`card ${flipped ? 'flipped' : ''}`} onClick={onFlip} sx={{ position: 'relative', p: 2 }}>
+    <MUICard className={`card ${flipped ? 'flipped' : ''}`} onClick={onFlip} sx={{ position: 'relative', p: 2, display: 'flex', flexDirection: 'column' }}>
       {/* Actions bar: flag (left) + counts (right) */}
       <Box className="card-actions" onClick={(e) => e.stopPropagation()} sx={{
         position: 'absolute',
@@ -57,20 +61,26 @@ export function Card({
         )}
       </Box>
 
-      <CardContent>
+      <CardContent sx={contentCenter ? { flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' } : undefined}>
         {!flipped ? (
           <HtmlOrText className="side front" text={card[frontField]} />
         ) : (
-          <Box className="side back">
-            <HtmlOrText className="japanese" text={card.japanese} />
-            <HtmlOrText className="hiragana" text={card.hiragana} />
-            <HtmlOrText className="english" text={card.english} />
-            {card.japanese_example ? (
-              <HtmlOrText className="japanese-example" text={card.japanese_example} />
-            ) : null}
-            {card.english_example ? (
-              <HtmlOrText className="english-example" text={card.english_example} />
-            ) : null}
+          <Box className="side back" sx={contentCenter ? { width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' } : undefined}>
+            {backVariant === 'englishOnly' ? (
+              <HtmlOrText className="english" text={card.english} />
+            ) : (
+              <>
+                <HtmlOrText className="japanese" text={card.japanese} />
+                <HtmlOrText className="hiragana" text={card.hiragana} />
+                <HtmlOrText className="english" text={card.english} />
+                {card.japanese_example ? (
+                  <HtmlOrText className="japanese-example" text={card.japanese_example} />
+                ) : null}
+                {card.english_example ? (
+                  <HtmlOrText className="english-example" text={card.english_example} />
+                ) : null}
+              </>
+            )}
           </Box>
         )}
       </CardContent>

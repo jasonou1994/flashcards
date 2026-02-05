@@ -157,6 +157,11 @@ export class LocalStorageCardDataProvider implements CardDataProvider {
     return { success: rec.success, failure: rec.failure };
   }
 
+  // Return a snapshot of all known records without mutating storage
+  getAllRecords(): Record<string, CardRecord> {
+    return this.read();
+  }
+
   isDifficult(cardId: string): boolean {
     const rec = this.getRecord(cardId);
     return rec.difficult === true;

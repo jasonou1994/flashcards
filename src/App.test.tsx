@@ -34,9 +34,10 @@ describe('App routing', () => {
     expect(screen.getByRole('heading', { name: /Stats/i })).toBeInTheDocument();
     const statsTab = screen.getByRole('tab', { name: /Stats/i });
     expect(statsTab).toHaveAttribute('aria-selected', 'true');
-    // Study controls should be absent
-    expect(screen.queryByRole('heading', { name: /Decks/i })).toBeNull();
+    // Study-specific controls (e.g., Reshuffle) should be absent
     expect(screen.queryByRole('button', { name: /Reshuffle/i })).toBeNull();
+    // Stats has its own deck sidebar
+    expect(screen.getByRole('heading', { name: /Decks/i })).toBeInTheDocument();
   });
 
   it('unknown route redirects to /study', () => {
