@@ -1,10 +1,14 @@
-export interface CardItem {
-  id: string;
-  japanese: string;
-  hiragana: string;
-  english: string;
-  japanese_example?: string;
-  english_example?: string;
+import type { CardItem, DeckOption } from './types';
+
+// Re-export types for backwards compatibility
+export type { CardItem, DeckOption };
+
+// Layout constants
+export const SIDEBAR_WIDTH = 280;
+
+// Helper to safely get card ID
+export function getCardId(card: CardItem): string {
+  return card.id;
 }
 
 export function shuffle<T>(arr: T[]): T[] {
@@ -25,7 +29,7 @@ export function sampleN<T>(arr: T[], n: number): T[] {
 export function validateDeckIds(cards: CardItem[]): void {
   const seen = new Set<string>();
   for (const c of cards) {
-    const id = (c as any).id;
+    const id = c.id;
     if (typeof id !== 'string' || id.trim().length === 0) {
       throw new Error('Deck validation error: each card must have a non-empty string id');
     }
@@ -98,4 +102,53 @@ export function sampleFlagFirst<T extends { id: string }>(
   const remainingCandidates = arr.filter((x) => !flaggedIds.has(x.id));
   const remainder = sampleMixedByPriority(remainingCandidates, n - selected.length, getPriority);
   return selected.concat(remainder);
+}
+
+// Deck discovery helpers
+export type DeckContext = {
+  (key: string): CardItem[];
+  keys(): string[];
+};
+
+export function createDeckContext(): DeckContext | null {
+  let deckContext: DeckContext | null = null;
+  try {
+    deckContext = (require as any).context('../decks', false, /\.json$/);
+  } catch {
+    deckContext = null;
+  }
+  // Test fallback: allow injected test decks when require.context isn't available
+  if (!deckContext && (globalThis as any).__TEST_DECKS__) {
+    const maps = (globalThis as any).__TEST_DECKS__ as Record<string, CardItem[]>;
+    const loader = ((key: string) => maps[key]) as DeckContext;
+    loader.keys = () => Object.keys(maps);
+    deckContext = loader;
+  }
+  return deckContext;
+}
+
+export function buildDeckOptions(deckContext: DeckContext | null): DeckOption[] {
+  if (!deckContext) return [];
+  return deckContext.keys().map((k: string) => ({
+    name: k.replace(/^\.\//, ''),
+    key: k,
+    loader: () => deckContext(k),
+  }));
+}
+
+export function loadAllCards(deckContext: DeckContext | null): CardItem[] {
+  if (!deckContext) return [];
+  let all: CardItem[] = [];
+  try {
+    const keys = deckContext.keys();
+    for (const k of keys) {
+      const arr = deckContext(k);
+      if (Array.isArray(arr)) {
+        all = all.concat(arr);
+      }
+    }
+  } catch {
+    all = [];
+  }
+  return aggregateAndDedupe(all);
 }

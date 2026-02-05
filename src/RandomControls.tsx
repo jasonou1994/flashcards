@@ -8,14 +8,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
-export interface RandomControlsProps {
-  onStartRandom: () => void;
-  randomCount: number;
-  onChangeRandomCount: (n: number) => void;
-  prioritizeDifficult: boolean;
-  onTogglePrioritizeDifficult: (v: boolean) => void;
-}
+import type { RandomControlsProps } from './types';
 
 export default function RandomControls({
   onStartRandom,

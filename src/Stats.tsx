@@ -13,122 +13,86 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
-// Using flex layout for responsive wrapping
-import type { CardItem } from './utils';
-import { aggregateAndDedupe as dedupeCards, validateDeckIds } from './utils';
+import type { CardItem } from './types';
+import {
+  validateDeckIds,
+  createDeckContext,
+  buildDeckOptions,
+  loadAllCards,
+  getCardId,
+  SIDEBAR_WIDTH,
+} from './utils';
 import { LocalStorageCardDataProvider } from './stats/LocalStorageCardDataProvider';
 import Card from './Card';
 
-type DeckOption = { name: string; key: string; loader: () => CardItem[] };
-
 export default function Stats() {
-  // discover decks from /decks using webpack require.context
-  let deckContext: any = null;
-  try {
-    deckContext = (require as any).context('../decks', false, /\.json$/);
-  } catch (e) {
-    deckContext = null;
-  }
-  // Test fallback: allow injected test decks when require.context isn't available
-  if (!deckContext && (globalThis as any).__TEST_DECKS__) {
-    const maps = (globalThis as any).__TEST_DECKS__ as Record<string, CardItem[]>;
-    const loader = (key: string) => maps[key];
-    (loader as any).keys = () => Object.keys(maps);
-    deckContext = loader;
-  }
-
-  const availableDecks = useMemo<DeckOption[]>(() => {
-    if (!deckContext) return [];
-    return deckContext
-      .keys()
-      .map((k: string) => ({ name: k.replace(/^\.\//, ''), key: k, loader: () => deckContext(k) as CardItem[] }));
-  }, []);
-
+  const deckContext = useMemo(() => createDeckContext(), []);
+  const availableDecks = useMemo(() => buildDeckOptions(deckContext), [deckContext]);
   const dataProvider = useMemo(() => new LocalStorageCardDataProvider(), []);
 
   const [selectedDeckKey, setSelectedDeckKey] = useState<string>('');
   const [flaggedOnly, setFlaggedOnly] = useState<boolean>(false);
-  const [ascending, setAscending] = useState<boolean>(true); // default lowest->highest ratio
-  const [refreshTick, setRefreshTick] = useState<number>(0); // bump to refresh snapshot when flags change
+  const [ascending, setAscending] = useState<boolean>(true);
+  const [refreshTick, setRefreshTick] = useState<number>(0);
   const [flippedById, setFlippedById] = useState<Record<string, boolean>>({});
-
-  function aggregateAllAndDedupe(): CardItem[] {
-    let all: CardItem[] = [];
-    try {
-      if (deckContext) {
-        const keys: string[] = deckContext.keys();
-        for (const k of keys) {
-          const arr = deckContext(k) as CardItem[];
-          if (Array.isArray(arr)) {
-            all = all.concat(arr);
-          }
-        }
-      }
-    } catch {
-      all = [];
-    }
-    const deduped = dedupeCards(all);
-    return deduped;
-  }
-
-  const sidebarWidth = 280;
 
   // Compute base list according to selection (no deck chosen -> all deduped)
   const baseCards = useMemo<CardItem[]>(() => {
     if (!selectedDeckKey) {
-      const deduped = aggregateAllAndDedupe();
+      const deduped = loadAllCards(deckContext);
       validateDeckIds(deduped);
       return deduped;
     }
     try {
-      const loaded = deckContext ? (deckContext(selectedDeckKey) as CardItem[]) : [];
+      const loaded = deckContext ? deckContext(selectedDeckKey) : [];
       validateDeckIds(loaded);
       return loaded.slice();
     } catch {
       return [];
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedDeckKey]);
+  }, [selectedDeckKey, deckContext]);
 
   // Snapshot table once per render cycle / when toggled
-  const tableSnapshot = useMemo(() => dataProvider.getAllRecords(), [dataProvider, refreshTick, selectedDeckKey]);
+  const tableSnapshot = useMemo(
+    () => dataProvider.getAllRecords(),
+    [dataProvider, refreshTick, selectedDeckKey]
+  );
 
-  // Apply flagged-only filter (use snapshot for O(1) lookups per card)
+  // Apply flagged-only filter
   const filteredCards = useMemo<CardItem[]>(() => {
     if (!flaggedOnly) return baseCards;
-    return baseCards.filter((c) => !!tableSnapshot[(c as any).id]?.difficult);
+    return baseCards.filter((c) => !!tableSnapshot[getCardId(c)]?.difficult);
   }, [baseCards, flaggedOnly, tableSnapshot]);
 
-  // Sort by success rate, placing 0/0 cards at the bottom regardless of order
+  // Sort by success rate, placing 0/0 cards at the bottom
   const orderedCards = useMemo<CardItem[]>(() => {
     const withData = filteredCards.map((c) => {
-      const id = (c as any).id as string;
+      const id = getCardId(c);
       const rec = tableSnapshot[id] || { success: 0, failure: 0, difficult: false };
-      const counts = { success: rec.success, failure: rec.failure };
-      const total = counts.success + counts.failure;
-      const successRate = total > 0 ? counts.success / total : 0;
+      const total = rec.success + rec.failure;
+      const successRate = total > 0 ? rec.success / total : 0;
       const name = (c.japanese || c.english || '').toString();
       return { card: c, successRate, name, total };
     });
     // Split into attempted and zero-attempt groups
     const attempted = withData.filter((x) => x.total > 0);
     const zeroAttempts = withData.filter((x) => x.total === 0);
-    // Sort attempted by successRate (asc/desc) with deterministic tiebreaker
+    // Sort attempted by successRate with deterministic tiebreaker
     attempted.sort((a, b) => {
-      if (a.successRate !== b.successRate) return ascending ? (a.successRate - b.successRate) : (b.successRate - a.successRate);
-      // When successRate ties, use name tiebreaker consistently
+      if (a.successRate !== b.successRate) {
+        return ascending ? a.successRate - b.successRate : b.successRate - a.successRate;
+      }
       const cmp = a.name.localeCompare(b.name);
       return ascending ? cmp : -cmp;
     });
-    // Always place zeroAttempts at the end
     return attempted.concat(zeroAttempts).map((x) => x.card);
-  }, [filteredCards, dataProvider, ascending]);
+  }, [filteredCards, ascending, tableSnapshot]);
 
   return (
     <Box>
       <Box sx={{ display: 'flex', mt: 1 }}>
-        {/* Sidebar: Decks list (same rendering style as Study) */}
-        <Paper elevation={0} sx={{ width: sidebarWidth, flexShrink: 0 }}>
+        {/* Sidebar: Decks list */}
+        <Paper elevation={0} sx={{ width: SIDEBAR_WIDTH, flexShrink: 0 }}>
           <Box sx={{ p: 2 }}>
             <Typography variant="h6" gutterBottom sx={{ fontSize: '1rem', color: 'text.secondary' }}>
               Decks
@@ -158,7 +122,7 @@ export default function Stats() {
               <InputLabel htmlFor="order-by">Order by</InputLabel>
               <Select
                 native
-                value={"ratio"}
+                value="ratio"
                 inputProps={{ id: 'order-by' }}
                 onChange={() => { /* Single option for now */ }}
               >
@@ -179,7 +143,7 @@ export default function Stats() {
           {/* Responsive flex grid of cards */}
           <Box aria-label="Stats cards grid" sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
             {orderedCards.map((c) => {
-              const id = (c as any).id as string;
+              const id = getCardId(c);
               const rec = tableSnapshot[id] || { success: 0, failure: 0, difficult: false };
               const counts = { success: rec.success, failure: rec.failure };
               const difficult = !!rec.difficult;
@@ -208,18 +172,15 @@ export default function Stats() {
                   <Card
                     card={c}
                     flipped={!!flippedById[id]}
-                    onFlip={() => {
-                      setFlippedById((prev) => ({ ...prev, [id]: !prev[id] }));
-                    }}
-                    frontField={'japanese'}
+                    onFlip={() => setFlippedById((prev) => ({ ...prev, [id]: !prev[id] }))}
+                    frontField="japanese"
                     counts={counts}
                     difficult={difficult}
-                    contentCenter={true}
-                    backVariant={'englishOnly'}
+                    contentCenter
+                    backVariant="englishOnly"
                     onToggleDifficult={(e) => {
                       e.stopPropagation();
                       dataProvider.toggleDifficult(id);
-                      // Bump refreshTick to refresh snapshot and re-apply filters/sorting
                       setRefreshTick((t) => t + 1);
                     }}
                   />

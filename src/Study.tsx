@@ -4,39 +4,27 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import type { CardStats } from './stats/CardDataProvider';
+import type { CardItem, CardStats, FrontField } from './types';
 import { LocalStorageCardDataProvider } from './stats/LocalStorageCardDataProvider';
-import type { CardItem } from './utils';
-import { validateDeckIds, aggregateAndDedupe as dedupeCards, shuffle, sampleN, sampleMixedByPriority, sampleFlagFirst } from './utils';
+import {
+  validateDeckIds,
+  shuffle,
+  sampleMixedByPriority,
+  sampleFlagFirst,
+  createDeckContext,
+  buildDeckOptions,
+  loadAllCards,
+  getCardId,
+  SIDEBAR_WIDTH,
+} from './utils';
 import Card from './Card';
 import Sidebar from './Sidebar';
 
-export type { CardItem };
-
-type DeckOption = { name: string; key: string; loader: () => CardItem[] };
-
 export default function Study() {
-  // discover decks from /decks using webpack require.context
-  let deckContext: any = null;
-  try {
-    deckContext = (require as any).context('../decks', false, /\.json$/);
-  } catch (e) {
-    deckContext = null;
-  }
-  // Test fallback: allow injected test decks when require.context isn't available
-  if (!deckContext && (globalThis as any).__TEST_DECKS__) {
-    const maps = (globalThis as any).__TEST_DECKS__ as Record<string, CardItem[]>;
-    const loader = (key: string) => maps[key];
-    (loader as any).keys = () => Object.keys(maps);
-    deckContext = loader;
-  }
-
-  const availableDecks = useMemo<DeckOption[]>(() => {
-    if (!deckContext) return [];
-    return deckContext.keys().map((k: string) => ({ name: k.replace(/^\.\//, ''), key: k, loader: () => deckContext(k) as CardItem[] }));
-  }, []);
-
+  const deckContext = useMemo(() => createDeckContext(), []);
+  const availableDecks = useMemo(() => buildDeckOptions(deckContext), [deckContext]);
   const dataProvider = useMemo(() => new LocalStorageCardDataProvider(), []);
+
   // Track which card IDs have been counted in the current deck run
   const countedThisRun = useRef<Set<string>>(new Set());
 
@@ -49,46 +37,26 @@ export default function Study() {
   const initialRandomDeckRef = useRef<CardItem[] | null>(null);
 
   const [flipped, setFlipped] = useState<boolean>(false);
-  const [frontField, setFrontField] = useState<'japanese' | 'english'>('japanese');
+  const [frontField, setFrontField] = useState<FrontField>('japanese');
   const [counts, setCounts] = useState<CardStats>({ success: 0, failure: 0 });
   const [difficult, setDifficult] = useState<boolean>(false);
 
-  function aggregateAllAndDedupe(): CardItem[] {
-    // Aggregate all cards across discovered decks and dedupe by any of the fields
-    let all: CardItem[] = [];
-    try {
-      if (deckContext) {
-        const keys: string[] = deckContext.keys();
-        for (const k of keys) {
-          const arr = deckContext(k) as CardItem[];
-          if (Array.isArray(arr)) {
-            all = all.concat(arr);
-          }
-        }
-      }
-    } catch {
-      all = [];
-    }
-    const deduped = dedupeCards(all);
-    return deduped;
-  }
-
   function failureRatioFor(card: CardItem): number {
-    const { success, failure } = dataProvider.getCounts((card as any).id as string);
+    const { success, failure } = dataProvider.getCounts(getCardId(card));
     const total = success + failure;
     return total > 0 ? failure / total : 0;
   }
 
   function sampleRandomRun(deduped: CardItem[]): CardItem[] {
     if (prioritizeDifficult) {
-      const flaggedIds = new Set<string>(dataProvider.getDifficult());
-      return sampleFlagFirst<CardItem>(deduped, flaggedIds, randomCount, failureRatioFor);
+      const flaggedIds = dataProvider.getDifficult();
+      return sampleFlagFirst(deduped, flaggedIds, randomCount, failureRatioFor);
     }
-    return sampleMixedByPriority<CardItem>(deduped, randomCount, failureRatioFor);
+    return sampleMixedByPriority(deduped, randomCount, failureRatioFor);
   }
 
   function startRandomDeck() {
-    const deduped = aggregateAllAndDedupe();
+    const deduped = loadAllCards(deckContext);
     const sampled = sampleRandomRun(deduped);
     setIsRandomRun(true);
     countedThisRun.current.clear();
@@ -113,22 +81,22 @@ export default function Study() {
     }
     let loaded: CardItem[] = [];
     try {
-      loaded = deckContext(selectedDeckKey) as CardItem[];
-    } catch (e) {
+      loaded = deckContext(selectedDeckKey);
+    } catch {
       loaded = [];
     }
     countedThisRun.current.clear();
     validateDeckIds(loaded);
     setDeck(shuffle(loaded));
     setFlipped(false);
-  }, [selectedDeckKey, isRandomRun]);
+  }, [selectedDeckKey, isRandomRun, deckContext]);
 
   const current = deck[0];
 
   // Update counts when current card changes
   useEffect(() => {
-    if (current && (current as any).id) {
-      setCounts(dataProvider.getCounts((current as any).id));
+    if (current) {
+      setCounts(dataProvider.getCounts(getCardId(current)));
     } else {
       setCounts({ success: 0, failure: 0 });
     }
@@ -136,8 +104,8 @@ export default function Study() {
 
   // Update difficult flag when current card or deck changes
   useEffect(() => {
-    if (current && (current as any).id) {
-      setDifficult(dataProvider.isDifficult((current as any).id as string));
+    if (current) {
+      setDifficult(dataProvider.isDifficult(getCardId(current)));
     } else {
       setDifficult(false);
     }
@@ -146,13 +114,10 @@ export default function Study() {
 
   function markKnown() {
     if (!current) return;
-    // Record success for current card
-    if ((current as any).id) {
-      const id = (current as any).id as string;
-      if (!countedThisRun.current.has(id)) {
-        dataProvider.incrementSuccess(id);
-        countedThisRun.current.add(id);
-      }
+    const id = getCardId(current);
+    if (!countedThisRun.current.has(id)) {
+      dataProvider.incrementSuccess(id);
+      countedThisRun.current.add(id);
     }
     const remaining = deck.slice(1);
     setDeck(remaining);
@@ -161,13 +126,10 @@ export default function Study() {
 
   function markUnknown() {
     if (!current) return;
-    // Record failure for current card
-    if ((current as any).id) {
-      const id = (current as any).id as string;
-      if (!countedThisRun.current.has(id)) {
-        dataProvider.incrementFailure(id);
-        countedThisRun.current.add(id);
-      }
+    const id = getCardId(current);
+    if (!countedThisRun.current.has(id)) {
+      dataProvider.incrementFailure(id);
+      countedThisRun.current.add(id);
     }
     // reinsert this card at random position after shuffling remaining
     const remaining = deck.slice(1);
@@ -191,14 +153,10 @@ export default function Study() {
     return () => window.removeEventListener('keydown', onKey);
   }, [deck, current]);
 
-  const sidebarWidth = 280;
-
-  // Single layout: sidebar + main; main renders content conditionally
-
   return (
     <Box>
       <Box sx={{ display: 'flex', mt: 1 }}>
-        <Paper elevation={0} sx={{ width: sidebarWidth, flexShrink: 0 }}>
+        <Paper elevation={0} sx={{ width: SIDEBAR_WIDTH, flexShrink: 0 }}>
           <Sidebar
             availableDecks={availableDecks}
             selectedDeckKey={selectedDeckKey}
@@ -209,7 +167,7 @@ export default function Study() {
             prioritizeDifficult={prioritizeDifficult}
             onTogglePrioritizeDifficult={setPrioritizeDifficult}
             frontField={frontField}
-            onChangeFrontField={(v) => setFrontField(v)}
+            onChangeFrontField={setFrontField}
           />
         </Paper>
 
@@ -227,7 +185,7 @@ export default function Study() {
             ) : (
               <>
                 <Typography variant="h4" gutterBottom>
-                  All done 🎉
+                  All done
                 </Typography>
                 <Typography variant="body1" gutterBottom>
                   You completed the deck.
@@ -242,7 +200,6 @@ export default function Study() {
                       const initial = initialRandomDeckRef.current || [];
                       if (initial.length > 0) {
                         validateDeckIds(initial);
-                        // Restore the same order as the beginning of the run
                         setDeck(initial.slice());
                       }
                       return;
@@ -251,11 +208,11 @@ export default function Study() {
                       return;
                     }
                     try {
-                      const loaded = deckContext(selectedDeckKey) as CardItem[];
+                      const loaded = deckContext(selectedDeckKey);
                       countedThisRun.current.clear();
                       validateDeckIds(loaded);
                       setDeck(shuffle(loaded));
-                    } catch (e) {
+                    } catch {
                       // no-op when reload fails
                     }
                   }}
@@ -280,8 +237,8 @@ export default function Study() {
                 emphasizeFirstLine
                 onToggleDifficult={(e) => {
                   e.stopPropagation();
-                  if (!current || !(current as any).id) return;
-                  const newState = dataProvider.toggleDifficult((current as any).id as string);
+                  if (!current) return;
+                  const newState = dataProvider.toggleDifficult(getCardId(current));
                   setDifficult(newState);
                 }}
               />

@@ -1,4 +1,4 @@
-import type { CardDataProvider, CardRecord, CardStats } from './CardDataProvider';
+import type { CardDataProvider, CardRecord, CardStats } from '../types';
 
 const TABLE_KEY = 'flashcards:carddata:v1';
 const MIGRATED_KEY = 'flashcards:carddata:migrated:v1';

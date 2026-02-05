@@ -1,7 +1,6 @@
 import React from 'react';
 import HtmlOrText from './HtmlOrText';
-import type { CardItem } from './utils';
-import type { CardStats } from './stats/CardDataProvider';
+import type { CardItem, CardStats, FrontField } from './types';
 import MUICard from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Box from '@mui/material/Box';
@@ -24,7 +23,7 @@ export function Card({
   card: CardItem;
   flipped: boolean;
   onFlip: () => void;
-  frontField: 'japanese' | 'english';
+  frontField: FrontField;
   counts?: CardStats;
   difficult?: boolean;
   onToggleDifficult?: (e: React.MouseEvent) => void;

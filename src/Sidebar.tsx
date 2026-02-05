@@ -11,22 +11,8 @@ import FormLabel from '@mui/material/FormLabel';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
+import type { SidebarProps, FrontField } from './types';
 import RandomControls from './RandomControls';
-
-export type SidebarDeck = { name: string; key: string };
-
-export interface SidebarProps {
-  availableDecks: SidebarDeck[];
-  selectedDeckKey: string;
-  onSelectDeck: (key: string) => void;
-  onStartRandom: () => void;
-  randomCount: number;
-  onChangeRandomCount: (n: number) => void;
-  prioritizeDifficult: boolean;
-  onTogglePrioritizeDifficult: (v: boolean) => void;
-  frontField: 'japanese' | 'english';
-  onChangeFrontField: (v: 'japanese' | 'english') => void;
-}
 
 export default function Sidebar({
   availableDecks,
@@ -68,7 +54,7 @@ export default function Sidebar({
         <RadioGroup
           name="frontSide"
           value={frontField}
-          onChange={(_, v) => onChangeFrontField(v as 'japanese' | 'english')}
+          onChange={(_, v) => onChangeFrontField(v as FrontField)}
         >
           <FormControlLabel value="japanese" control={<Radio />} label="Japanese" />
           <FormControlLabel value="english" control={<Radio />} label="English" />
