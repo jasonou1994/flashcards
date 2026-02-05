@@ -65,18 +65,14 @@ export function Card({
 
       <CardContent sx={contentCenter ? { flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' } : undefined}>
         {!flipped ? (
-          <Box className="side front" sx={emphasizeFirstLine ? { fontSize: '2.5rem' } : undefined}>
-            <HtmlOrText text={card[frontField]} />
-          </Box>
+          <HtmlOrText className="side front" text={card[frontField]} variant={emphasizeFirstLine ? 'h3' : 'h5'} />
         ) : (
           <Box className="side back" sx={contentCenter ? { width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' } : undefined}>
             {backVariant === 'englishOnly' ? (
               <HtmlOrText className="english" text={card.english} />
             ) : (
               <>
-                <Box className="japanese" sx={emphasizeFirstLine ? { fontSize: '2.5rem' } : undefined}>
-                  <HtmlOrText text={card.japanese} />
-                </Box>
+                <HtmlOrText className="japanese" text={card.japanese} variant={emphasizeFirstLine ? 'h3' : 'h5'} />
                 <HtmlOrText className="hiragana" text={card.hiragana} />
                 <HtmlOrText className="english" text={card.english} />
                 {card.japanese_example ? (
