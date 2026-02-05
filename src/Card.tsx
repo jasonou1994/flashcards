@@ -19,6 +19,7 @@ export function Card({
   onToggleDifficult,
   contentCenter = false,
   backVariant = 'full',
+  emphasizeFirstLine = false,
 }: {
   card: CardItem;
   flipped: boolean;
@@ -29,6 +30,7 @@ export function Card({
   onToggleDifficult?: (e: React.MouseEvent) => void;
   contentCenter?: boolean;
   backVariant?: 'full' | 'englishOnly';
+  emphasizeFirstLine?: boolean;
 }) {
   return (
     <MUICard className={`card ${flipped ? 'flipped' : ''}`} onClick={onFlip} sx={{ position: 'relative', p: 2, display: 'flex', flexDirection: 'column' }}>
@@ -63,14 +65,18 @@ export function Card({
 
       <CardContent sx={contentCenter ? { flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' } : undefined}>
         {!flipped ? (
-          <HtmlOrText className="side front" text={card[frontField]} />
+          <Box className="side front" sx={emphasizeFirstLine ? { fontSize: '2.5rem' } : undefined}>
+            <HtmlOrText text={card[frontField]} />
+          </Box>
         ) : (
           <Box className="side back" sx={contentCenter ? { width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' } : undefined}>
             {backVariant === 'englishOnly' ? (
               <HtmlOrText className="english" text={card.english} />
             ) : (
               <>
-                <HtmlOrText className="japanese" text={card.japanese} />
+                <Box className="japanese" sx={emphasizeFirstLine ? { fontSize: '2.5rem' } : undefined}>
+                  <HtmlOrText text={card.japanese} />
+                </Box>
                 <HtmlOrText className="hiragana" text={card.hiragana} />
                 <HtmlOrText className="english" text={card.english} />
                 {card.japanese_example ? (

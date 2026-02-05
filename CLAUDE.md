@@ -1,6 +1,6 @@
-# GitHub Copilot Instructions
+# Claude Code Instructions
 
-> **Sync policy**: This file and `CLAUDE.md` (in project root) contain identical project context. When updating either file, always update both to keep them in sync.
+> **Sync policy**: This file and `.github/copilot-instructions.md` contain identical project context. When updating either file, always update both to keep them in sync.
 
 ---
 

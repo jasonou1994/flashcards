@@ -277,6 +277,7 @@ export default function Study() {
                 frontField={frontField}
                 counts={counts}
                 difficult={difficult}
+                emphasizeFirstLine
                 onToggleDifficult={(e) => {
                   e.stopPropagation();
                   if (!current || !(current as any).id) return;
