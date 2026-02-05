@@ -8,6 +8,7 @@ const mockCard = {
   japanese: '日本',
   hiragana: 'にほん',
   english: 'Japan',
+  english_definition: 'Japan (country in East Asia).',
 } as any;
 
 describe('Card component actions bar', () => {
@@ -76,6 +77,7 @@ describe('Card structure', () => {
     japanese: '<ruby>卒業<rt>そつぎょう</rt></ruby>',
     hiragana: 'そつぎょう',
     english: 'graduation',
+    english_definition: 'graduation (ceremony or act of graduating from school).',
   } as CardItem;
 
   it('renders required fields in order', () => {
@@ -93,17 +95,17 @@ describe('Card structure', () => {
     const children = Array.from(back!.children);
     expect(children[0]).toHaveClass('japanese');
     expect(children[1]).toHaveClass('hiragana');
-    expect(children[2]).toHaveClass('english');
+    expect(children[2]).toHaveClass('english-definition');
   });
 
-  it('renders optional examples after english in order', () => {
+  it('renders optional examples after english_definition in order', () => {
     const card: CardItem = { ...base, id: 'test-2', japanese_example: '<ruby>例<rt>れい</rt></ruby> 文', english_example: 'Example sentence' } as CardItem;
     const { container } = render(<Card card={card} flipped={true} onFlip={() => {}} frontField="japanese" />);
     const back = container.querySelector('.side.back');
     const children = Array.from(back!.children);
     expect(children[0]).toHaveClass('japanese');
     expect(children[1]).toHaveClass('hiragana');
-    expect(children[2]).toHaveClass('english');
+    expect(children[2]).toHaveClass('english-definition');
     expect(children[3]).toHaveClass('japanese-example');
     expect(children[4]).toHaveClass('english-example');
   });

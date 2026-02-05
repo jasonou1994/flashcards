@@ -20,14 +20,14 @@ describe('Stats tab UI', () => {
   it('renders sidebar, toolbar, and grid with aggregated cards by default', () => {
     const decks: Record<string, CardItem[]> = {
       './a.json': [
-        { id: 'a-1', japanese: 'A', hiragana: 'あ', english: 'alpha' },
-        { id: 'a-2', japanese: 'B', hiragana: 'ぶ', english: 'beta' },
+        { id: 'a-1', japanese: 'A', hiragana: 'あ', english: 'alpha', english_definition: 'alpha def.' },
+        { id: 'a-2', japanese: 'B', hiragana: 'ぶ', english: 'beta', english_definition: 'beta def.' },
       ],
       './b.json': [
-        { id: 'b-1', japanese: 'A', hiragana: 'あ2', english: 'alpha2' }, // duplicate japanese
-        { id: 'b-2', japanese: 'C', hiragana: 'ぶ', english: 'gamma' }, // duplicate hiragana
-        { id: 'b-3', japanese: 'D', hiragana: 'で', english: 'beta' }, // duplicate english
-        { id: 'b-4', japanese: 'E', hiragana: 'え', english: 'epsilon' }, // unique
+        { id: 'b-1', japanese: 'A', hiragana: 'あ2', english: 'alpha2', english_definition: 'alpha2 def.' }, // duplicate japanese
+        { id: 'b-2', japanese: 'C', hiragana: 'ぶ', english: 'gamma', english_definition: 'gamma def.' }, // duplicate hiragana
+        { id: 'b-3', japanese: 'D', hiragana: 'で', english: 'beta', english_definition: 'beta def.' }, // duplicate english
+        { id: 'b-4', japanese: 'E', hiragana: 'え', english: 'epsilon', english_definition: 'epsilon def.' }, // unique
       ],
     };
     mockDeckContext(decks);
@@ -49,11 +49,11 @@ describe('Stats tab UI', () => {
   it('filters by deck selection and toggles off when clicking again', () => {
     const decks: Record<string, CardItem[]> = {
       './a.json': [
-        { id: 'a-1', japanese: 'A', hiragana: 'あ', english: 'alpha' },
-        { id: 'a-2', japanese: 'B', hiragana: 'ぶ', english: 'beta' },
+        { id: 'a-1', japanese: 'A', hiragana: 'あ', english: 'alpha', english_definition: 'alpha def.' },
+        { id: 'a-2', japanese: 'B', hiragana: 'ぶ', english: 'beta', english_definition: 'beta def.' },
       ],
       './b.json': [
-        { id: 'b-4', japanese: 'E', hiragana: 'え', english: 'epsilon' },
+        { id: 'b-4', japanese: 'E', hiragana: 'え', english: 'epsilon', english_definition: 'epsilon def.' },
       ],
     };
     mockDeckContext(decks);
@@ -72,8 +72,8 @@ describe('Stats tab UI', () => {
   it('flagged-only toggle filters to difficult cards', () => {
     const decks: Record<string, CardItem[]> = {
       './a.json': [
-        { id: 'a-1', japanese: 'A', hiragana: 'あ', english: 'alpha' },
-        { id: 'a-2', japanese: 'B', hiragana: 'ぶ', english: 'beta' },
+        { id: 'a-1', japanese: 'A', hiragana: 'あ', english: 'alpha', english_definition: 'alpha def.' },
+        { id: 'a-2', japanese: 'B', hiragana: 'ぶ', english: 'beta', english_definition: 'beta def.' },
       ],
     };
     mockDeckContext(decks);
@@ -93,8 +93,8 @@ describe('Stats tab UI', () => {
   it('orders by success rate ascending by default and can reverse ordering', () => {
     const decks: Record<string, CardItem[]> = {
       './a.json': [
-        { id: 'a-1', japanese: 'A', hiragana: 'あ', english: 'alpha' },
-        { id: 'a-2', japanese: 'B', hiragana: 'ぶ', english: 'beta' },
+        { id: 'a-1', japanese: 'A', hiragana: 'あ', english: 'alpha', english_definition: 'alpha def.' },
+        { id: 'a-2', japanese: 'B', hiragana: 'ぶ', english: 'beta', english_definition: 'beta def.' },
       ],
     };
     // Pre-populate counts: a-1 failure ratio higher than a-2
@@ -123,9 +123,9 @@ describe('Stats tab UI', () => {
   it('displays 0/0 cards at the bottom regardless of order', () => {
     const decks: Record<string, CardItem[]> = {
       './a.json': [
-        { id: 'a-1', japanese: 'ZERO', hiragana: 'ぜろ', english: 'zero' }, // 0/0
-        { id: 'a-2', japanese: 'HIGH', hiragana: 'はい', english: 'high' }, // 3/0
-        { id: 'a-3', japanese: 'LOW', hiragana: 'ろう', english: 'low' },  // 0/3
+        { id: 'a-1', japanese: 'ZERO', hiragana: 'ぜろ', english: 'zero', english_definition: 'zero def.' }, // 0/0
+        { id: 'a-2', japanese: 'HIGH', hiragana: 'はい', english: 'high', english_definition: 'high def.' }, // 3/0
+        { id: 'a-3', japanese: 'LOW', hiragana: 'ろう', english: 'low', english_definition: 'low def.' },  // 0/3
       ],
     };
     const table = {

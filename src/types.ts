@@ -3,7 +3,8 @@ export interface CardItem {
   id: string;
   japanese: string;
   hiragana: string;
-  english: string;
+  english: string; // Short translation for front side
+  english_definition: string; // Full definition for back side
   japanese_example?: string;
   english_example?: string;
 }

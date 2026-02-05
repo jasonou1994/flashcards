@@ -138,7 +138,30 @@ export default function Study() {
     setFlipped(false);
   }
 
-  // keyboard handlers: Space to flip, Enter to mark known
+  function restartDeck() {
+    if (isRandomRun) {
+      countedThisRun.current.clear();
+      const initial = initialRandomDeckRef.current || [];
+      if (initial.length > 0) {
+        validateDeckIds(initial);
+        setDeck(initial.slice());
+      }
+      return;
+    }
+    if (!selectedDeckKey || !deckContext) return;
+    try {
+      const loaded = deckContext(selectedDeckKey);
+      countedThisRun.current.clear();
+      validateDeckIds(loaded);
+      setDeck(shuffle(loaded));
+    } catch {
+      // no-op when reload fails
+    }
+  }
+
+  const isDeckComplete = !current && (isRandomRun || selectedDeckKey);
+
+  // keyboard handlers: Space to flip, E/Enter to mark known, F to mark unknown
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.code === 'Space' || e.key === ' ') {
@@ -146,12 +169,22 @@ export default function Study() {
         setFlipped((f) => !f);
       } else if (e.key === 'Enter') {
         e.preventDefault();
+        if (isDeckComplete) {
+          restartDeck();
+        } else {
+          markKnown();
+        }
+      } else if (e.key === 'e' || e.key === 'E') {
+        e.preventDefault();
         markKnown();
+      } else if (e.key === 'f' || e.key === 'F') {
+        e.preventDefault();
+        markUnknown();
       }
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [deck, current]);
+  }, [deck, current, isDeckComplete]);
 
   return (
     <Box>
@@ -190,35 +223,12 @@ export default function Study() {
                 <Typography variant="body1" gutterBottom>
                   You completed the deck.
                 </Typography>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={() => {
-                    if (isRandomRun) {
-                      // Restart random run using the same initially sampled cards
-                      countedThisRun.current.clear();
-                      const initial = initialRandomDeckRef.current || [];
-                      if (initial.length > 0) {
-                        validateDeckIds(initial);
-                        setDeck(initial.slice());
-                      }
-                      return;
-                    }
-                    if (!selectedDeckKey || !deckContext) {
-                      return;
-                    }
-                    try {
-                      const loaded = deckContext(selectedDeckKey);
-                      countedThisRun.current.clear();
-                      validateDeckIds(loaded);
-                      setDeck(shuffle(loaded));
-                    } catch {
-                      // no-op when reload fails
-                    }
-                  }}
-                >
+                <Button variant="contained" color="primary" onClick={restartDeck}>
                   Restart
                 </Button>
+                <Typography variant="caption" sx={{ mt: 1, display: 'block', color: 'text.secondary' }}>
+                  Press Enter to restart
+                </Typography>
               </>
             )
           ) : (
@@ -250,7 +260,7 @@ export default function Study() {
 
               <Typography variant="body2" sx={{ mt: 2 }}>Cards left: {deck.length}</Typography>
               <Typography variant="caption" sx={{ mt: 1, color: 'text.secondary' }}>
-                Tip: press Space to flip, Enter to mark Known
+                Tip: Space to flip, E/Enter for Known, F for Unknown
               </Typography>
             </>
           )}

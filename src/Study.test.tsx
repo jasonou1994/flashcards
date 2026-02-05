@@ -6,9 +6,9 @@ import type { CardItem } from './utils';
 function mockSingleDeck() {
     const maps: Record<string, CardItem[]> = {
       './test.json': [
-        { id: 'mock-0001', japanese: 'カード1', hiragana: 'かーど1', english: 'card one' },
-        { id: 'mock-0002', japanese: 'カード2', hiragana: 'かーど2', english: 'card two' },
-        { id: 'mock-0003', japanese: 'カード3', hiragana: 'かーど3', english: 'card three' },
+        { id: 'mock-0001', japanese: 'カード1', hiragana: 'かーど1', english: 'card one', english_definition: 'card one (first card).' },
+        { id: 'mock-0002', japanese: 'カード2', hiragana: 'かーど2', english: 'card two', english_definition: 'card two (second card).' },
+        { id: 'mock-0003', japanese: 'カード3', hiragana: 'かーど3', english: 'card three', english_definition: 'card three (third card).' },
       ],
     };
     const loader = (key: string) => maps[key];
@@ -224,6 +224,131 @@ describe('Stats gating for a single deck run', () => {
   });
 });
 
+describe('Keyboard shortcuts', () => {
+  function getCardsLeftCount() {
+    const el = screen.getByText(/Cards left:/i);
+    const text = el.textContent || '';
+    const m = text.match(/Cards left:\s*(\d+)/);
+    return m ? parseInt(m[1], 10) : NaN;
+  }
+
+  function getCardElement() {
+    return document.querySelector('.card') as HTMLElement;
+  }
+
+  beforeEach(() => {
+    const maps: Record<string, CardItem[]> = {
+      './test.json': [
+        { id: 'key-0001', japanese: 'カード1', hiragana: 'かーど1', english: 'card one', english_definition: 'card one (first).' },
+        { id: 'key-0002', japanese: 'カード2', hiragana: 'かーど2', english: 'card two', english_definition: 'card two (second).' },
+        { id: 'key-0003', japanese: 'カード3', hiragana: 'かーど3', english: 'card three', english_definition: 'card three (third).' },
+      ],
+    };
+    const loader = (key: string) => maps[key];
+    (loader as any).keys = () => Object.keys(maps);
+    (globalThis as any).__TEST_DECKS__ = maps;
+  });
+
+  afterEach(() => {
+    delete (globalThis as any).__TEST_DECKS__;
+  });
+
+  it('Space key toggles card flip', () => {
+    render(<Study />);
+    fireEvent.click(screen.getByRole('button', { name: /Start Random Run/i }));
+    const card = getCardElement();
+
+    expect(card.className).not.toMatch(/flipped/);
+    fireEvent.keyDown(window, { key: ' ', code: 'Space' });
+    expect(card.className).toMatch(/flipped/);
+    fireEvent.keyDown(window, { key: ' ', code: 'Space' });
+    expect(card.className).not.toMatch(/flipped/);
+  });
+
+  it('E key marks card as Known (removes card)', () => {
+    render(<Study />);
+    fireEvent.click(screen.getByRole('button', { name: /Start Random Run/i }));
+    const before = getCardsLeftCount();
+
+    fireEvent.keyDown(window, { key: 'e' });
+    expect(getCardsLeftCount()).toBe(before - 1);
+  });
+
+  it('E key (uppercase) marks card as Known', () => {
+    render(<Study />);
+    fireEvent.click(screen.getByRole('button', { name: /Start Random Run/i }));
+    const before = getCardsLeftCount();
+
+    fireEvent.keyDown(window, { key: 'E' });
+    expect(getCardsLeftCount()).toBe(before - 1);
+  });
+
+  it('Enter key marks card as Known when card is displayed', () => {
+    render(<Study />);
+    fireEvent.click(screen.getByRole('button', { name: /Start Random Run/i }));
+    const before = getCardsLeftCount();
+
+    fireEvent.keyDown(window, { key: 'Enter' });
+    expect(getCardsLeftCount()).toBe(before - 1);
+  });
+
+  it('F key marks card as Unknown (keeps card in deck)', () => {
+    render(<Study />);
+    fireEvent.click(screen.getByRole('button', { name: /Start Random Run/i }));
+    const before = getCardsLeftCount();
+
+    fireEvent.keyDown(window, { key: 'f' });
+    expect(getCardsLeftCount()).toBe(before); // card count unchanged
+    expect(getCardElement().className).not.toMatch(/flipped/); // flip reset
+  });
+
+  it('F key (uppercase) marks card as Unknown', () => {
+    render(<Study />);
+    fireEvent.click(screen.getByRole('button', { name: /Start Random Run/i }));
+    const before = getCardsLeftCount();
+
+    fireEvent.keyDown(window, { key: 'F' });
+    expect(getCardsLeftCount()).toBe(before);
+  });
+
+  it('Enter key restarts deck on completion screen', () => {
+    render(<Study />);
+    fireEvent.click(screen.getByRole('button', { name: /Start Random Run/i }));
+
+    // Complete the deck
+    fireEvent.keyDown(window, { key: 'Enter' });
+    fireEvent.keyDown(window, { key: 'Enter' });
+    fireEvent.keyDown(window, { key: 'Enter' });
+
+    // Should show completion
+    expect(screen.getByRole('heading', { name: /All done/i })).toBeInTheDocument();
+
+    // Press Enter to restart
+    fireEvent.keyDown(window, { key: 'Enter' });
+
+    // Should be back to studying
+    expect(screen.getByRole('button', { name: /Reshuffle/i })).toBeInTheDocument();
+    expect(getCardsLeftCount()).toBeGreaterThan(0);
+  });
+
+  it('E and F keys do nothing on completion screen', () => {
+    render(<Study />);
+    fireEvent.click(screen.getByRole('button', { name: /Start Random Run/i }));
+
+    // Complete the deck
+    fireEvent.keyDown(window, { key: 'Enter' });
+    fireEvent.keyDown(window, { key: 'Enter' });
+    fireEvent.keyDown(window, { key: 'Enter' });
+
+    expect(screen.getByRole('heading', { name: /All done/i })).toBeInTheDocument();
+
+    // E and F should not cause errors or restart
+    fireEvent.keyDown(window, { key: 'e' });
+    fireEvent.keyDown(window, { key: 'f' });
+    expect(screen.getByRole('heading', { name: /All done/i })).toBeInTheDocument();
+  });
+});
+
 describe('Random deck aggregation and dedupe', () => {
   function mockDeckContext(maps: Record<string, CardItem[]>) {
     const loader = (key: string) => maps[key];
@@ -248,14 +373,14 @@ describe('Random deck aggregation and dedupe', () => {
   it('dedupes across japanese/hiragana/english and respects quantity on start and restart', () => {
     const decks: Record<string, CardItem[]> = {
       './a.json': [
-        { id: 'a-1', japanese: 'A', hiragana: 'あ', english: 'alpha' },
-        { id: 'a-2', japanese: 'B', hiragana: 'ぶ', english: 'beta' },
+        { id: 'a-1', japanese: 'A', hiragana: 'あ', english: 'alpha', english_definition: 'alpha def.' },
+        { id: 'a-2', japanese: 'B', hiragana: 'ぶ', english: 'beta', english_definition: 'beta def.' },
       ],
       './b.json': [
-        { id: 'b-1', japanese: 'A', hiragana: 'あ2', english: 'alpha2' }, // duplicate japanese
-        { id: 'b-2', japanese: 'C', hiragana: 'ぶ', english: 'gamma' }, // duplicate hiragana
-        { id: 'b-3', japanese: 'D', hiragana: 'で', english: 'beta' }, // duplicate english
-        { id: 'b-4', japanese: 'E', hiragana: 'え', english: 'epsilon' }, // unique
+        { id: 'b-1', japanese: 'A', hiragana: 'あ2', english: 'alpha2', english_definition: 'alpha2 def.' }, // duplicate japanese
+        { id: 'b-2', japanese: 'C', hiragana: 'ぶ', english: 'gamma', english_definition: 'gamma def.' }, // duplicate hiragana
+        { id: 'b-3', japanese: 'D', hiragana: 'で', english: 'beta', english_definition: 'beta def.' }, // duplicate english
+        { id: 'b-4', japanese: 'E', hiragana: 'え', english: 'epsilon', english_definition: 'epsilon def.' }, // unique
       ],
     };
     mockDeckContext(decks);

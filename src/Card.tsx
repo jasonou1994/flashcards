@@ -73,7 +73,7 @@ export function Card({
               <>
                 <HtmlOrText className="japanese" text={card.japanese} variant={emphasizeFirstLine ? 'h3' : 'h5'} />
                 <HtmlOrText className="hiragana" text={card.hiragana} />
-                <HtmlOrText className="english" text={card.english} />
+                <HtmlOrText className="english-definition" text={card.english_definition} />
                 {card.japanese_example ? (
                   <HtmlOrText className="japanese-example" text={card.japanese_example} />
                 ) : null}
